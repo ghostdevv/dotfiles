@@ -42,7 +42,7 @@ ex ()
 # Better commands
 alias \
 	yay="yay --noconfirm --color always" \
-	pacman="sudo pacman --color always" \
+	pacman="pacman --color always" \
 	grep="grep --color=auto" \
 	mkdir="mkdir -pv"
 
