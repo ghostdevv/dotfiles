@@ -92,4 +92,4 @@ alias \
 # Bare git repo alias for dotfiles
 alias \
 	dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME" \
-	dotfiles-setup="git init --bare $HOME/dotfiles && dotfiles config --local status.showUntrackedFiles no && git checkout -b main"
+	dotfiles-setup="git init --bare $HOME/dotfiles && dotfiles config --local status.showUntrackedFiles no"
