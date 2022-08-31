@@ -1,8 +1,9 @@
 # Install volta
 curl https://get.volta.sh | bash
 
-# Reload shell
-. ~/.bashrc
+# Load volta executable
+VOLTA_HOME="$HOME/.volta"
+PATH="$VOLTA_HOME/bin:$PATH"
 
 # Install global tools
 volta install pnpm
