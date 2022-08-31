@@ -5,6 +5,10 @@ curl https://get.volta.sh | bash
 VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
 
+# Setup volta
+volta setup
+volta install node
+
 # Install global tools
 volta install pnpm
 volta install tsc
