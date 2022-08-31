@@ -1,16 +1,16 @@
 sync() {
-  if [ -d ".git" ]; then;
+  if [[ -d ".git" ]]; then
     printf "\nSyncing with git:\n"
 
     git fetch
     git pull
   fi;
 
-  if [ -f "package-lock.json" ]; then;
+  if [[ -f "package-lock.json" ]]; then
     printf "\nInstalling with npm:\n"
 
     npm install
-  elif [ -f "pnpm-lock.yaml" ]; then;
+  elif [[ -f "pnpm-lock.yaml" ]]; then
     printf "\nInstalling with pnpm:\n"
 
     pnpm install
@@ -18,19 +18,19 @@ sync() {
 }
 
 update() {
-  if [ -f "package-lock.json" ]; then;
+  if [[ -f "package-lock.json" ]]; then
     printf "\nUpdating with npm:\n"
 
     rm -rf node_modules
     pnpm up --config.strict-peer-dependencies=false --config.engine-strict=false --latest -r --no-lockfile
     rm -rf node_modules
     npm i
-  elif [ -f "pnpm-lock.yaml" ]; then;
+  elif [[ -f "pnpm-lock.yaml" ]]; then
     printf "\nUpdating with pnpm:\n"
 
     pnpm up --config.strict-peer-dependencies=false --latest -r
 
-    if [ -f "pnpm-workspace.yaml" ]; then;
+    if [[ -f "pnpm-workspace.yaml" ]]; then
       pnpm up --config.strict-peer-dependencies=false --latest
     fi;
   fi;
@@ -39,7 +39,7 @@ update() {
 resolve_pm() {
   local PM="pnpm"
 
-  if [ -f "package-lock.json" ]; then;
+  if [[ -f "package-lock.json" ]]; then
     PM="npm";
   fi;
 
@@ -63,7 +63,7 @@ pi() {
 pr() {
   local PM=$(resolve_pm);
 
-  if [ $# -eq 0 ]; then;
+  if [[ $# -eq 0 ]]; then
     echo "Please pass in a script to run";
     return 1;
   fi;
