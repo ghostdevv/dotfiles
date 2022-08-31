@@ -12,4 +12,6 @@ volta install astro
 volta install nodemon
 
 # Work around
+mkdir -p ~/scripts
+cp ./scripts/* ~/scripts
 cp -n ./.bash_aliases ~/.bash_aliases
