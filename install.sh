@@ -13,7 +13,6 @@ volta install node
 volta install pnpm
 volta install tsm
 volta install create-ghost
-volta install astro
 volta install nodemon
 
 # Work around
