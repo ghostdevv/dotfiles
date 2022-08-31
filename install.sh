@@ -19,3 +19,6 @@ volta install nodemon
 # mkdir -p ~/scripts
 # cp ./scripts/* ~/scripts
 # cp -n ./.bash_aliases ~/.bash_aliases
+
+# Done
+echo "Done!"
