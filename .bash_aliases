@@ -1,1 +1,1 @@
-source './scripts/alias.sh'
+alias check="echo check"
