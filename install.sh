@@ -1,8 +1,8 @@
 # Vars
-CURRENT_DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)";
+CURRENT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 # Logs
-echo Install dotfiles from $CURRENT_DIR
+echo "Install dotfiles from $CURRENT_DIR"
 
 # Install volta
 curl https://get.volta.sh | bash
