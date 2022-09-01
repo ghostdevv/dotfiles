@@ -1,3 +1,6 @@
+# Vars
+CURRENT_DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)";
+
 # Install volta
 curl https://get.volta.sh | bash
 
@@ -15,10 +18,13 @@ volta install tsm
 volta install create-ghost
 volta install nodemon
 
-# Work around
-# mkdir -p ~/scripts
-# cp ./scripts/* ~/scripts
-# cp -n ./.bash_aliases ~/.bash_aliases
+# Copy aliases
+mkdir -p ~/scripts
+cp -r $CURRENT_DIR/scripts/* ~/scripts
+cp $CURRENT_DIR/.bash_aliases ~/.bash_aliases
+
+# Reload bash
+. ~/.bashrc
 
 # Done
 echo "Done!"
