@@ -3,6 +3,8 @@ CURRENT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 # Logs
 echo "Install dotfiles from $CURRENT_DIR"
+echo "BASH_SOURCE[0] ${BASH_SOURCE[0]}"
+echo "BASH_SOURCE ${BASH_SOURCE}"
 
 # Install volta
 curl https://get.volta.sh | bash
