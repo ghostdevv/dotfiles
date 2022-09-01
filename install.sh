@@ -16,10 +16,7 @@ volta setup
 volta install node
 
 # Install global tools
-volta install pnpm
-volta install tsm
-volta install create-ghost
-volta install nodemon
+volta install pnpm tsm create-ghost nodemon
 
 # Copy aliases
 mkdir -p ~/scripts
