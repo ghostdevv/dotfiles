@@ -1,1 +1,1 @@
-source ./scripts/alias.sh
+. ./.bash_aliases

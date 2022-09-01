@@ -15,10 +15,8 @@ volta install node
 # Install global tools
 volta install pnpm tsm create-ghost nodemon
 
-# Copy aliases
-mkdir -p ~/scripts
-cp -r ./scripts/* ~/scripts
-cp ./.bash_aliases ~/.bash_aliases
+# Load aliases
+curl https://raw.githubusercontent.com/ghostdevv/dotfiles/main/.bash_aliases > ~/.bash_aliases
 
 # Reload bash
 . ~/.bashrc
