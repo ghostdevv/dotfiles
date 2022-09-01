@@ -1,12 +1,5 @@
-echo "BASH_SOURCE ${BASH_SOURCE} SHELL $SHELL"
-
-# Vars
-CURRENT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-
 # Logs
-echo "Install dotfiles from $CURRENT_DIR"
-echo "BASH_SOURCE ${BASH_SOURCE}"
-echo "BASH_SOURCE[0] ${BASH_SOURCE[0]}"
+echo "Installing dotfiles"
 
 # Install volta
 curl https://get.volta.sh | bash
@@ -24,8 +17,8 @@ volta install pnpm tsm create-ghost nodemon
 
 # Copy aliases
 mkdir -p ~/scripts
-cp -r $CURRENT_DIR/scripts/* ~/scripts
-cp $CURRENT_DIR/.bash_aliases ~/.bash_aliases
+cp -r ./scripts/* ~/scripts
+cp ./.bash_aliases ~/.bash_aliases
 
 # Reload bash
 . ~/.bashrc
