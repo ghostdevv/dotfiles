@@ -5,7 +5,7 @@ CURRENT_DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
 
 # Logs
 echo "Installing dotfiles"
-echo "B_S: ${BASH_SOURCE} S: $SHELL"
+echo "B_S: ${BASH_SOURCE} S: $SHELL CD: $CURRENT_DIR"
 
 # Install volta
 curl https://get.volta.sh | bash
@@ -23,7 +23,7 @@ volta install pnpm tsm create-ghost nodemon
 
 # Load aliases
 # curl https://raw.githubusercontent.com/ghostdevv/dotfiles/main/.bash_aliases > ~/.bash_aliases
-cp "$CURRENT_DIR/.bash_aliases" "~/.bash_aliases"
+cp "$CURRENT_DIR/.bash_aliases" ~/.bash_aliases
 
 # Reload bash
 . ~/.bashrc
