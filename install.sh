@@ -1,5 +1,8 @@
+#!/bin/bash
+
 # Logs
 echo "Installing dotfiles"
+echo "B_S: ${BASH_SOURCE} S: $SHELL"
 
 # Install volta
 curl https://get.volta.sh | bash
