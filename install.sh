@@ -22,7 +22,6 @@ volta install node
 volta install pnpm tsm create-ghost nodemon
 
 # Load aliases
-# curl https://raw.githubusercontent.com/ghostdevv/dotfiles/main/.bash_aliases > ~/.bash_aliases
 cp "$CURRENT_DIR/.bash_aliases" ~/.bash_aliases
 
 # Reload bash
