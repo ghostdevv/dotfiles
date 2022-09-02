@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Vars
+CURRENT_DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)";
+
 # Logs
 echo "Installing dotfiles"
 echo "B_S: ${BASH_SOURCE} S: $SHELL"
@@ -19,7 +22,8 @@ volta install node
 volta install pnpm tsm create-ghost nodemon
 
 # Load aliases
-curl https://raw.githubusercontent.com/ghostdevv/dotfiles/main/.bash_aliases > ~/.bash_aliases
+# curl https://raw.githubusercontent.com/ghostdevv/dotfiles/main/.bash_aliases > ~/.bash_aliases
+cp "$CURRENT_DIR/.bash_aliases" "~/.bash_aliases"
 
 # Reload bash
 . ~/.bashrc
