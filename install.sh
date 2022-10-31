@@ -19,7 +19,7 @@ volta setup
 volta install node
 
 # Install global tools
-volta install pnpm tsm create-ghost nodemon yarn
+volta install pnpm yarn tsm nodemon
 
 # Load aliases
 cp "$CURRENT_DIR/.bash_aliases" ~/.bash_aliases
