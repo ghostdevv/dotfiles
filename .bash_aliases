@@ -75,3 +75,14 @@ pr() {
 alias pd="pnpm dev"
 alias pp="pnpm preview"
 alias pb="pnpm build"
+
+webp() {
+    local REGEX='\.(png|jpg|jpeg|pnm|pgn|ppm|pam|tiff)$'
+
+    if [ -z "$(echo $1 | grep -E -i $REGEX)" ]; then
+        echo 'Error: File must be one of: png, jpg, jpeg, pnm, pgn, ppm, pam, tiff'
+        exit 1
+    fi
+
+    cwebp -q 90 "$1" -o "$(echo $1 | sed -E "s/$REGEX//").webp"
+}
