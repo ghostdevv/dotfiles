@@ -86,3 +86,5 @@ webp() {
 
     cwebp -q 90 "$1" -o "$(echo $1 | sed -E "s/$REGEX//").webp"
 }
+
+alias hax="~/.zshrc -w"
