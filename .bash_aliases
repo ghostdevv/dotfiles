@@ -120,8 +120,6 @@ tunnel() {
         echo "  Unable to copy to clipboard"
     fi
 
-    echo "$URL" | xsel --clipboard --input
-
     screen -S "$ID" -X logfile flush 0
     screen -S "$ID" -X log off
     rm -f "$ID"
