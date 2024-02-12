@@ -87,7 +87,7 @@ webp() {
     cwebp -q 90 "$1" -o "$(echo $1 | sed -E "s/$REGEX//").webp"
 }
 
-alias hax="~/.zshrc -w"
+alias hax="code ~/.zshrc -w"
 
 tunnel() {
     if ! [[ $1 =~ ^-?[0-9]+$ ]]; then
