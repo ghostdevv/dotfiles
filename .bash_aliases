@@ -162,3 +162,15 @@ alias pi="ni"
 alias pd="nr dev"
 alias pp="nr preview"
 alias pb="nr build"
+
+# optionally configure volta
+if [[ -d "$HOME/.volta" ]]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
+# optionally configure deno
+if [[ -d "$HOME/.deno" ]]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
