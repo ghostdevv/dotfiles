@@ -120,6 +120,9 @@ alias la="ls -a"
 alias ll="ls -alFh"
 alias l="ls"
 
+# Set nano as the editor
+export EDITOR="nano"
+
 # Update the git repo & deps 
 sync() {
   if [[ -d ".git" ]]; then
