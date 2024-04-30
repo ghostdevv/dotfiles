@@ -205,5 +205,5 @@ update-dotfiles() {
   dotfiles_download ".bash_aliases"
   dotfiles_download ".zshrc-personal"
 
-  printf "\nDone!\n"
+  printf "\nDone! Don't forget to restart your shell.\n"
 }
