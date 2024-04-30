@@ -177,5 +177,7 @@ fi
 
 # if bat exists alias cat for it
 if command -v bat &> /dev/null; then
-  alias cat="bat"
+  export BAT_THEME="Visual Studio Dark+"
+  export BAT_STYLE="full"
+  alias cat="bat --style=header,header-filename,header-filesize,grid"
 fi
