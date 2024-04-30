@@ -131,3 +131,5 @@ tunnel() {
 
     screen -r "$ID"
 }
+
+alias hinfo="curl -s https://am.i.mullvad.net/json | jq"
