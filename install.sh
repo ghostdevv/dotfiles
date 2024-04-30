@@ -16,10 +16,10 @@ PATH="$VOLTA_HOME/bin:$PATH"
 
 # Setup volta
 volta setup
-volta install node
+volta install node@20
 
 # Install global tools
-volta install pnpm yarn tsm nodemon
+volta install pnpm tsm nodemon @antfu/ni
 
 # Load aliases
 cp "$CURRENT_DIR/.bash_aliases" ~/.bash_aliases
