@@ -194,7 +194,11 @@ update-dotfiles() {
     else
       printf "\nUpdating $OUTPUT\n"
       curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/$1" -o $OUTPUT
-      sed -i "1i# DOTFILES_VERSION=$LATEST_COMMIT\n" $OUTPUT
+      
+      if [[ "$(unmae)" != "Darwin" ]]; then
+        # this isn't working correctly on mac and I can't fix it
+        sed -i "1i# DOTFILES_VERSION=$LATEST_COMMIT\n" $OUTPUT
+      fi
     fi
   }
 
