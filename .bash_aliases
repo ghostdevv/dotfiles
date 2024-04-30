@@ -189,7 +189,7 @@ update-dotfiles() {
   function dotfiles_download {
     local OUTPUT="$HOME/$1"
 
-    if [[ -f $OUTPUT && "$LATEST_COMMIT" = "$(grep -m 1 -Po '(?<=DOTFILES_VERSION=)[\w]+' $OUTPUT)" ]]; then
+    if [[ -f $OUTPUT && "$LATEST_COMMIT" = "$(grep -m 1 -Eo 'DOTFILES_VERSION=(\w+)' $OUTPUT | sed 's/DOTFILES_VERSION=//')" ]]; then
       printf "\nSkipping $OUTPUT\n"
     else
       printf "\nUpdating $OUTPUT\n"
@@ -201,5 +201,5 @@ update-dotfiles() {
   dotfiles_download ".bash_aliases"
   dotfiles_download ".zshrc-personal"
 
-  printf "\nDone! Don't forget to reload your shell\n"
+  printf "\nDone!\n"
 }
