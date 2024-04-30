@@ -152,7 +152,7 @@ update() {
     if [[ -f "pnpm-workspace.yaml" ]]; then
       pnpm up --config.strict-peer-dependencies=false --latest
     fi;
-  else then
+  else
     echo "No lockfile found"
   fi;
 }
