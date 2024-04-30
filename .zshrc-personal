@@ -1,0 +1,12 @@
+##? zsh config
+
+export ZSH="/usr/share/oh-my-zsh/"
+
+if [[ -d "$HOME/.oh-my-zsh" ]]; then
+  export ZSH="$HOME/.oh-my-zsh"
+fi
+
+ZSH_THEME="sorin"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
