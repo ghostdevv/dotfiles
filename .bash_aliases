@@ -174,3 +174,8 @@ if [[ -d "$HOME/.deno" ]]; then
   export DENO_INSTALL="$HOME/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
 fi
+
+# if bat exists alias cat for it
+if command -v bat &> /dev/null; then
+  alias cat="bat"
+fi
