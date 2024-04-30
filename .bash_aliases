@@ -1,3 +1,4 @@
+# Convert an image to webp
 webp() {
   local REGEX='\.(png|jpg|jpeg|pnm|pgn|ppm|pam|tiff)$'
 
@@ -9,6 +10,7 @@ webp() {
   cwebp -q 90 "$1" -o "$(echo $1 | sed -E "s/$REGEX//").webp"
 }
 
+# Start a cloudflare tunnel with optional port
 tunnel() {
   if ! [[ $1 =~ ^-?[0-9]+$ ]]; then
       echo "Please pass a port as first argument to this command"
@@ -53,7 +55,7 @@ tunnel() {
 }
 
 # Uncompress any file
-# This function is made by Arcolinux under the GNU GPL v3.0 License
+# This function is based on code by Arcolinux under the GNU GPL v3.0 License
 # https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L455
 ex() {
   if [ -f $1 ] ; then
@@ -79,12 +81,46 @@ ex() {
   fi
 }
 
+# Open the ~/.zshrc in vscode
 alias hax="code ~/.zshrc -w"
+
+# Get host info using mullvad api
 alias hinfo="curl -s https://am.i.mullvad.net/json | jq"
 
+# Shortcut for journalctl
+# This alias is based on code by Arcolinux under the GNU GPL v3.0 License
+# https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L350
+alias jctl="journalctl -p 3 -xb"
 
-# node
+# Update grub config
+# This alias is based on code by Arcolinux under the GNU GPL v3.0 License
+# https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L225
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
+# List all processes
+alias lsps="ps auxf"
+
+# Grep through process list
+# This alias is based on code by Arcolinux under the GNU GPL v3.0 License
+# https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L222
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# Shortcuts or sensible defaults
+# This block of aliases are based on code by Arcolinux under the GNU GPL v3.0 License
+# https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc
+alias pacman="sudo pacman --color auto"
+alias free="free -mt"
+alias wget="wget -c"
+alias df="df -h"
+alias grep="grep --color=auto"
+alias egrep="grep -E --color=auto"
+alias fgrep="grep -F --color=auto"
+alias ls="ls --color=auto"
+alias la="ls -a"
+alias ll="ls -alFh"
+alias l="ls"
+
+# Update the git repo & deps 
 sync() {
   if [[ -d ".git" ]]; then
     printf "\nSyncing with git:\n"
@@ -96,6 +132,7 @@ sync() {
   ni
 }
 
+# Update deps 
 update() {
   if [[ -f "package-lock.json" ]]; then
     printf "\nUpdating with npm:\n"
@@ -117,6 +154,7 @@ update() {
   fi;
 }
 
+# node aliases
 alias pi="ni"
 alias pd="nr dev"
 alias pp="nr preview"
