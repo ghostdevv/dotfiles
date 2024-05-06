@@ -6,9 +6,9 @@ update_dotfiles() {
     local OUTPUT="$HOME/$1"
 
     if [[ -f $OUTPUT && "$LATEST_COMMIT" = "$(grep -m 1 -Eo 'DOTFILES_VERSION=(\w+)' $OUTPUT | sed 's/DOTFILES_VERSION=//')" ]]; then
-      printf "\nSkipping $OUTPUT\n"
+      echo "Skipping '$OUTPUT'"
     else
-      printf "\nUpdating $OUTPUT\n"
+      printf "\n\nUpdating '$OUTPUT'\n"
       curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o $OUTPUT
       
       if [[ "$(uname)" != "Darwin" ]]; then
@@ -18,8 +18,19 @@ update_dotfiles() {
     fi
   }
 
+  # General Dotfiles
+  dotfiles_download ".dotfiles.sh"
   dotfiles_download ".bash_aliases"
   dotfiles_download ".zshrc-personal"
+  dotfiles_download ".gitconfig"
+  dotfiles_download ".nanorc"
+
+  # Linux Specific
+  if [[ "$(uname)" != "Darwin" ]]; then
+    dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
+    dotfiles_download ".config/presets/user/ghost.json"
+    dotfiles_download ".config/alacritty/alacritty.toml"
+  fi
 
   printf "\nDone! Don't forget to restart your shell.\n"
 }
