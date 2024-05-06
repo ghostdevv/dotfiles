@@ -9,6 +9,7 @@ update_dotfiles() {
       echo "Skipping '$1'"
     else
       printf "\n\nUpdating '$1'\n"
+      mkdir -p "$(dirname $OUTPUT)"
       curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o $OUTPUT
       
       if [[ "$(uname)" != "Darwin" ]]; then
