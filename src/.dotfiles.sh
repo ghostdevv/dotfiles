@@ -24,12 +24,12 @@ update_dotfiles() {
   dotfiles_download ".zshrc-personal"
   dotfiles_download ".gitconfig"
   dotfiles_download ".nanorc"
+  dotfiles_download ".config/alacritty/alacritty.toml"
 
   # Linux Specific
   if [[ "$(uname)" != "Darwin" ]]; then
     dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
     dotfiles_download ".config/presets/user/ghost.json"
-    dotfiles_download ".config/alacritty/alacritty.toml"
   fi
 
   printf "\nDone! Don't forget to restart your shell.\n"
