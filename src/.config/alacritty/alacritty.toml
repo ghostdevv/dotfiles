@@ -39,7 +39,7 @@ style = "Italic"
 
 [font.normal]
 family = "Comic Mono"
-style = "Regular"
+style = "Normal"
 
 [scrolling]
 history = 50000
