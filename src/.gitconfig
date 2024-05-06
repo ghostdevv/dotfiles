@@ -1,5 +1,9 @@
 [user]
 	name = GHOST
 	email = ghostdevbusiness@gmail.com
+
 [init]
 	defaultBranch = main
+
+[safe]
+	directory = "/usr/local/Homebrew"
