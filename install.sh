@@ -15,7 +15,7 @@ if ! command -v volta &> /dev/null; then
 
     volta setup
     volta install node@20
-    volta install pnpm tsm nodemon @antfu/ni
+    volta install pnpm@8 tsm nodemon @antfu/ni
 fi
 
 # Download & Update dotfiles
