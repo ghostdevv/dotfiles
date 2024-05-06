@@ -182,7 +182,7 @@ if command -v bat &> /dev/null; then
   alias cat="bat --style=header,header-filename,header-filesize,grid"
 fi
 
-update-dotfiles() {
+update_dotfiles() {
   local LATEST_COMMIT="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
   echo "Updating Dotfiles ($(echo $LATEST_COMMIT | cut -c1-7))"
 
@@ -207,6 +207,8 @@ update-dotfiles() {
 
   printf "\nDone! Don't forget to restart your shell.\n"
 }
+
+alias update-dotfiles="update_dotfiles"
 
 # Based on idea by @fractalhq
 peep() {
