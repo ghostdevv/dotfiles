@@ -207,3 +207,24 @@ update-dotfiles() {
 
   printf "\nDone! Don't forget to restart your shell.\n"
 }
+
+# Based on idea by @fractalhq
+peep() {
+  if [[ ! -n "$1" ]]; then
+    echo "Usage: peep <repo>"
+    exit 1
+  fi
+
+  local REPO="https://github.com/$1.git"
+  local LATEST_COMMIT_HASH="$(git ls-remote --head $REPO --ref main --type commit | head -n 1 | awk '{print $1}')"
+  local OUTPUT="/tmp/peep-$LATEST_COMMIT_HASH"
+
+  if [[ ! -d "$OUTPUT" ]]; then
+    git clone --depth 1 $REPO $OUTPUT
+    printf "\nCloned '$1' to '$OUTPUT'! Opening...\n"
+  else
+    echo "Repo '$1' found, opening..."
+  fi
+
+  code $OUTPUT
+}
