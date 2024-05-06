@@ -6,9 +6,9 @@ update_dotfiles() {
     local OUTPUT="$HOME/$1"
 
     if [[ -f $OUTPUT && "$LATEST_COMMIT" = "$(grep -m 1 -Eo 'DOTFILES_VERSION=(\w+)' $OUTPUT | sed 's/DOTFILES_VERSION=//')" ]]; then
-      echo "Skipping '$OUTPUT'"
+      echo "Skipping '$1'"
     else
-      printf "\n\nUpdating '$OUTPUT'\n"
+      printf "\n\nUpdating '$1'\n"
       curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o $OUTPUT
       
       if [[ "$(uname)" != "Darwin" ]]; then
