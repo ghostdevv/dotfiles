@@ -27,4 +27,4 @@ if [ "$(basename $SHELL)" = "bash" ]; then
 fi
 
 printf "\n\n\nPlease include the following at the top of your shell config file:\n\n"
-cat "$CURRENT_DIR/src/.zshrc"
+cat "$CURRENT_DIR/.zshrc.example"
