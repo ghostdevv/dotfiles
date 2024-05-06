@@ -8,7 +8,7 @@ echo "Installing dotfiles"
 printf "in: '$SHELL' at: '$CURRENT_DIR'\n\n"
 
 # Install & Setup volta
-if ! command -v bat &> /dev/null; then
+if ! command -v volta &> /dev/null; then
     curl https://get.volta.sh | bash
     VOLTA_HOME="$HOME/.volta"
     PATH="$VOLTA_HOME/bin:$PATH"
