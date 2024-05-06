@@ -193,7 +193,7 @@ update-dotfiles() {
       printf "\nSkipping $OUTPUT\n"
     else
       printf "\nUpdating $OUTPUT\n"
-      curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/$1" -o $OUTPUT
+      curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o $OUTPUT
       
       if [[ "$(uname)" != "Darwin" ]]; then
         # this isn't working correctly on mac and I can't fix it
