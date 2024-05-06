@@ -1,0 +1,27 @@
+update_dotfiles() {
+  local LATEST_COMMIT="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
+  echo "Updating Dotfiles ($(echo $LATEST_COMMIT | cut -c1-7))"
+
+  function dotfiles_download {
+    local OUTPUT="$HOME/$1"
+
+    if [[ -f $OUTPUT && "$LATEST_COMMIT" = "$(grep -m 1 -Eo 'DOTFILES_VERSION=(\w+)' $OUTPUT | sed 's/DOTFILES_VERSION=//')" ]]; then
+      printf "\nSkipping $OUTPUT\n"
+    else
+      printf "\nUpdating $OUTPUT\n"
+      curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o $OUTPUT
+      
+      if [[ "$(uname)" != "Darwin" ]]; then
+        # this isn't working correctly on mac and I can't fix it
+        sed -i "1i# DOTFILES_VERSION=$LATEST_COMMIT\n" $OUTPUT
+      fi
+    fi
+  }
+
+  dotfiles_download ".bash_aliases"
+  dotfiles_download ".zshrc-personal"
+
+  printf "\nDone! Don't forget to restart your shell.\n"
+}
+
+alias update-dotfiles="update_dotfiles"
