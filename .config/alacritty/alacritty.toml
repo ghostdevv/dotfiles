@@ -1,0 +1,50 @@
+[colors.bright]
+black = "#545454"
+blue = "#437af1"
+cyan = "#93e0e3"
+green = "#7cdb6b"
+magenta = "#b294bb"
+red = "#f97554"
+white = "#ffffff"
+yellow = "#fce94f"
+
+[colors.normal]
+black = "#3f3f3f"
+blue = "#2160ec"
+cyan = "#06989a"
+green = "#67c157"
+magenta = "#85678f"
+red = "#f26c4b"
+white = "#dcdccc"
+yellow = "#c4a000"
+
+[colors.primary]
+background = "#222222"
+foreground = "#F9F9F9"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "Comic Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Comic Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Comic Mono"
+style = "Italic"
+
+[font.normal]
+family = "Comic Mono"
+style = "Regular"
+
+[scrolling]
+history = 50000
+
+[window]
+opacity = 0.8
+padding = { x = 12, y = 12 }
+decorations = "none"
