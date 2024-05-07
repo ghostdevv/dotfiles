@@ -37,9 +37,10 @@ update_dotfiles() {
       mkdir -p "$(dirname $OUTPUT)"
       curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o $OUTPUT
       
-      if [[ "$(uname)" != "Darwin" ]]; then
+      local COMMENT="$(comment $OUTPUT "DOTFILES_VERSION=$LATEST_COMMIT")"
+      if [[ "$(uname)" != "Darwin" && -n "$COMMENT" ]]; then
         # this isn't working correctly on mac and I can't fix it
-        sed -i "1i$(comment $OUTPUT "DOTFILES_VERSION=$LATEST_COMMIT")\n" $OUTPUT
+        sed -i "1i$COMMENT\n" $OUTPUT
       fi
     else
       echo "Skipping '$1'"
