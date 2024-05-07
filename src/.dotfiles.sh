@@ -1,6 +1,21 @@
 update_dotfiles() {
+  local FORCE=false
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -f|--force)
+        local FORCE=true
+        shift 1
+        ;;
+      *)
+        echo "Unknown option: $1"
+        return 1
+        ;;
+    esac
+  done
+
   local LATEST_COMMIT="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
-  echo "Updating Dotfiles ($(echo $LATEST_COMMIT | cut -c1-7))"
+  printf "\nUpdating Dotfiles ($(echo $LATEST_COMMIT | cut -c1-7)) [$FORCE]\n\n"
 
   function comment {
     case $1 in
@@ -13,9 +28,11 @@ update_dotfiles() {
   function dotfiles_download {
     local OUTPUT="$HOME/$1"
 
-    if [[ -f $OUTPUT && "$LATEST_COMMIT" = "$(grep -m 1 -Eo 'DOTFILES_VERSION=(\w+)' $OUTPUT | sed 's/DOTFILES_VERSION=//')" ]]; then
-      echo "Skipping '$1'"
-    else
+    if [[ -f "$OUTPUT" ]]; then
+      local CURRENT_COMMIT="$(grep -m 1 -Eo 'DOTFILES_VERSION=(\w+)' $OUTPUT | sed 's/DOTFILES_VERSION=//')"
+    fi
+
+    if [[ "$LATEST_COMMIT" != "$CURRENT_COMMIT" || "$FORCE" = true ]]; then
       printf "\n\nUpdating '$1'\n"
       mkdir -p "$(dirname $OUTPUT)"
       curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o $OUTPUT
@@ -24,6 +41,8 @@ update_dotfiles() {
         # this isn't working correctly on mac and I can't fix it
         sed -i "1i$(comment $OUTPUT "DOTFILES_VERSION=$LATEST_COMMIT")\n" $OUTPUT
       fi
+    else
+      echo "Skipping '$1'"
     fi
   }
 
