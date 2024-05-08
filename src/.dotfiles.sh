@@ -16,8 +16,8 @@ update_dotfiles() {
 
   local STORAGE_DIR="$HOME/.dotfiles"
 
-  local LATEST_COMMIT="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
-  printf "\nUpdating Dotfiles ($(echo $LATEST_COMMIT | cut -c1-7)) [$FORCE]\n\n"
+  local LATEST_VERSION="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
+  printf "\nUpdating Dotfiles ($(echo $LATEST_VERSION | cut -c1-7)) [$FORCE]\n\n"
 
   if [[ ! -d "$STORAGE_DIR" ]]; then
     mkdir -p "$STORAGE_DIR"
@@ -29,10 +29,10 @@ update_dotfiles() {
   function dotfiles_download {
     local OUTPUT="$HOME/$1"
 
-    if [[ "$LATEST_COMMIT" != "$CURRENT_VERSION" || "$FORCE" = true || ! -f "$OUTPUT" ]]; then
+    if [[ "$LATEST_VERSION" != "$CURRENT_VERSION" || "$FORCE" = true || ! -f "$OUTPUT" ]]; then
       printf "\n\nUpdating '$1'\n"
       mkdir -p "$(dirname $OUTPUT)"
-      curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_COMMIT/src/$1" -o "$OUTPUT"
+      curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/src/$1" -o "$OUTPUT"
       echo
     else
       echo "Skipping '$1'"
@@ -54,7 +54,7 @@ update_dotfiles() {
     dotfiles_download ".config/presets/user/ghost.json"
   fi
 
-  echo "$LATEST_COMMIT" > "$STORAGE_DIR/version"
+  echo "$LATEST_VERSION" > "$STORAGE_DIR/version"
 
   printf "\nDone! Don't forget to restart your shell.\n"
 }
