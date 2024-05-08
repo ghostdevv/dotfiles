@@ -1,0 +1,28 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "modules": [
+        "title",
+        "separator",
+        "os",
+        "host",
+        "kernel",
+        "packages",
+        "shell",
+        "cpu",
+        "gpu",
+        "memory",
+        "break",
+        "de",
+        "wm",
+        "wmtheme",
+        "theme",
+        "icons",
+        "terminal",
+        {
+            "type": "terminalfont",
+            "format": "{/2}{-}{/}{2}{?3} {3}{?}"
+        },
+        "break",
+        "colors"
+    ]
+}

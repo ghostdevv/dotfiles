@@ -54,6 +54,7 @@ update_dotfiles() {
   dotfiles_download ".gitconfig"
   dotfiles_download ".nanorc"
   dotfiles_download ".config/alacritty/alacritty.toml"
+  dotfiles_download ".config/fastfetch/config.jsonc"
 
   # Linux Specific
   if [[ "$(uname)" != "Darwin" ]]; then
