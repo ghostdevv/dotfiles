@@ -84,7 +84,7 @@ ex() {
 }
 
 # Open the ~/.zshrc in vscode
-alias hax="code ~/.zshrc -w"
+alias hax="code ~/.zshrc"
 
 # Get host info using mullvad api
 alias hinfo="curl -s https://am.i.mullvad.net/json | jq"
