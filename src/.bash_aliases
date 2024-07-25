@@ -125,6 +125,10 @@ alias l="ls"
 # Set nano as the editor
 export EDITOR="nano"
 
+# @antfu/ni settings
+export NI_DEFAULT_AGENT="pnpm"
+export NI_GLOBAL_AGENT="pnpm"
+
 # Update the git repo & deps 
 sync() {
   if [[ -d ".git" ]]; then
