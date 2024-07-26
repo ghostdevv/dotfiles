@@ -211,3 +211,4 @@ peep() {
 
 # Search
 alias s="search search"
+sq() { search search "!$@" }
