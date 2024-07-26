@@ -208,3 +208,6 @@ peep() {
 
   code $OUTPUT
 }
+
+# Search
+alias s="search search"
