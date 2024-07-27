@@ -171,6 +171,7 @@ alias pb="nr build"
 
 # optionally configure volta
 if [[ -d "$HOME/.volta" ]]; then
+  export VOLTA_FEATURE_PNPM="1"
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
