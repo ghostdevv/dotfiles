@@ -186,7 +186,7 @@ fi
 if command -v bat &> /dev/null; then
   export BAT_THEME="Visual Studio Dark+"
   export BAT_STYLE="full"
-  alias cat="bat --style=header,header-filename,header-filesize,grid"
+  alias cat="bat --paging=never --style=header,header-filename,header-filesize,grid"
 fi
 
 # Based on idea by @fractalhq
