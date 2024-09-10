@@ -47,7 +47,6 @@ update_dotfiles() {
   dotfiles_download ".nanorc"
   dotfiles_download ".config/alacritty/alacritty.toml"
   dotfiles_download ".config/fastfetch/config.jsonc"
-  dotfiles_download ".ssh/config"
 
   # Linux Specific
   if [[ "$(uname)" = "Linux" ]]; then
@@ -58,10 +57,13 @@ update_dotfiles() {
   echo "$LATEST_VERSION" > "$STORAGE_DIR/version"
 
   if command -v op >/dev/null; then
-    printf "\nSetting ~/.ssh/config hosts with 1password\n"
+    printf "\nSetting ~/.ssh/config hosts with 1password"
 
     for ID in $(op item ls --categories server --format=json | jq -r '.[].id'); do
-      op item get $ID --format=json \
+      SERVER=$(op item get $ID --format=json)
+      printf "Found Server: $(echo $SERVER | jq '.title')\n"
+
+      echo $SERVER \
         | jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
         >>  ~/.ssh/config
     done
@@ -71,3 +73,5 @@ update_dotfiles() {
 }
 
 alias update-dotfiles="update_dotfiles"
+
+update_dotfiles
