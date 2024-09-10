@@ -75,5 +75,3 @@ update_dotfiles() {
 }
 
 alias update-dotfiles="update_dotfiles"
-
-update_dotfiles
