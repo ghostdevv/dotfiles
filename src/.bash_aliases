@@ -213,3 +213,19 @@ peep() {
 # Search
 alias s="search search"
 sq() { search search "!$@"; }
+
+function quish_simple() {
+  if [[ ! -n "$1" ]]; then
+    echo "Usage: quish_simple <file>"
+    exit 1
+  fi
+
+  local file="$1"
+  local resolution="1920:1080"
+  local fps="30"
+  local bitrate="1500"
+  local type="mp4"
+  local output="quished-$1"
+
+  ffmpeg -y -v quiet -stats -i "$file" -vf "scale=$resolution:force_original_aspect_ratio=decrease,pad=$resolution:(ow-iw)/2:(oh-ih)/2" -r "$fps" -b:v "$bitrate"k "${output}.${type}" </dev/null
+}
