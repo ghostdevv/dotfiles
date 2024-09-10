@@ -47,6 +47,7 @@ update_dotfiles() {
   dotfiles_download ".nanorc"
   dotfiles_download ".config/alacritty/alacritty.toml"
   dotfiles_download ".config/fastfetch/config.jsonc"
+  dotfiles_download ".ssh/config"
 
   # Linux Specific
   if [[ "$(uname)" = "Linux" ]]; then
