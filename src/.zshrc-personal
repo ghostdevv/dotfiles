@@ -10,3 +10,9 @@ ZSH_THEME="sorin"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# Load 1password completions if installed
+if command -v op >/dev/null; then
+  echo c
+  eval "$(op completion zsh)"; compdef _op op
+fi
