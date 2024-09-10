@@ -61,13 +61,9 @@ update_dotfiles() {
     echo "Setting ~/.ssh/config hosts with 1password"
 
     for ID in $(op item ls --categories server --format=json | jq -r '.[].id'); do
-      ENTRY=$(op item get $ID --format=json | jq '
-        "Host \(.title | ascii_downcase)
-        HostName \(.fields[] | select(.label == "ip") | .value)
-        User \(.fields[] | select(.label == "username") | .value)\n"
-      ')
-
-      echo -e $ENTRY | sed 's/"//g' >> ~/.ssh/config
+      op item get $ID --format=json | \
+        jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
+        >> ~/.ssh/config
     done
   fi
 
