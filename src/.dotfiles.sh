@@ -59,6 +59,8 @@ update_dotfiles() {
   if command -v op >/dev/null; then
     printf "\nSetting ~/.ssh/config hosts with 1password"
 
+    FORCE=true dotfiles_download ".ssh/config"
+
     for ID in $(op item ls --categories server --format=json | jq -r '.[].id'); do
       SERVER=$(op item get $ID --format=json)
       printf "Found Server: $(echo $SERVER | jq '.title')\n"
