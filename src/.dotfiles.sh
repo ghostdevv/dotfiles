@@ -58,12 +58,12 @@ update_dotfiles() {
   echo "$LATEST_VERSION" > "$STORAGE_DIR/version"
 
   if command -v op >/dev/null; then
-    echo "Setting ~/.ssh/config hosts with 1password"
+    printf "\nSetting ~/.ssh/config hosts with 1password\n"
 
     for ID in $(op item ls --categories server --format=json | jq -r '.[].id'); do
-      op item get $ID --format=json | \
-        jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
-        >> ~/.ssh/config
+      op item get $ID --format=json \
+        | jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
+        >>  ~/.ssh/config
     done
   fi
 
