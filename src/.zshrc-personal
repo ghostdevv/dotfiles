@@ -10,6 +10,7 @@ ZSH_THEME="sorin"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Load 1password completions if installed
 if command -v op >/dev/null; then
