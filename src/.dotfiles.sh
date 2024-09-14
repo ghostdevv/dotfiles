@@ -53,6 +53,8 @@ update_dotfiles() {
   if [[ "$(uname)" = "Linux" ]]; then
     dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
     dotfiles_download ".config/presets/user/ghost.json"
+    dotfiles_download ".config/autostart/1password.desktop"
+    dotfiles_download ".config/autostart/guake.desktop"
   fi
 
   echo "$LATEST_VERSION" > "$STORAGE_DIR/version"
