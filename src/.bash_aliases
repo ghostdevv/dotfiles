@@ -352,6 +352,8 @@ update_system() {
     install_search
   fi
 
+  set +e
+
   echo -e "\nDone! You may need to do the following steps:"
   echo "- Setup dns"
   echo "- Press apply in gdm-settings"
