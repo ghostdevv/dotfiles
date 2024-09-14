@@ -297,6 +297,8 @@ update_system() {
   dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
   dconf write /org/gnome/desktop/privacy/remove-old-temp-files "true"
   dconf write /org/gnome/desktop/privacy/remove-old-trash-files "true"
+  # nautilus
+  dconf write /org/gnome/nautilus/preferences/show-hidden-files "true"
 
   # Folders
   create_bookmarked_folder() {
