@@ -239,14 +239,25 @@ update_system() {
   set -e
 
   echo "Installing System Packages"
-  yay -Syyu --needed cmake discord-ptb visual-studio-code-bin spotify ttf-comic-mono-git alacritty gnome-browser-connector-git breeze-gtk breeze-icons gradience 1password gnome-shell-extension-pop-shell-git kate bat fastfetch-git mullvad-vpn-bin tailscale github-cli guake xcursor-breeze adw-gtk3 jq zsh-autocomplete zsh-completions zsh-syntax-highlighting gparted ddgr btop-git lazydocker lazygit 1password-cli scrcpy flatpak archlinux-tweak-tool-git bluez bluez-utils appimagelauncher vlc jdk17-openjdk jdk21-openjdk blender dnsproxy cmatrix gdm-settings breeze-icons breeze-gtk oh-my-zsh-git pnpm-shell-completion
+  yay -Syyu --needed \
+    breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gradience gdm-settings archlinux-tweak-tool-git \
+    gnome-browser-connector-git gnome-shell-extension-pop-shell-git \
+    mullvad-vpn-bin tailscale dnsproxy \
+    appimagelauncher flatpak \
+    bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy \
+    discord-ptb spotify 1password kate gparted vlc blender \
+    visual-studio-code-bin lazydocker lazygit alacritty guake github-cli \
+    jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
+    oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
 
   echo "\nStarting Tailscale"
   sudo systemctl enable tailscaled --now
   sudo tailscale up
 
   echo -e "\nInstalling Flatpak Packages"
-  flatpak install flathub io.missioncenter.MissionCenter org.qbittorrent.qBittorrent com.brave.Browser org.raspberrypi.rpi-imager ca.desrt.dconf-editor
+  flatpak install flathub \
+    io.missioncenter.MissionCenter org.qbittorrent.qBittorrent com.brave.Browser \
+    org.raspberrypi.rpi-imager ca.desrt.dconf-editor
 
   echo -e "\nSetting Gnome Settings"
   # theming
