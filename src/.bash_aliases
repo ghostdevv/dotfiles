@@ -300,13 +300,16 @@ update_system() {
 
   # Folders
   create_bookmarked_folder() {
-    FOLDER=$1
+    FOLDER="$HOME/$1"
     BOOKMARK_FILE="$HOME/.config/gtk-3.0/bookmarks"
 
-    mkdir -p "$HOME/$FOLDER"
+    if [[  ! -e "$FOLDER" ]]; then
+      echo -e "\nCreating $FOLDER and bookmarking in nautillus"
+      mkdir -p "$FOLDER"
+    fi
 
     if ! grep -q "$FOLDER" "$BOOKMARK_FILE"; then
-      echo "file://$HOME/$FOLDER" >> $BOOKMARK_FILE
+      echo "file://$FOLDER" >> $BOOKMARK_FILE
     fi
   }
 
