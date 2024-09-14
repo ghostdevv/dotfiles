@@ -231,7 +231,10 @@ function quish_simple() {
 }
 
 update_system() {
-  # todo check is arch
+  if ! grep -q '^ID_LIKE=.*arch' /etc/os-release; then
+    echo "System is not Arch Linux or an Arch-based distribution, exiting..."
+    return 1
+  fi
 
   set -e
 
