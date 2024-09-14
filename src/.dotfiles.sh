@@ -60,18 +60,25 @@ update_dotfiles() {
   echo "$LATEST_VERSION" > "$STORAGE_DIR/version"
 
   if command -v op >/dev/null; then
-    printf "\nSetting ~/.ssh/config hosts with 1password"
+    echo -n "\nDo you want to update your SSH config? (y/N): "
+    read answer
+    answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
-    FORCE=true dotfiles_download ".ssh/config"
+    if [[ "$answer" == "y" ]]; then
+      printf "\nSetting ~/.ssh/config hosts with 1password"
 
-    for ID in $(op item ls --categories server --format=json | jq -r '.[].id'); do
-      SERVER=$(op item get $ID --format=json)
-      printf "Found Server: $(echo $SERVER | jq '.title')\n"
+      FORCE=true dotfiles_download ".ssh/config"
 
-      echo $SERVER \
-        | jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
-        >>  ~/.ssh/config
-    done
+      for ID in $(op item ls --categories server --format=json | jq -r '.[].id'); do
+        SERVER=$(op item get $ID --format=json)
+        printf "Found Server: $(echo $SERVER | jq '.title')\n"
+
+        echo $SERVER \
+          | jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
+          >>  ~/.ssh/config
+      done
+    fi
+
   fi
 
   if [[ -f ~/.config/guake/guake.conf ]]; then
