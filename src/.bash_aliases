@@ -298,6 +298,22 @@ update_system() {
   dconf write /org/gnome/desktop/privacy/remove-old-temp-files "true"
   dconf write /org/gnome/desktop/privacy/remove-old-trash-files "true"
 
+  # Folders
+  create_bookmarked_folder() {
+    FOLDER=$1
+    BOOKMARK_FILE="$HOME/.config/gtk-3.0/bookmarks"
+
+    mkdir -p "$HOME/$FOLDER"
+
+    if ! grep -q "$FOLDER" "$BOOKMARK_FILE"; then
+      echo "file://$HOME/$FOLDER" >> $BOOKMARK_FILE
+    fi
+  }
+
+  create_bookmarked_folder dev
+  create_bookmarked_folder torrent
+  create_bookmarked_folder to-archive
+
   # Set shell to zsh
   if [[ "$SHELL" != "/bin/zsh" ]]; then
     echo -e "\nSetting ZSH"
