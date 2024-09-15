@@ -350,6 +350,7 @@ update_system() {
     if [[ "$answer" != "n" ]]; then
       echo -e "\nUpdating Search"
       install_search
+      echo "Search is now v$(search --version)"
     fi
   else
     echo -e "\nInstalling Search"
