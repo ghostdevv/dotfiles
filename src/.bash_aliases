@@ -338,6 +338,8 @@ update_system() {
         && sudo systemctl daemon-reload \
         && sudo systemctl enable search --now
     fi
+
+    sudo systemctl restart search
   }
 
   if command -v search &> /dev/null; then
