@@ -246,13 +246,21 @@ update_system() {
     appimagelauncher flatpak \
     bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy \
     discord-ptb spotify 1password kate gparted vlc blender \
-    visual-studio-code-bin lazydocker lazygit alacritty guake github-cli \
+    visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose \
     jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
     oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
 
-  echo "\nStarting Tailscale"
+  echo -e "\nStarting Tailscale"
   sudo systemctl enable tailscaled --now
   sudo tailscale up
+
+  echo -e "\nStarting Docker"
+  sudo systemctl enable docker --now
+
+  if ! groups $USER | grep -q "\bdocker\b"; then
+    echo -e "\nAdded you to the docker group"
+    sudo usermod -aG docker $USER
+  fi
 
   echo -e "\nInstalling Flatpak Packages"
   flatpak install flathub \
