@@ -239,7 +239,7 @@ update_system() {
   set -e
 
   echo "Installing System Packages"
-  yay -Syyu --needed \
+  yay -Sy --needed \
     breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gradience gdm-settings archlinux-tweak-tool-git \
     gnome-browser-connector-git gnome-shell-extension-pop-shell-git \
     mullvad-vpn-bin tailscale dnsproxy \
