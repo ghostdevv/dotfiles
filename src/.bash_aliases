@@ -281,7 +281,9 @@ update_system() {
   dconf write /org/gnome/login-screen/logo "''"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/cursor-theme "'Breeze_Light'"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/icon-theme "'Adwaita'"
-  dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-type "'color'"
+  dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-color "'rgb(18, 18, 20)'"
+  dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-type "'image'"
+  dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-image "'$HOME/Pictures/background.png'"
   # pop shell
   gsettings set org.gnome.mutter workspaces-only-on-primary "true"
   dconf write /org/gnome/desktop/wm/keybindings/show-desktop "['<Super>d']"
