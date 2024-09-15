@@ -7,7 +7,7 @@ if [[ -d "$HOME/.oh-my-zsh" ]]; then
 fi
 
 ZSH_THEME="sorin"
-plugins=(git rust ssh volta sudo)
+plugins=(git rust ssh volta sudo deno)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
