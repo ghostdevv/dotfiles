@@ -245,7 +245,7 @@ update_system() {
     mullvad-vpn-bin tailscale dnsproxy \
     appimagelauncher flatpak \
     bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy \
-    discord-ptb spotify 1password kate gparted vlc blender \
+    discord-ptb spotify 1password kate gparted vlc blender brave-bin \
     visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose \
     jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
     oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
@@ -264,7 +264,7 @@ update_system() {
 
   echo -e "\nInstalling Flatpak Packages"
   flatpak install flathub \
-    io.missioncenter.MissionCenter org.qbittorrent.qBittorrent com.brave.Browser \
+    io.missioncenter.MissionCenter org.qbittorrent.qBittorrent \
     org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian \
     org.gimp.GIMP
 
