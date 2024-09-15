@@ -257,7 +257,8 @@ update_system() {
   echo -e "\nInstalling Flatpak Packages"
   flatpak install flathub \
     io.missioncenter.MissionCenter org.qbittorrent.qBittorrent com.brave.Browser \
-    org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian
+    org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian \
+    org.gimp.GIMP
 
   echo -e "\nSetting Gnome Settings"
   # theming
