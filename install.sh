@@ -20,6 +20,14 @@ if ! command -v volta &> /dev/null; then
     volta install pnpm@8 tsm nodemon @antfu/ni
 fi
 
+# Install & Setup Deno
+if ! command -v volta &> /dev/null; then
+    curl -fsSL https://deno.land/install.sh | sh
+
+    export DENO_INSTALL="/home/ghost/.deno"
+    export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
 # Download & Update dotfiles
 source "$CURRENT_DIR/src/.dotfiles.sh"
 update_dotfiles
