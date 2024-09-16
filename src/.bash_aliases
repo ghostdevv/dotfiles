@@ -245,7 +245,7 @@ update_system() {
     mullvad-vpn-bin tailscale dnsproxy \
     appimagelauncher flatpak \
     bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy \
-    discord-ptb spotify 1password kate gparted vlc blender brave-bin \
+    discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight \
     visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose \
     jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
     oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
