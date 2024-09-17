@@ -287,6 +287,7 @@ update_system() {
   # pop shell
   gsettings set org.gnome.mutter workspaces-only-on-primary "true"
   dconf write /org/gnome/desktop/wm/keybindings/show-desktop "['<Super>d']"
+  dconf write /org/gnome/desktop/wm/keybindings/minimize "['<Super>h']"
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint "true"
   dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgba(33, 96, 236, 1)'"
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint-border-radius "uint32 15"
