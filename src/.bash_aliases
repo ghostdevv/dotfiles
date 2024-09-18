@@ -264,7 +264,7 @@ update_system() {
 
   echo -e "\nInstalling Flatpak Packages"
   flatpak install flathub \
-    io.missioncenter.MissionCenter org.qbittorrent.qBittorrent \
+    io.missioncenter.MissionCenter org.qbittorrent.qBittorrent org.gnome.Characters \
     org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian \
     org.gimp.GIMP
 
