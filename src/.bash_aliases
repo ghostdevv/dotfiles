@@ -244,7 +244,7 @@ update_system() {
     gnome-browser-connector-git gnome-shell-extension-pop-shell-git \
     mullvad-vpn-bin tailscale dnsproxy \
     appimagelauncher flatpak \
-    bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp \
+    bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
     discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight \
     visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose \
     jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
