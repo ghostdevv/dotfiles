@@ -246,7 +246,7 @@ update_system() {
     appimagelauncher flatpak \
     bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
     discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight \
-    visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose \
+    visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose hyperfine \
     jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
     oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
 
