@@ -290,10 +290,19 @@ update_system() {
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-color "'rgb(18, 18, 20)'"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-type "'image'"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-image "'$HOME/Pictures/background.png'"
-  # pop shell
-  gsettings set org.gnome.mutter workspaces-only-on-primary "true"
+  # wm keybindings
+  dconf write /org/gnome/mutter/workspaces-only-on-primary true
   dconf write /org/gnome/desktop/wm/keybindings/show-desktop "['<Super>d']"
   dconf write /org/gnome/desktop/wm/keybindings/minimize "['<Super>h']"
+  dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-down "@as []"
+  dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-up "@as []"
+  dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-left "@as ['<Super>Page_Up']"
+  dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-right "@as ['<Super>Page_Down']"
+  dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-left "@as ['<Super><Shift>Page_Up']"
+  dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-right "@as ['<Super><Shift>Page_Down']"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/screensaver "['<Super>Escape']"
+  dconf write /org/gnome/desktop/wm/keybindings/close "['<Super>q', '<Alt>F4']"
+  # pop shell
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint "true"
   dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgba(33, 96, 236, 1)'"
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint-border-radius "uint32 15"
