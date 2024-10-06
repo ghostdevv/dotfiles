@@ -193,10 +193,19 @@ fi
 peep() {
   if [[ ! -n "$1" ]]; then
     echo "Usage: peep <repo>"
-    exit 1
+    return 1
   fi
 
-  local REPO="https://github.com/$1.git"
+  local REPO
+  if [[ "$1" =~ ^https?:// ]]; then
+    REPO="$1"
+  elif [[ "$1" =~ ^[^/]+/[^/]+$ ]]; then
+    REPO="https://github.com/$1.git"
+  else
+    echo "Please provide a repo path or url"
+    return 1
+  fi
+
   local LATEST_COMMIT_HASH="$(git ls-remote --head $REPO --ref main --type commit | head -n 1 | awk '{print $1}')"
   local OUTPUT="/tmp/peep-$LATEST_COMMIT_HASH"
 
