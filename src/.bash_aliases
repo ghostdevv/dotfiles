@@ -238,17 +238,23 @@ update_system() {
 
   set -e
 
-  echo "Installing System Packages"
-  yay -Sy --needed \
-    breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gradience gdm-settings archlinux-tweak-tool-git \
-    gnome-browser-connector-git gnome-shell-extension-pop-shell-git \
-    mullvad-vpn-bin tailscale dnsproxy \
-    appimagelauncher flatpak \
-    bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
-    discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight \
-    visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose hyperfine \
-    jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
-    oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
+  echo -n "\nDo you want to install/update system packages? (Y/n): "
+  read answer
+  answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
+
+  if [[ "$answer" != "n" ]]; then
+    echo "Installing System Packages"
+    yay -Sy --needed \
+      breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gradience gdm-settings archlinux-tweak-tool-git \
+      gnome-browser-connector-git gnome-shell-extension-pop-shell-git \
+      mullvad-vpn-bin tailscale dnsproxy \
+      appimagelauncher flatpak \
+      bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
+      discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight \
+      visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose hyperfine \
+      jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
+      oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
+  fi
 
   echo -e "\nStarting Tailscale"
   sudo systemctl enable tailscaled --now
