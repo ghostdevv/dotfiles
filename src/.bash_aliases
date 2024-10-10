@@ -256,7 +256,7 @@ update_system() {
     yay -Sy --needed \
       breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gradience gdm-settings archlinux-tweak-tool-git \
       gnome-browser-connector-git gnome-shell-extension-pop-shell-git \
-      mullvad-vpn-bin tailscale dnsproxy \
+      mullvad-vpn-bin tailscale dnsproxy dog \
       appimagelauncher flatpak \
       bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
       discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight \
