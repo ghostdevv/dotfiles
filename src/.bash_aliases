@@ -267,7 +267,7 @@ update_system() {
 
   echo -e "\nStarting Tailscale"
   sudo systemctl enable tailscaled --now
-  sudo tailscale up --accept-dns=false
+  sudo tailscale up --accept-dns=false --operator=ghost
 
   echo -e "\nStarting Docker"
   sudo systemctl enable docker --now
