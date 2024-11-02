@@ -402,3 +402,7 @@ update_system() {
 }
 
 alias update-system="update_system"
+
+# Svelte
+export SVELTE_INSPECTOR_OPTIONS=true
+export SVELTE_INSPECTOR_TOGGLE=ctrl+alt
