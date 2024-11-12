@@ -11,6 +11,7 @@
         "cpu",
         "gpu",
         "memory",
+        "uptime",
         "break",
         "de",
         "wm",
