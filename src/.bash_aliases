@@ -22,7 +22,7 @@ tunnel() {
   echo "Starting tunnel for http://localhost:$1"
 
   local ID="t$(date +%s)"
-  
+
   screen -S "$ID" -L -Logfile "$ID" -dm bash -c "cloudflared tunnel --url http://localhost:$1"
 
   until grep -oqi 'https://.*trycloudflare.com' $ID; do
@@ -83,6 +83,9 @@ ex() {
   fi
 }
 
+# Remap zeditor to zed
+alias zed="zeditor"
+
 # Open the ~/.zshrc in vscode
 alias hax="code ~/.zshrc"
 
@@ -129,7 +132,7 @@ export EDITOR="nano"
 export NI_DEFAULT_AGENT="pnpm"
 export NI_GLOBAL_AGENT="pnpm"
 
-# Update the git repo & deps 
+# Update the git repo & deps
 sync() {
   if [[ -d ".git" ]]; then
     printf "\nSyncing with git:\n"
@@ -141,7 +144,7 @@ sync() {
   ni
 }
 
-# Update deps 
+# Update deps
 update() {
   if [[ -f "package-lock.json" ]]; then
     printf "\nUpdating with npm:\n"
@@ -260,7 +263,7 @@ update_system() {
       appimagelauncher flatpak \
       bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
       discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight \
-      visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose hyperfine \
+      visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose hyperfine zed \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
       oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
   fi
