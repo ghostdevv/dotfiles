@@ -4,11 +4,12 @@ font-family-bold = "Comic Mono"
 font-family-bold-italic = "Comic Mono"
 font-size = 12.0
 
+theme = "SpaceGray Eighties"
 background = "#121214"
 foreground = "#eeeeee"
 background-opacity = 0.65
-theme = "SpaceGray Eighties"
 
+resize-overlay = "never"
 window-decoration = false
 window-padding-x = 8
 window-padding-y = 8
