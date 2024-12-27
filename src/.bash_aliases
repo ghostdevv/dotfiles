@@ -263,7 +263,7 @@ update_system() {
       appimagelauncher flatpak \
       bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
       discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight signal-desktop \
-      visual-studio-code-bin lazydocker lazygit alacritty guake github-cli docker docker-compose hyperfine zed \
+      visual-studio-code-bin lazydocker lazygit alacritty ghostty guake github-cli docker docker-compose hyperfine zed \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
       oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
   fi
@@ -328,7 +328,7 @@ update_system() {
   dconf write /org/gnome/shell/extensions/vitals/hot-sensors "['_memory_usage_', '_processor_usage_']"
   # terminal shortcut
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
-  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'alacritty'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'ghostty'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/binding "'<Super>T'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/']"
   # privacy
