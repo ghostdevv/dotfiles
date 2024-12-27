@@ -48,7 +48,7 @@ update_dotfiles() {
   dotfiles_download ".config/alacritty/alacritty.toml"
   dotfiles_download ".config/ghostty/config"
   dotfiles_download ".config/fastfetch/config.jsonc"
-  dotfiles_download ".config/guake/guake.conf"
+  rm -r ~/.config/guake # todo remove in future
 
   # Linux Specific
   if [[ "$(uname)" = "Linux" ]]; then

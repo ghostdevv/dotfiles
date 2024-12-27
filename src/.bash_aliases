@@ -338,6 +338,25 @@ update_system() {
   dconf write /org/gnome/desktop/privacy/remove-old-trash-files "true"
   # nautilus
   dconf write /org/gnome/nautilus/preferences/show-hidden-files "true"
+  # guake
+  dconf write /org/guake/style/font/palette "'#000000000000:#ffff55555555:#5050fafa7b7b:#f1f1fafa8c8c:#bdbd9393f9f9:#ffff7979c6c6:#8b8be9e9fdfd:#bbbbbbbbbbbb:#555555555555:#ffff55555555:#5050fafa7b7b:#f1f1fafa8c8c:#bdbd9393f9f9:#ffff7979c6c6:#8b8be9e9fdfd:#ffffffffffff:#eeeeeeeeeeee:#121212121414'"
+  dconf write /org/guake/style/font/palette-name "'Custom'"
+  dconf write /org/guake/style/font/style "'Comic Mono 12'"
+  dconf write /org/guake/style/font/allow-bold "true"
+  dconf write /org/guake/style/background/transparency "65"
+  dconf write /org/guake/keybindings/global/show-hide "'<Alt>Return'"
+  dconf write /org/guake/general/use-trayicon "false"
+  dconf write /org/guake/general/window-width "80"
+  dconf write /org/guake/general/window-height "35"
+  dconf write /org/guake/general/window-losefocus "true"
+  dconf write /org/guake/general/gtk-use-system-default-theme "false"
+  dconf write /org/guake/general/gtk-prefer-dark-theme "true"
+  dconf write /org/guake/general/gtk-theme-name "'Adwaita'"
+  dconf write /org/guake/general/use-default-font "false"
+  dconf write /org/guake/style/cursor-blink-mode "1"
+  dconf write /org/guake/style/cursor-shape "1"
+  dconf write /org/guake/general/use-scrollbar "false"
+  dconf write /org/guake/general/hide-tabs-if-one-tab "true"
 
   # Folders
   create_bookmarked_folder() {
