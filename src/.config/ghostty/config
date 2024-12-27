@@ -1,0 +1,16 @@
+font-family = "Comic Mono"
+font-family-italic = "Comic Mono"
+font-family-bold = "Comic Mono"
+font-family-bold-italic = "Comic Mono"
+font-size = 12.0
+
+background = "#121214"
+foreground = "#eeeeee"
+background-opacity = 0.65
+theme = "Dracula+"
+
+window-decoration = false
+window-padding-x = 8
+window-padding-y = 8
+
+cursor-style = "block"

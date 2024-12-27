@@ -46,6 +46,7 @@ update_dotfiles() {
   dotfiles_download ".gitconfig"
   dotfiles_download ".nanorc"
   dotfiles_download ".config/alacritty/alacritty.toml"
+  dotfiles_download ".config/ghostty/config"
   dotfiles_download ".config/fastfetch/config.jsonc"
   dotfiles_download ".config/guake/guake.conf"
 
