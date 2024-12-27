@@ -7,7 +7,7 @@ font-size = 12.0
 background = "#121214"
 foreground = "#eeeeee"
 background-opacity = 0.65
-theme = "Dracula+"
+theme = "SpaceGray Eighties"
 
 window-decoration = false
 window-padding-x = 8

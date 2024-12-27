@@ -339,7 +339,7 @@ update_system() {
   # nautilus
   dconf write /org/gnome/nautilus/preferences/show-hidden-files "true"
   # guake
-  dconf write /org/guake/style/font/palette "'#000000000000:#ffff55555555:#5050fafa7b7b:#f1f1fafa8c8c:#bdbd9393f9f9:#ffff7979c6c6:#8b8be9e9fdfd:#bbbbbbbbbbbb:#555555555555:#ffff55555555:#5050fafa7b7b:#f1f1fafa8c8c:#bdbd9393f9f9:#ffff7979c6c6:#8b8be9e9fdfd:#ffffffffffff:#eeeeeeeeeeee:#121212121414'"
+  dconf write /org/guake/style/font/palette "'#151517171c1c:#ecec5f5f6767:#8080a7a76363:#fdfdc2c25353:#54548585c0c0:#bfbf8383c0c0:#5757c2c2c0c0:#eeeeecece7e7:#555555555555:#ffff69697373:#9393d3d39393:#ffffd1d15656:#4d4d8383d0d0:#ffff5555ffff:#8383e8e8e4e4:#ffffffffffff:#eeeeeeeeeeee:#121212121414'"
   dconf write /org/guake/style/font/palette-name "'Custom'"
   dconf write /org/guake/style/font/style "'Comic Mono 12'"
   dconf write /org/guake/style/font/allow-bold "true"
