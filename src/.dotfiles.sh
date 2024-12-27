@@ -82,10 +82,6 @@ update_dotfiles() {
 
   fi
 
-  if [[ -f ~/.config/guake/guake.conf ]]; then
-    guake --restore-preferences ~/.config/guake/guake.conf
-  fi
-
   printf "\nDone! Don't forget to restart your shell.\n"
 }
 
