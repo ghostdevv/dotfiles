@@ -75,7 +75,7 @@ update_dotfiles() {
         printf "Found Server: $(echo $SERVER | jq '.title')\n"
 
         echo $SERVER \
-          | jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
+          | jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)\n  SetEnv TERM=xterm-256color"' \
           >>  ~/.ssh/config
       done
     fi
