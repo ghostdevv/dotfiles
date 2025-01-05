@@ -48,7 +48,6 @@ update_dotfiles() {
   dotfiles_download ".config/alacritty/alacritty.toml"
   dotfiles_download ".config/ghostty/config"
   dotfiles_download ".config/fastfetch/config.jsonc"
-  rm -r ~/.config/guake # todo remove in future
   # Zed
   dotfiles_download ".config/zed/settings.json"
   dotfiles_download ".config/zed/keymap.json"
