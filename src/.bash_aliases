@@ -357,6 +357,7 @@ update_system() {
   dconf write /org/guake/style/cursor-shape "1"
   dconf write /org/guake/general/use-scrollbar "false"
   dconf write /org/guake/general/hide-tabs-if-one-tab "true"
+  dconf write /org/guake/general/start-at-login "true"
 
   # Folders
   create_bookmarked_folder() {
