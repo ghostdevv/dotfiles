@@ -1,0 +1,11 @@
+// https://zed.dev/docs/tasks
+[
+    {
+        "label": "lazygit",
+        "command": "lazygit",
+        "allow_concurrent_runs": false,
+        "use_new_terminal": false,
+        "reveal_target": "center",
+        "shell": "system"
+    }
+]

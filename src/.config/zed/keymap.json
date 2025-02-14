@@ -10,7 +10,8 @@
         "context": "Workspace",
         "bindings": {
             "ctrl-alt-b": "workspace::ToggleLeftDock",
-            "ctrl-b": "workspace::ToggleRightDock"
+            "ctrl-b": "workspace::ToggleRightDock",
+            "alt-g": ["task::Spawn", { "task_name": "lazygit" }]
         }
     }
 ]

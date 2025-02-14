@@ -51,6 +51,7 @@ update_dotfiles() {
   # Zed
   dotfiles_download ".config/zed/settings.json"
   dotfiles_download ".config/zed/keymap.json"
+  dotfiles_download ".config/zed/tasks.json"
   dotfiles_download ".config/zed/themes/serendipity-sunset-v1-zed.json"
 
   # Linux Specific
