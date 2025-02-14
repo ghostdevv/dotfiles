@@ -49,7 +49,10 @@
         "html": true,
         "scss": true,
         "sql": true,
-        "toml": true
+        "toml": true,
+        "biome": true,
+        "astro": true,
+        "basher": true
     },
     "tabs": {
         "file_icons": true,
