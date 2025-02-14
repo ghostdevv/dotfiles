@@ -6,17 +6,11 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-alt-b": "workspace::ToggleLeftDock",
-      "ctrl-b": "workspace::ToggleRightDock"
+    {
+        "context": "Workspace",
+        "bindings": {
+            "ctrl-alt-b": "workspace::ToggleLeftDock",
+            "ctrl-b": "workspace::ToggleRightDock"
+        }
     }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-    }
-  }
 ]
