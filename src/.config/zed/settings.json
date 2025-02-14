@@ -64,5 +64,12 @@
     },
     "journal": {
         "hour_format": "hour24"
+    },
+    "lsp": {
+        "biome": {
+            "settings": {
+                "require_config_file": true
+            }
+        }
     }
 }
