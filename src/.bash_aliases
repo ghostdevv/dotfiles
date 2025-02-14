@@ -172,6 +172,22 @@ alias pd="nr dev"
 alias pp="nr preview"
 alias pb="nr build"
 
+scripts() {
+    if [[ -f "package.json" ]]; then
+        echo "Scripts in package.json"
+        jq -r .scripts package.json
+        return 0
+    fi
+
+    if [[ -f "deno.json" ]]; then
+        echo "Tasks in deno.json"
+        jq -r .tasks deno.json
+        return 0
+    fi
+
+    echo "No package.json or deno.json found"
+}
+
 # optionally configure volta
 if [[ -d "$HOME/.volta" ]]; then
   export VOLTA_FEATURE_PNPM="1"
