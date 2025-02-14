@@ -32,6 +32,34 @@
     "tab_size": 4,
     "terminal": {
         "font_family": "Comic Mono",
-        "font_size": 14
+        "font_size": 14,
+        "cursor_shape": "bar",
+        "blinking": "on",
+        "toolbar": {
+            "breadcrumbs": false
+        }
+    },
+    "restore_on_startup": "last_workspace",
+    "auto_install_extensions": {
+        "catppuccin-icons": true,
+        "docker-compose": true,
+        "dockerfile": true,
+        "svelte": true,
+        "deno": true,
+        "html": true,
+        "scss": true,
+        "sql": true,
+        "toml": true
+    },
+    "tabs": {
+        "file_icons": true,
+        "git_status": true,
+        "show_diagnostics": "all"
+    },
+    "file_types": {
+        "JSON": ["prettierrc"]
+    },
+    "journal": {
+        "hour_format": "hour24"
     }
 }
