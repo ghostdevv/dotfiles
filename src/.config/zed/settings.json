@@ -7,27 +7,27 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-	"assistant": {
-		"version": "2",
-		"enabled": true,
-		"default_model": {
-			"provider": "zed.dev",
-			"model": "claude-3-5-sonnet-latest"
-		}
-	},
-	"collaboration_panel": {
-		"dock": "right"
-	},
-	"project_panel": {
-		"dock": "right"
-	},
-	"ui_font_size": 16,
-	"buffer_font_size": 14,
-	"theme": "Rosé Pine Moon",
-	"buffer_font_family": "Comic Mono",
-	"tab_size": 4,
-	"terminal": {
-		"font_family": "Comic Mono",
-		"font_size": 14
-	}
+    "assistant": {
+        "version": "2",
+        "enabled": true,
+        "default_model": {
+            "provider": "zed.dev",
+            "model": "claude-3-5-sonnet-latest"
+        }
+    },
+    "collaboration_panel": {
+        "dock": "right"
+    },
+    "project_panel": {
+        "dock": "right"
+    },
+    "ui_font_size": 16,
+    "buffer_font_size": 14,
+    "theme": "Serendipity Sunset V1",
+    "buffer_font_family": "Comic Mono",
+    "tab_size": 4,
+    "terminal": {
+        "font_family": "Comic Mono",
+        "font_size": 14
+    }
 }
