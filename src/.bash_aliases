@@ -311,6 +311,7 @@ update_system() {
   gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
   dconf write /org/gnome/shell/extensions/user-theme/name "'GHOST'"
   dconf write /org/gnome/desktop/interface/clock-show-seconds true
+  dconf write /org/gnome/desktop/interface/accent-color "'blue'"
   # gdm theming
   dconf write /org/gnome/login-screen/logo "''"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/cursor-theme "'Breeze_Light'"
