@@ -273,7 +273,7 @@ update_system() {
   if [[ "$answer" != "n" ]]; then
     echo "Installing System Packages"
     yay -Sy --needed \
-      breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gradience gdm-settings archlinux-tweak-tool-git \
+      breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gdm-settings archlinux-tweak-tool-git \
       gnome-browser-connector-git gnome-shell-extension-pop-shell-git \
       mullvad-vpn-bin tailscale dnsproxy dog p7zip \
       appimagelauncher flatpak \
