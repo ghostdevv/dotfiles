@@ -300,7 +300,9 @@ update_system() {
   flatpak install flathub \
     io.missioncenter.MissionCenter org.qbittorrent.qBittorrent org.gnome.Characters \
     org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian \
-    org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio
+    org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio \
+    io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger \
+    fr.romainvigier.MetadataCleaner
 
   echo -e "\nSetting Gnome Settings"
   # theming
