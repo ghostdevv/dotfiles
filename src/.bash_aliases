@@ -343,11 +343,17 @@ update_system() {
   dconf write /org/gnome/shell/keybindings/toggle-message-tray "@as []"
   # vitals
   dconf write /org/gnome/shell/extensions/vitals/hot-sensors "['_memory_usage_', '_processor_usage_']"
-  # terminal shortcut
+  # custom keybindings
+  ## terminal
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'ghostty'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/binding "'<Super>T'"
-  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/']"
+  ## guake
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/name "'Guake Toggle'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/command "'guake-toggle'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/binding "'<Alt>Return'"
+  ## save keybindings
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/']"
   # privacy
   dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
   dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
@@ -361,7 +367,7 @@ update_system() {
   dconf write /org/guake/style/font/style "'Comic Mono 12'"
   dconf write /org/guake/style/font/allow-bold "true"
   dconf write /org/guake/style/background/transparency "65"
-  dconf write /org/guake/keybindings/global/show-hide "'<Alt>Return'"
+  dconf write /org/guake/keybindings/global/show-hide "''"
   dconf write /org/guake/general/use-trayicon "false"
   dconf write /org/guake/general/window-width "80"
   dconf write /org/guake/general/window-height "35"
