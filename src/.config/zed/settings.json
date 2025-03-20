@@ -27,6 +27,12 @@
     "git_panel": {
         "dock": "right"
     },
+    "outline_panel": {
+        "dock": "right"
+    },
+    "notification_panel": {
+        "dock": "left"
+    },
     "ui_font_size": 16,
     "buffer_font_size": 14,
     "theme": "Serendipity Sunset V1",
