@@ -302,7 +302,7 @@ update_system() {
     org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian \
     org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio \
     io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger \
-    fr.romainvigier.MetadataCleaner
+    fr.romainvigier.MetadataCleaner org.gnome.Boxes
 
   echo -e "\nSetting Gnome Settings"
   # theming
