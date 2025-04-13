@@ -298,7 +298,7 @@ update_system() {
 
   echo -e "\nInstalling Flatpak Packages"
   flatpak install flathub \
-    io.missioncenter.MissionCenter org.qbittorrent.qBittorrent org.gnome.Characters \
+    io.missioncenter.MissionCenter org.qbittorrent.qBittorrent org.gnome.Characters it.mijorus.smile \
     org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian \
     org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio \
     io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger \
@@ -354,8 +354,12 @@ update_system() {
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/name "'Guake Toggle'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/command "'guake-toggle'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/binding "'<Alt>Return'"
+  ## smilet
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/name "'Emoji Picker (Smile) Toggle'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/command "'flatpak run it.mijorus.smile'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/binding "'<Super>period'"
   ## save keybindings
-  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/']"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/']"
   # privacy
   dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
   dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
