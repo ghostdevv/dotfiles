@@ -278,8 +278,8 @@ update_system() {
       mullvad-vpn-bin tailscale dnsproxy dog 7zip trash-cli \
       appimagelauncher flatpak \
       bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen \
-      discord-ptb spotify 1password kate gparted vlc blender brave-bin filelight signal-desktop \
-      visual-studio-code-bin lazydocker lazygit alacritty ghostty guake github-cli docker docker-compose hyperfine zed \
+      spotify 1password kate gparted vlc blender brave-bin filelight signal-desktop \
+      visual-studio-code-bin lazydocker lazygit alacritty gfhostty guake github-cli docker docker-compose hyperfine zed \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
       oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
   fi
@@ -299,7 +299,7 @@ update_system() {
   echo -e "\nInstalling Flatpak Packages"
   flatpak install flathub \
     io.missioncenter.MissionCenter org.qbittorrent.qBittorrent org.gnome.Characters it.mijorus.smile \
-    org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian \
+    org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian com.discordapp.Discord \
     org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio \
     io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger \
     fr.romainvigier.MetadataCleaner org.gnome.Boxes
