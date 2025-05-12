@@ -7,78 +7,78 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-    "features": {
-        "edit_prediction_provider": "zed"
-    },
-    "assistant": {
-        "version": "2",
-        "enabled": true,
-        "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-3-5-sonnet-latest"
-        }
-    },
-    "collaboration_panel": {
-        "dock": "right"
-    },
-    "project_panel": {
-        "dock": "right"
-    },
-    "git_panel": {
-        "dock": "right"
-    },
-    "outline_panel": {
-        "dock": "right"
-    },
-    "notification_panel": {
-        "dock": "left"
-    },
-    "ui_font_size": 16,
-    "buffer_font_size": 14,
-    "theme": "Serendipity Sunset V1",
-    "icon_theme": "Catppuccin Mocha",
-    "buffer_font_family": "Comic Mono",
-    "tab_size": 4,
-    "terminal": {
-        "font_family": "Comic Mono",
-        "font_size": 14,
-        "cursor_shape": "bar",
-        "blinking": "on",
-        "toolbar": {
-            "breadcrumbs": false
-        }
-    },
-    "restore_on_startup": "last_workspace",
-    "auto_install_extensions": {
-        "catppuccin-icons": true,
-        "docker-compose": true,
-        "dockerfile": true,
-        "svelte": true,
-        "deno": true,
-        "html": true,
-        "scss": true,
-        "sql": true,
-        "toml": true,
-        "biome": true,
-        "astro": true,
-        "basher": true
-    },
-    "tabs": {
-        "file_icons": true,
-        "git_status": true,
-        "show_diagnostics": "all"
-    },
-    "file_types": {
-        "JSON": ["prettierrc"]
-    },
-    "journal": {
-        "hour_format": "hour24"
-    },
-    "lsp": {
-        "biome": {
-            "settings": {
-                "require_config_file": true
-            }
-        }
-    }
+	"features": {
+		"edit_prediction_provider": "zed"
+	},
+	"agent": {
+		"version": "2",
+		"enabled": true,
+		"default_model": {
+			"provider": "zed.dev",
+			"model": "claude-3-7-sonnet-thinking-latest"
+		}
+	},
+	"collaboration_panel": {
+		"dock": "right"
+	},
+	"project_panel": {
+		"dock": "right"
+	},
+	"git_panel": {
+		"dock": "right"
+	},
+	"outline_panel": {
+		"dock": "right"
+	},
+	"notification_panel": {
+		"dock": "left"
+	},
+	"ui_font_size": 16,
+	"buffer_font_size": 14,
+	"theme": "Serendipity Sunset V1",
+	"icon_theme": "Catppuccin Mocha",
+	"buffer_font_family": "Comic Mono",
+	"tab_size": 4,
+	"terminal": {
+		"font_family": "Comic Mono",
+		"font_size": 14,
+		"cursor_shape": "bar",
+		"blinking": "on",
+		"toolbar": {
+			"breadcrumbs": false
+		}
+	},
+	"restore_on_startup": "last_workspace",
+	"auto_install_extensions": {
+		"catppuccin-icons": true,
+		"docker-compose": true,
+		"dockerfile": true,
+		"svelte": true,
+		"deno": true,
+		"html": true,
+		"scss": true,
+		"sql": true,
+		"toml": true,
+		"biome": true,
+		"astro": true,
+		"basher": true
+	},
+	"tabs": {
+		"file_icons": true,
+		"git_status": true,
+		"show_diagnostics": "all"
+	},
+	"file_types": {
+		"JSON": ["prettierrc"]
+	},
+	"journal": {
+		"hour_format": "hour24"
+	},
+	"lsp": {
+		"biome": {
+			"settings": {
+				"require_config_file": true
+			}
+		}
+	}
 }
