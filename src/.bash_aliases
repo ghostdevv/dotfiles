@@ -188,6 +188,38 @@ scripts() {
     echo "No package.json or deno.json found"
 }
 
+function yeet-node-modules() {
+    # Find all node_modules directories and store them in an array
+    NODE_MODULES_DIRS=()
+    while IFS= read -r dir; do
+        NODE_MODULES_DIRS+=("$dir")
+    done < <(find . -name "node_modules" -type d -prune)
+
+    # Check if any node_modules directories were found
+    if [ ${#NODE_MODULES_DIRS[@]} -eq 0 ]; then
+        echo "No node_modules directories found."
+        return 0
+    fi
+
+    echo "The following node_modules directories will be deleted:"
+    printf "  %s\n" "${NODE_MODULES_DIRS[@]}"
+
+    echo -n "Do you want to delete these directories? (y/N): "
+    read -r answer
+
+    # Check the answer
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+        echo "Deleting node_modules directories..."
+        for dir in "${NODE_MODULES_DIRS[@]}"; do
+            rm -rf "$dir"
+            echo "  Deleted: $dir"
+        done
+        echo "Done!"
+    else
+        echo "No worries! I've not deleted anything"
+    fi
+}
+
 # optionally configure volta
 if [[ -d "$HOME/.volta" ]]; then
   export VOLTA_FEATURE_PNPM="1"
