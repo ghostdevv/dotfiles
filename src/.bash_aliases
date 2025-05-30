@@ -98,6 +98,66 @@ alias hinfo="curl -s https://am.i.mullvad.net/json | jq"
 alias jctl="journalctl -p 3 -xb"
 
 # Update grub config
+
+# Check git status of child directories
+git_status_check() {
+  local current_dir=$(pwd)
+
+  echo "Checking git repositories in child directories..."
+  echo
+
+  for dir in */; do
+    if [ -d "$dir" ]; then
+      cd "$dir" || continue
+
+      # Check if it's a git repository
+      if [ -d ".git" ] || git rev-parse --git-dir > /dev/null 2>&1; then
+        echo "📁 ${dir%/}"
+
+        # Get current branch
+        local branch=$(git branch --show-current)
+        echo "  Branch: $branch"
+
+        # Check for uncommitted changes
+        if ! git diff --quiet || ! git diff --cached --quiet; then
+          echo "  📝 Has uncommitted changes"
+        fi
+
+        # Check for unpushed commits and if behind remote
+        local ahead=0
+        local behind=0
+
+        # Only check if there's a tracking branch
+        if git rev-parse @{u} >/dev/null 2>&1; then
+          ahead=$(git rev-list --count @{u}..HEAD 2>/dev/null || echo "0")
+          behind=$(git rev-list --count HEAD..@{u} 2>/dev/null || echo "0")
+
+          if [ "$ahead" -gt 0 ]; then
+            echo "  ⬆️  Has $ahead commit(s) not pushed"
+          fi
+
+          if [ "$behind" -gt 0 ]; then
+            echo "  ⬇️  Is $behind commit(s) behind remote"
+          fi
+
+          # If no differences with remote and no local changes
+          if [ "$ahead" -eq 0 ] && [ "$behind" -eq 0 ] && git diff --quiet && git diff --cached --quiet; then
+            echo "  ✅ Repository is up to date"
+          fi
+        else
+          echo "  ⚠️  No tracking branch"
+        fi
+
+        echo
+      fi
+
+      cd "$current_dir" || return
+    fi
+  done
+}
+
+alias gsc="git_status_check"
+
 # This alias is based on code by Arcolinux under the GNU GPL v3.0 License
 # https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L225
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
