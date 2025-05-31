@@ -62,10 +62,6 @@ function update-dotfiles() {
   # Tools
   dotfiles_download ".config/fastfetch/config.jsonc"
 
-  # remove old files
-  rm ~/.dotfiles.sh
-  rm -r ~/.dotfiles
-
   # Linux Specific
   if [[ "$(uname)" = "Linux" ]]; then
     dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
