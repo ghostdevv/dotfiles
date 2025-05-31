@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Smile
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=smile it.mijorus.smile --start-hidden
+Icon=it.mijorus.smile
+Terminal=false
+Type=Application
+Categories=Utility;GTK;
+StartupNotify=true
+Keywords=Emoji;Picker;
+X-Flatpak=it.mijorus.smile

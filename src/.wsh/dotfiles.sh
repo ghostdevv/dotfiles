@@ -72,6 +72,7 @@ function update-dotfiles() {
   if [[ "$(uname)" = "Linux" ]]; then
     _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
     _dotfiles_download ".config/autostart/1password.desktop"
+    _dotfiles_download ".config/autostart/it.mijorus.smile.desktop"
   fi
 
   # Store new version
