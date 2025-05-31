@@ -30,7 +30,7 @@ fi
 
 # Download & Update wsh
 source "$CURRENT_DIR/src/.wsh/dotfiles.sh"
-update_dotfiles
+update-dotfiles
 
 if [ "$(basename $SHELL)" = "bash" ]; then
     source ~/.bashrc

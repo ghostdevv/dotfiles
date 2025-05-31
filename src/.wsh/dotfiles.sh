@@ -50,6 +50,7 @@ function update-dotfiles() {
   dotfiles_download ".wsh/network.sh"
   dotfiles_download ".wsh/files.sh"
   dotfiles_download ".wsh/update-system.sh"
+  dotfiles_download ".wsh/entry.sh"
   # bash & zsh config
   dotfiles_download ".bash_aliases"
   dotfiles_download ".zshrc-personal"
