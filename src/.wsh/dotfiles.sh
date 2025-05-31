@@ -15,7 +15,7 @@ function update-dotfiles() {
   done
 
   # get the current kernel to deduce the OS
-  local KERNEL="$(uname --kernel-name | tr '[:upper:]' '[:lower:]')"
+  local PLATFORM="$(uname --kernel-name | tr '[:upper:]' '[:lower:]')"
 
   # find the current version
   local CURRENT_VERSION_FILE="$HOME/.dotfiles-version"
@@ -25,7 +25,7 @@ function update-dotfiles() {
   local LATEST_VERSION="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
 
   # welcomer
-  printf "\nupdate-dotfiles --current-version=\"$(echo $CURRENT_VERSION | cut -c1-7)\" --latest-version=\"$(echo $LATEST_VERSION | cut -c1-7)\" --force=$FORCE --os=$KERNEL\n\n"
+  printf "\nupdate-dotfiles --current-version=\"$(echo $CURRENT_VERSION | cut -c1-7)\" --latest-version=\"$(echo $LATEST_VERSION | cut -c1-7)\" --force=$FORCE --platform=$PLATFORM\n\n"
 
   # Checks if the path has an update (normalised to $HOME):
   # - Is the current version different from the latest version?
@@ -36,9 +36,15 @@ function update-dotfiles() {
     [[ "$LATEST_VERSION" != "$CURRENT_VERSION" || "$FORCE" = true || ! -e "$OUTPUT" ]]
   }
 
-  # Download a file from GitHub if an update is
-  # available. Normalises the path to $HOME.
+  # Download a file from GitHub if an update is available. Given
+  # path is normalised to $HOME. If a platform lock argument is provided,
+  # it'll only install if the platform matches the current platform.
   function _dotfiles_download() {
+    local PLATFORM_LOCK="$2"
+    if [[ -n $PLATFORM_LOCK && $PLATFORM_LOCK != $PLATFORM ]]; then
+        echo "Skipping '$1' (platform mismatch)"
+    fi
+
     local OUTPUT="$HOME/$1"
 
     if _has_update_available "$1"; then
@@ -80,13 +86,11 @@ function update-dotfiles() {
   _dotfiles_download ".gitconfig"
   # Tools
   _dotfiles_download ".config/fastfetch/config.jsonc"
-
-  # Linux Specific
-  if [[ "$(uname)" = "Linux" ]]; then
-    _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
-    _dotfiles_download ".config/autostart/1password.desktop"
-    _dotfiles_download ".config/autostart/it.mijorus.smile.desktop"
-  fi
+  # Theme
+  _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
+  # Autostart
+  _dotfiles_download ".config/autostart/1password.desktop" "linux"
+  _dotfiles_download ".config/autostart/it.mijorus.smile.desktop" "linux"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
