@@ -84,9 +84,18 @@ function update-system() {
   dconf write /org/gnome/shell/extensions/pop-shell/show-title "false"
   dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default "true"
   # clipboard indicator
-  dconf write /org/gnome/shell/extensions/clipboard-indicator/toggle-menu "['<Super>v']"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/history-size "50"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/preview-size "50"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/paste-button "true"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/move-item-first "true"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/display-mode "0"
   dconf write /org/gnome/shell/keybindings/toggle-message-tray "@as []"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings "true"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/private-mode-binding "@as []"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/toggle-menu "['<Super>v']"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/clear-history "@as []"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/next-entry "@as []"
+  dconf write /org/gnome/shell/extensions/clipboard-indicator/prev-entry "@as []"
   # vitals
   dconf write /org/gnome/shell/extensions/vitals/hot-sensors "['_memory_usage_', '_processor_usage_']"
   # custom keybindings
