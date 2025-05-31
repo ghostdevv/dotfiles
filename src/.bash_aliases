@@ -92,11 +92,6 @@ alias hax="zed ~/.zshrc"
 # Get host info using mullvad api
 alias hinfo="curl -s https://am.i.mullvad.net/json | jq"
 
-# Shortcut for journalctl
-# This alias is based on code by Arcolinux under the GNU GPL v3.0 License
-# https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L350
-alias jctl="journalctl -p 3 -xb"
-
 # Check git status of child directories
 function gsc() {
   local current_dir=$(pwd)
