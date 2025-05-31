@@ -20,10 +20,15 @@ function update-dotfiles() {
   local CURRENT_VERSION_FILE="$HOME/.dotfiles-version"
   local CURRENT_VERSION="$(cat "$CURRENT_VERSION_FILE" 2>/dev/null)"
 
-  function _dotfiles_download {
+  function _has_update_available() {
+    local OUTPUT="$HOME/$1"
+    [[ "$LATEST_VERSION" != "$CURRENT_VERSION" || "$FORCE" = true || ! -e "$OUTPUT" ]]
+  }
+
+  function _dotfiles_download() {
     local OUTPUT="$HOME/$1"
 
-    if [[ "$LATEST_VERSION" != "$CURRENT_VERSION" || "$FORCE" = true || ! -f "$OUTPUT" ]]; then
+    if _has_update_available "$1"; then
       printf "\n\nUpdating '$1'\n"
       mkdir -p "$(dirname $OUTPUT)"
       curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/src/$1" -o "$OUTPUT"
@@ -33,8 +38,9 @@ function update-dotfiles() {
     fi
   }
 
-  # wsh
-  if [[ -d "$HOME/.wsh" ]]; then rm -r "$HOME/.wsh"; fi
+  # wsh - if an update is needed, we remove the whole
+  # directory to make removing orphaned files easier
+  if _has_update_available ".wsh"; then rm -r "$HOME/.wsh"; fi
   _dotfiles_download ".wsh/dotfiles.sh"
   _dotfiles_download ".wsh/system.sh"
   _dotfiles_download ".wsh/dotfiles.sh"
@@ -93,8 +99,9 @@ function update-dotfiles() {
     fi
   fi
 
-  # Remove dotfiles_download function
+  # Cleanup internal functions
   unset -f _dotfiles_download
+  unset -f _has_update_available
 
   printf "\nDone! Don't forget to restart your shell.\n"
 }
