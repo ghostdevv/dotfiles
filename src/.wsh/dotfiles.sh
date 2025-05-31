@@ -39,20 +39,33 @@ function update-dotfiles() {
     fi
   }
 
-  # General Dotfiles
-  dotfiles_download ".dotfiles/dotfiles.sh"
+  # wsh
+  if [[ -d ~/.wsh ]]; then rm -r ~/.wsh; fi
+  dotfiles_download ".wsh/dotfiles.sh"
+  dotfiles_download ".wsh/system.sh"
+  dotfiles_download ".wsh/dotfiles.sh"
+  dotfiles_download ".wsh/git.sh"
+  dotfiles_download ".wsh/deno-node.sh"
+  dotfiles_download ".wsh/editors.sh"
+  dotfiles_download ".wsh/network.sh"
+  dotfiles_download ".wsh/files.sh"
+  dotfiles_download ".wsh/update-system.sh"
+  # bash & zsh config
   dotfiles_download ".bash_aliases"
   dotfiles_download ".zshrc-personal"
-  dotfiles_download ".gitconfig"
-  dotfiles_download ".nanorc"
-  dotfiles_download ".config/alacritty/alacritty.toml"
-  dotfiles_download ".config/ghostty/config"
-  dotfiles_download ".config/fastfetch/config.jsonc"
-  # Zed
+  # Editors
   dotfiles_download ".config/zed/settings.json"
   dotfiles_download ".config/zed/keymap.json"
   dotfiles_download ".config/zed/tasks.json"
   dotfiles_download ".config/zed/themes/serendipity-sunset-v1-zed.json"
+  dotfiles_download ".nanorc"
+  # Terminals
+  dotfiles_download ".config/alacritty/alacritty.toml"
+  dotfiles_download ".config/ghostty/config"
+  # Git
+  dotfiles_download ".gitconfig"
+  # Tools
+  dotfiles_download ".config/fastfetch/config.jsonc"
 
   # remove old files
   rm ~/.dotfiles.sh

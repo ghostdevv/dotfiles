@@ -28,8 +28,8 @@ if ! command -v deno &> /dev/null; then
     export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
-# Download & Update dotfiles
-source "$CURRENT_DIR/src/.dotfiles/dotfiles.sh"
+# Download & Update wsh
+source "$CURRENT_DIR/src/.wsh/dotfiles.sh"
 update_dotfiles
 
 if [ "$(basename $SHELL)" = "bash" ]; then
