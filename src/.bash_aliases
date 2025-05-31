@@ -406,6 +406,7 @@ update_system() {
   dconf write /org/gnome/shell/extensions/user-theme/name "'GHOST'"
   dconf write /org/gnome/desktop/interface/accent-color "'blue'"
   gsettings set org.gnome.desktop.interface show-battery-percentage true
+  gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'com.discordapp.Discord.desktop', 'org.gnome.Nautilus.desktop', 'spotify.desktop', 'com.tutanota.Tutanota.desktop']"
   # gdm theming
   dconf write /org/gnome/login-screen/logo "''"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/cursor-theme "'Breeze_Light'"
