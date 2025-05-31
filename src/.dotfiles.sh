@@ -1,4 +1,4 @@
-update_dotfiles() {
+function update-dotfiles() {
   local FORCE=false
 
   while [[ $# -gt 0 ]]; do
@@ -86,5 +86,3 @@ update_dotfiles() {
 
   printf "\nDone! Don't forget to restart your shell.\n"
 }
-
-alias update-dotfiles="update_dotfiles"
