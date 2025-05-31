@@ -97,10 +97,8 @@ alias hinfo="curl -s https://am.i.mullvad.net/json | jq"
 # https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L350
 alias jctl="journalctl -p 3 -xb"
 
-# Update grub config
-
 # Check git status of child directories
-git_status_check() {
+function gsc() {
   local current_dir=$(pwd)
 
   echo "Checking git repositories in child directories..."
@@ -155,8 +153,6 @@ git_status_check() {
     fi
   done
 }
-
-alias gsc="git_status_check"
 
 # This alias is based on code by Arcolinux under the GNU GPL v3.0 License
 # https://github.com/arcolinux/arcolinux-zsh/blob/121b8ed0619ea041a2eed5483491336ec1edbcb8/etc/skel/.zshrc#L225
@@ -300,7 +296,7 @@ if command -v bat &> /dev/null; then
   alias cat="bat --paging=never --style=header,header-filename,header-filesize,grid"
 fi
 
-# Based on idea by @fractalhq
+# Based on idea by @braebo
 peep() {
   if [[ ! -n "$1" ]]; then
     echo "Usage: peep <repo>"
@@ -334,6 +330,7 @@ peep() {
 alias s="search search"
 sq() { search search "!$@"; }
 
+# Based on idea by @braebo
 function quish_simple() {
   if [[ ! -n "$1" ]]; then
     echo "Usage: quish_simple <file>"
