@@ -29,7 +29,7 @@ if ! command -v deno &> /dev/null; then
 fi
 
 # Download & Update dotfiles
-source "$CURRENT_DIR/src/.dotfiles.sh"
+source "$CURRENT_DIR/src/.dotfiles/dotfiles.sh"
 update_dotfiles
 
 if [ "$(basename $SHELL)" = "bash" ]; then

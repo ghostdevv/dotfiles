@@ -40,7 +40,7 @@ function update-dotfiles() {
   }
 
   # General Dotfiles
-  dotfiles_download ".dotfiles.sh"
+  dotfiles_download ".dotfiles/dotfiles.sh"
   dotfiles_download ".bash_aliases"
   dotfiles_download ".zshrc-personal"
   dotfiles_download ".gitconfig"
@@ -53,6 +53,9 @@ function update-dotfiles() {
   dotfiles_download ".config/zed/keymap.json"
   dotfiles_download ".config/zed/tasks.json"
   dotfiles_download ".config/zed/themes/serendipity-sunset-v1-zed.json"
+
+  # remove old files
+  rm ~/.dotfiles.sh
 
   # Linux Specific
   if [[ "$(uname)" = "Linux" ]]; then

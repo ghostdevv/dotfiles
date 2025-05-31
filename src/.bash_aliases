@@ -1,4 +1,4 @@
-source ~/.dotfiles.sh
+source ~/.dotfiles/dotfiles.sh
 
 # Convert an image to webp
 webp() {
