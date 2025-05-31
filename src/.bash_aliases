@@ -425,6 +425,9 @@ update_system() {
   dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-right "@as ['<Super><Shift>Page_Down']"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/screensaver "['<Super>Escape']"
   dconf write /org/gnome/desktop/wm/keybindings/close "['<Super>q', '<Alt>F4']"
+  dconf write /org/gnome/shell/keybindings/focus-active-notification "@as []"
+  dconf write /org/gnome/shell/keybindings/toggle-message-tray "@as ['<Super>n']"
+  dconf write /org/gnome/shell/keybindings/toggle-quick-settings "@as ['<Super>x']"
   # pop shell
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint "true"
   dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgba(33, 96, 236, 1)'"
