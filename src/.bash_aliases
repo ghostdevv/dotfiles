@@ -404,7 +404,6 @@ update_system() {
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
   dconf write /org/gnome/shell/extensions/user-theme/name "'GHOST'"
-  dconf write /org/gnome/desktop/interface/clock-show-seconds true
   dconf write /org/gnome/desktop/interface/accent-color "'blue'"
   # gdm theming
   dconf write /org/gnome/login-screen/logo "''"
@@ -482,6 +481,12 @@ update_system() {
   dconf write /org/guake/general/use-scrollbar "false"
   dconf write /org/guake/general/hide-tabs-if-one-tab "true"
   dconf write /org/guake/general/start-at-login "true"
+  # clocks
+  gsettings set org.gnome.clocks world-clocks "[{'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]"
+  gsettings set org.gnome.desktop.interface clock-show-seconds true
+  gsettings set org.gnome.desktop.interface clock-show-date true
+  gsettings set org.gnome.desktop.interface clock-show-weekday false
+  gsettings set org.gnome.desktop.interface clock-format '24h'
 
   # Folders
   create_bookmarked_folder() {
