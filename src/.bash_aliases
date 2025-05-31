@@ -86,8 +86,8 @@ ex() {
 # Remap zeditor to zed
 alias zed="zeditor"
 
-# Open the ~/.zshrc in vscode
-alias hax="code ~/.zshrc"
+# Open the ~/.zshrc in zed
+alias hax="zed ~/.zshrc"
 
 # Get host info using mullvad api
 alias hinfo="curl -s https://am.i.mullvad.net/json | jq"
