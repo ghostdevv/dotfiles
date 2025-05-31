@@ -342,7 +342,7 @@ function quish_simple() {
   ffmpeg -y -v quiet -stats -i "$file" -vf "scale=$resolution:force_original_aspect_ratio=decrease,pad=$resolution:(ow-iw)/2:(oh-ih)/2" -r "$fps" -b:v "$bitrate"k "${output}.${type}" </dev/null
 }
 
-update_system() {
+function update-system() {
   if ! grep -q '^ID_LIKE=.*arch' /etc/os-release; then
     echo "System is not Arch Linux or an Arch-based distribution, exiting..."
     return 1
@@ -546,8 +546,6 @@ update_system() {
   echo "- Press apply in gdm-settings"
   echo "- Restart your computer"
 }
-
-alias update-system="update_system"
 
 # Svelte
 export SVELTE_INSPECTOR_OPTIONS=true
