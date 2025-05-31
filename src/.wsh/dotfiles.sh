@@ -14,17 +14,30 @@ function update-dotfiles() {
     esac
   done
 
-  local LATEST_VERSION="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
-  printf "\nUpdating Dotfiles ($(echo $LATEST_VERSION | cut -c1-7)) [$FORCE]\n\n"
+  # get the current kernel to deduce the OS
+  local KERNEL="$(uname --kernel-name | tr '[:upper:]' '[:lower:]')"
 
+  # find the current version
   local CURRENT_VERSION_FILE="$HOME/.dotfiles-version"
   local CURRENT_VERSION="$(cat "$CURRENT_VERSION_FILE" 2>/dev/null)"
 
+  # fetch the latest version from github
+  local LATEST_VERSION="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
+
+  # welcomer
+  printf "\nupdate-dotfiles --current-version=\"$(echo $CURRENT_VERSION | cut -c1-7)\" --latest-version=\"$(echo $LATEST_VERSION | cut -c1-7)\" --force=$FORCE --os=$KERNEL\n\n"
+
+  # Checks if the path has an update (normalised to $HOME):
+  # - Is the current version different from the latest version?
+  # - Is the force flag set to true?
+  # - Does the path exist?
   function _has_update_available() {
     local OUTPUT="$HOME/$1"
     [[ "$LATEST_VERSION" != "$CURRENT_VERSION" || "$FORCE" = true || ! -e "$OUTPUT" ]]
   }
 
+  # Download a file from GitHub if an update is
+  # available. Normalises the path to $HOME.
   function _dotfiles_download() {
     local OUTPUT="$HOME/$1"
 
