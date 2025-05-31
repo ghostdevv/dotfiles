@@ -14,17 +14,11 @@ function update-dotfiles() {
     esac
   done
 
-  local STORAGE_DIR="$HOME/.dotfiles"
-
   local LATEST_VERSION="$(git ls-remote --head https://github.com/ghostdevv/dotfiles.git --ref main --type commit | head -n 1 | awk '{print $1}')"
   printf "\nUpdating Dotfiles ($(echo $LATEST_VERSION | cut -c1-7)) [$FORCE]\n\n"
 
-  if [[ ! -d "$STORAGE_DIR" ]]; then
-    mkdir -p "$STORAGE_DIR"
-    touch "$STORAGE_DIR/version"
-  fi
-
-  local CURRENT_VERSION="$(cat "$STORAGE_DIR/version")"
+  local CURRENT_VERSION_FILE="$HOME/.dotfiles-version"
+  local CURRENT_VERSION="$(cat "$CURRENT_VERSION_FILE" 2>/dev/null)"
 
   function dotfiles_download {
     local OUTPUT="$HOME/$1"
@@ -40,7 +34,7 @@ function update-dotfiles() {
   }
 
   # wsh
-  if [[ -d ~/.wsh ]]; then rm -r ~/.wsh; fi
+  if [[ -d "$HOME/.wsh" ]]; then rm -r "$HOME/.wsh"; fi
   dotfiles_download ".wsh/dotfiles.sh"
   dotfiles_download ".wsh/system.sh"
   dotfiles_download ".wsh/dotfiles.sh"
@@ -70,6 +64,7 @@ function update-dotfiles() {
 
   # remove old files
   rm ~/.dotfiles.sh
+  rm -r ~/.dotfiles
 
   # Linux Specific
   if [[ "$(uname)" = "Linux" ]]; then
@@ -77,7 +72,7 @@ function update-dotfiles() {
     dotfiles_download ".config/autostart/1password.desktop"
   fi
 
-  echo "$LATEST_VERSION" > "$STORAGE_DIR/version"
+  echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
 
   if command -v op >/dev/null; then
     echo -n "\nDo you want to update your SSH config? (y/N): "
