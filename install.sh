@@ -21,7 +21,7 @@ if ! command -v volta &> /dev/null; then
 fi
 
 # Install & Setup Deno
-if ! command -v volta &> /dev/null; then
+if ! command -v deno &> /dev/null; then
     curl -fsSL https://deno.land/install.sh | sh
 
     export DENO_INSTALL="/home/ghost/.deno"
