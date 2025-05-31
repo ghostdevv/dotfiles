@@ -20,7 +20,7 @@ function update-dotfiles() {
   local CURRENT_VERSION_FILE="$HOME/.dotfiles-version"
   local CURRENT_VERSION="$(cat "$CURRENT_VERSION_FILE" 2>/dev/null)"
 
-  function dotfiles_download {
+  function _dotfiles_download {
     local OUTPUT="$HOME/$1"
 
     if [[ "$LATEST_VERSION" != "$CURRENT_VERSION" || "$FORCE" = true || ! -f "$OUTPUT" ]]; then
@@ -35,41 +35,43 @@ function update-dotfiles() {
 
   # wsh
   if [[ -d "$HOME/.wsh" ]]; then rm -r "$HOME/.wsh"; fi
-  dotfiles_download ".wsh/dotfiles.sh"
-  dotfiles_download ".wsh/system.sh"
-  dotfiles_download ".wsh/dotfiles.sh"
-  dotfiles_download ".wsh/git.sh"
-  dotfiles_download ".wsh/deno-node.sh"
-  dotfiles_download ".wsh/editors.sh"
-  dotfiles_download ".wsh/network.sh"
-  dotfiles_download ".wsh/files.sh"
-  dotfiles_download ".wsh/update-system.sh"
-  dotfiles_download ".wsh/entry.sh"
+  _dotfiles_download ".wsh/dotfiles.sh"
+  _dotfiles_download ".wsh/system.sh"
+  _dotfiles_download ".wsh/dotfiles.sh"
+  _dotfiles_download ".wsh/git.sh"
+  _dotfiles_download ".wsh/deno-node.sh"
+  _dotfiles_download ".wsh/editors.sh"
+  _dotfiles_download ".wsh/network.sh"
+  _dotfiles_download ".wsh/files.sh"
+  _dotfiles_download ".wsh/update-system.sh"
+  _dotfiles_download ".wsh/entry.sh"
   # bash & zsh config
-  dotfiles_download ".bash_aliases"
-  dotfiles_download ".zshrc-personal"
+  _dotfiles_download ".bash_aliases"
+  _dotfiles_download ".zshrc-personal"
   # Editors
-  dotfiles_download ".config/zed/settings.json"
-  dotfiles_download ".config/zed/keymap.json"
-  dotfiles_download ".config/zed/tasks.json"
-  dotfiles_download ".config/zed/themes/serendipity-sunset-v1-zed.json"
-  dotfiles_download ".nanorc"
+  _dotfiles_download ".config/zed/settings.json"
+  _dotfiles_download ".config/zed/keymap.json"
+  _dotfiles_download ".config/zed/tasks.json"
+  _dotfiles_download ".config/zed/themes/serendipity-sunset-v1-zed.json"
+  _dotfiles_download ".nanorc"
   # Terminals
-  dotfiles_download ".config/alacritty/alacritty.toml"
-  dotfiles_download ".config/ghostty/config"
+  _dotfiles_download ".config/alacritty/alacritty.toml"
+  _dotfiles_download ".config/ghostty/config"
   # Git
-  dotfiles_download ".gitconfig"
+  _dotfiles_download ".gitconfig"
   # Tools
-  dotfiles_download ".config/fastfetch/config.jsonc"
+  _dotfiles_download ".config/fastfetch/config.jsonc"
 
   # Linux Specific
   if [[ "$(uname)" = "Linux" ]]; then
-    dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
-    dotfiles_download ".config/autostart/1password.desktop"
+    _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css"
+    _dotfiles_download ".config/autostart/1password.desktop"
   fi
 
+  # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
 
+  # Updating ssh config
   if command -v op >/dev/null; then
     echo -n "\nDo you want to update your SSH config? (y/N): "
     read answer
@@ -78,7 +80,7 @@ function update-dotfiles() {
     if [[ "$answer" == "y" ]]; then
       printf "\nSetting ~/.ssh/config hosts with 1password"
 
-      FORCE=true dotfiles_download ".ssh/config"
+      FORCE=true _dotfiles_download ".ssh/config"
 
       for ID in $(op item ls --categories server --format=json | jq -r '.[].id'); do
         SERVER=$(op item get $ID --format=json)
@@ -89,8 +91,10 @@ function update-dotfiles() {
           >>  ~/.ssh/config
       done
     fi
-
   fi
+
+  # Remove dotfiles_download function
+  unset -f _dotfiles_download
 
   printf "\nDone! Don't forget to restart your shell.\n"
 }
