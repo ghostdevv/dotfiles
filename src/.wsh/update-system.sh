@@ -89,7 +89,6 @@ function update-system() {
   dconf write /org/gnome/shell/extensions/clipboard-indicator/paste-button "true"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/move-item-first "true"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/display-mode "0"
-  dconf write /org/gnome/shell/keybindings/toggle-message-tray "@as []"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings "true"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/private-mode-binding "@as []"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/toggle-menu "['<Super>v']"
