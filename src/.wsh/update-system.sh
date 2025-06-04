@@ -17,7 +17,7 @@ function update-system() {
       gnome-browser-connector gnome-shell-extension-pop-shell-git \
       mullvad-vpn-bin tailscale dnsproxy dog 7zip trash-cli \
       appimagelauncher flatpak \
-      bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin \
+      bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify 1password kate gparted vlc blender brave-bin filelight signal-desktop \
       visual-studio-code-bin lazydocker lazygit alacritty gfhostty guake github-cli docker docker-compose hyperfine zed \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
