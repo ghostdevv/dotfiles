@@ -15,7 +15,7 @@ function update-system() {
     yay -Sy --needed \
       breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gdm-settings archlinux-tweak-tool-git \
       gnome-browser-connector gnome-shell-extension-pop-shell-git \
-      mullvad-vpn-bin tailscale dnsproxy dog 7zip trash-cli \
+      mullvad-vpn-bin tailscale dnsproxy dog 7zip trash-cli viu \
       appimagelauncher flatpak \
       bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify 1password kate gparted vlc blender brave-bin filelight signal-desktop \
