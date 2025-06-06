@@ -70,6 +70,7 @@ function update-dotfiles() {
   _dotfiles_download ".wsh/files.sh"
   _dotfiles_download ".wsh/update-system.sh"
   _dotfiles_download ".wsh/entry.sh"
+  _dotfiles_download ".wsh/images/framework-16-expansion-cards.png"
   # bash & zsh config
   _dotfiles_download ".bash_aliases"
   _dotfiles_download ".zshrc-personal"
