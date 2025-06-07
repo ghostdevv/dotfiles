@@ -6,3 +6,4 @@ source ~/.wsh/editors.sh
 source ~/.wsh/network.sh
 source ~/.wsh/files.sh
 source ~/.wsh/update-system.sh
+source ~/.wsh/fun.sh

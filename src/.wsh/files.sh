@@ -53,17 +53,3 @@ function quish_simple() {
 
   ffmpeg -y -v quiet -stats -i "$file" -vf "scale=$resolution:force_original_aspect_ratio=decrease,pad=$resolution:(ow-iw)/2:(oh-ih)/2" -r "$fps" -b:v "$bitrate"k "${output}.${type}" </dev/null
 }
-
-alias fw="viu ~/.wsh/images/framework-16-expansion-cards.png --width 45"
-
-function imagine() {
-    local text="${1:-"imagine"}"
-    local output="/tmp/imagine-$text.gif"
-
-    if [[ ! -f "$output" ]]; then
-        echo -e "Downloading & Caching ${text}.gif"
-        curl -sLo "$output" "https://imagine.willow.sh/$text.gif"
-    fi
-
-    viu --width 45 --frame-rate 12 "$output"
-}
