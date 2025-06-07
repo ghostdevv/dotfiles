@@ -47,7 +47,7 @@ function update-system() {
         org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian com.discordapp.Discord com.modrinth.ModrinthApp \
         org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio org.libreoffice.LibreOffice \
         io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger org.kde.kdenlive \
-        org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine io.github.giantpinkrobots.varia \
+        org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine \
         com.mongodb.Compass
   fi
 
