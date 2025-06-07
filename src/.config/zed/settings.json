@@ -15,7 +15,7 @@
 		"enabled": true,
 		"default_model": {
 			"provider": "zed.dev",
-			"model": "claude-3-7-sonnet-thinking-latest"
+			"model": "claude-sonnet-4-thinking-latest"
 		}
 	},
 	"collaboration_panel": {
