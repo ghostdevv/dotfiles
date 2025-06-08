@@ -184,9 +184,9 @@ function update-system() {
   create_bookmarked_folder to-archive
 
   # Set shell to zsh
-  if [[ "$SHELL" != "/bin/zsh" ]]; then
+  if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
     echo -e "\nSetting ZSH"
-    chsh -s /bin/zsh
+    chsh -s /usr/bin/zsh
   fi
 
   # Install my search tool
