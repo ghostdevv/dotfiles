@@ -1,5 +1,5 @@
 function update-system() {
-  if ! grep -q '^ID_LIKE=.*arch' /etc/os-release; then
+  if ! grep -q -E '^ID=arch|ID_LIKE=.*arch' /etc/os-release; then
     echo "System is not Arch Linux or an Arch-based distribution, exiting..."
     return 1
   fi
