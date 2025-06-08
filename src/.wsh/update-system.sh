@@ -13,15 +13,19 @@ function update-system() {
   if [[ "$answer" != "n" ]]; then
     echo "Installing System Packages"
     yay -Sy --needed \
-      breeze-gtk breeze-icons ttf-comic-mono-git xcursor-breeze gdm-settings archlinux-tweak-tool-git \
+      noto-fonts noto-fonts-extra ttf-twemoji ttf-comic-mono-git \
+      breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-shell-extension-pop-shell-git \
-      mullvad-vpn-bin tailscale dnsproxy dog 7zip trash-cli viu \
-      appimagelauncher flatpak \
-      bat fastfetch-git cmatrix ddgr btop-git jq 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
-      spotify 1password kate gparted vlc blender brave-bin filelight signal-desktop \
-      visual-studio-code-bin lazydocker lazygit alacritty gfhostty guake github-cli docker docker-compose hyperfine zed \
+      mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup \
+      appimagelauncher flatpak reflector \
+      bat fastfetch cmatrix ddgr btop-git jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
+      spotify kate gparted vlc blender brave-bin filelight signal-desktop \
+      visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
-      oh-my-zsh-git pnpm-shell-completion zsh-syntax-highlighting
+      zsh pnpm-shell-completion zsh-syntax-highlighting
+
+      # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
+      # linux-zen mesa networkmanager openssh plymouth vulkan-radeon git
   fi
 
   echo -e "\nStarting Tailscale"
@@ -48,7 +52,7 @@ function update-system() {
         org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio org.libreoffice.LibreOffice \
         io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger org.kde.kdenlive \
         org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine \
-        com.mongodb.Compass
+        com.mongodb.Compass io.github.realmazharhussain.GdmSettings
   fi
 
 
