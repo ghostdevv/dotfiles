@@ -186,6 +186,7 @@ function update-system() {
   create_bookmarked_folder dev
   create_bookmarked_folder torrent
   create_bookmarked_folder to-archive
+  xdg-user-dirs-update
 
   # Set shell to zsh
   if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
