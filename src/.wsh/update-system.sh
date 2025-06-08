@@ -15,7 +15,7 @@ function update-system() {
     yay -Sy --needed \
       noto-fonts noto-fonts-extra ttf-twemoji ttf-comic-mono-git \
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
-      gnome-browser-connector gnome-tweaks \
+      gnome-browser-connector gnome-tweaks power-profiles-daemon \
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree \
       appimagelauncher flatpak reflector \
       bat fastfetch cmatrix ddgr btop-git jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
