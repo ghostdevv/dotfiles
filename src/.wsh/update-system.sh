@@ -158,7 +158,10 @@ function update-system() {
   dconf write /org/gnome/desktop/privacy/remove-old-trash-files "true"
   # nautilus
   echo " - theme nautilus"
-  dconf write /org/gnome/nautilus/preferences/show-hidden-files "true"
+  gsettings set org.gnome.nautilus.preferences show-hidden-files true
+  gsettings set org.gtk.gtk4.Settings.FileChooser show-hidden true
+  gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first true
+  gsettings set org.gnome.nautilus.preferences date-time-format 'detailed'
   # guake
   echo " - guake"
   dconf write /org/guake/style/font/palette "'#151517171c1c:#ecec5f5f6767:#8080a7a76363:#fdfdc2c25353:#54548585c0c0:#bfbf8383c0c0:#5757c2c2c0c0:#eeeeecece7e7:#555555555555:#ffff69697373:#9393d3d39393:#ffffd1d15656:#4d4d8383d0d0:#ffff5555ffff:#8383e8e8e4e4:#ffffffffffff:#eeeeeeeeeeee:#121212121414'"
