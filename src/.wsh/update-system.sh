@@ -20,7 +20,7 @@ function update-system() {
       appimagelauncher flatpak reflector \
       bat fastfetch cmatrix ddgr btop-git jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify kate gparted vlc blender brave-bin filelight signal-desktop \
-      visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano \
+      visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
       zsh pnpm-shell-completion zsh-syntax-highlighting
 
