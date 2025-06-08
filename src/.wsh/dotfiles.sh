@@ -88,7 +88,6 @@ function update-dotfiles() {
   _dotfiles_download ".gitconfig"
   # Tools
   _dotfiles_download ".config/fastfetch/config.jsonc"
-  _dotfiles_download ".config/fw-fanctrl/config.json" "linux"
   _dotfiles_download ".config/pop-shell/config.json" "linux"
   # Theme
   _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
