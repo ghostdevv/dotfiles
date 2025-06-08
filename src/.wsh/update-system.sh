@@ -90,6 +90,9 @@ function update-system() {
   dconf write /org/gnome/mutter/workspaces-only-on-primary true
   dconf write /org/gnome/desktop/wm/keybindings/show-desktop "['<Super>d']"
   dconf write /org/gnome/desktop/wm/keybindings/minimize "['<Super>h']"
+  dconf write /org/gnome/desktop/wm/keybindings/maximize "@as []"
+  dconf write /org/gnome/desktop/wm/keybindings/toggle-maximized "['<Super>m']"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/home "['<Super>f']"
   dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-down "@as []"
   dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-up "@as []"
   dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-left "@as ['<Super>Page_Up']"
@@ -101,6 +104,9 @@ function update-system() {
   dconf write /org/gnome/shell/keybindings/focus-active-notification "@as []"
   dconf write /org/gnome/shell/keybindings/toggle-message-tray "@as ['<Super>n']"
   dconf write /org/gnome/shell/keybindings/toggle-quick-settings "@as ['<Super>x']"
+  dconf write /org/gnome/mutter/keybindings/toggle-tiled-left "@as []"
+  dconf write /org/gnome/mutter/keybindings/toggle-tiled-right "@as []"
+  dconf write /org/gnome/mutter/wayland/keybindings/restore-shortcuts "@as []"
   # pop shell
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint "true"
   dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgba(33, 96, 236, 1)'"
@@ -130,7 +136,7 @@ function update-system() {
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/name "'Guake Toggle'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/command "'guake-toggle'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/binding "'<Alt>Return'"
-  ## smilet
+  ## smile
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/name "'Emoji Picker (Smile) Toggle'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/command "'flatpak run it.mijorus.smile'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/binding "'<Super>period'"
