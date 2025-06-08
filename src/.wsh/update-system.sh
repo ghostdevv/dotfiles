@@ -23,7 +23,8 @@ function update-system() {
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
       zsh pnpm-shell-completion zsh-syntax-highlighting \
-      pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse
+      pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse \
+      wireless-regdb
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
       # linux-zen mesa networkmanager openssh plymouth vulkan-radeon git
@@ -66,7 +67,6 @@ function update-system() {
         org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine \
         com.mongodb.Compass io.github.realmazharhussain.GdmSettings
   fi
-
 
   echo -e "\nSetting Gnome Settings"
   # theming
@@ -236,6 +236,10 @@ function update-system() {
   else
     echo -e "\nInstalling Search"
     install_search
+  fi
+
+  if ! grep -q '^WIRELESS_REGDOM="GB"' "/etc/conf.d/wireless-regdom"; then
+    echo "Please uncomment GB line in /etc/conf.d/wireless-regdom"
   fi
 
   set +e
