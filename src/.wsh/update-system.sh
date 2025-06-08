@@ -22,7 +22,8 @@ function update-system() {
       spotify kate gparted vlc blender brave-bin filelight signal-desktop \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
-      zsh pnpm-shell-completion zsh-syntax-highlighting
+      zsh pnpm-shell-completion zsh-syntax-highlighting \
+      pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
       # linux-zen mesa networkmanager openssh plymouth vulkan-radeon git
