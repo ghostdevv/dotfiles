@@ -16,7 +16,7 @@ function update-system() {
       noto-fonts noto-fonts-extra ttf-twemoji ttf-comic-mono-git \
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks \
-      mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup \
+      mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git \
       appimagelauncher flatpak reflector \
       bat fastfetch cmatrix ddgr btop-git jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify kate gparted vlc blender brave-bin filelight signal-desktop \
@@ -44,6 +44,7 @@ function update-system() {
     sudo systemctl enable reflector --now
     sudo systemctl enable bluetooth --now
     sudo systemctl enable gdm
+    sudo systemctl enable fw-fanctrl --now
   fi
 
   if ! groups $USER | grep -q "\bdocker\b"; then
