@@ -1,0 +1,17 @@
+{
+    "float": [
+        {
+            "class": "1Password"
+        },
+        {
+            "class": "Emulator",
+            "title": "Android Emulator - Medium_Phone_API_36:5554"
+        },
+        {
+            "class": "it.mijorus.smile",
+            "title": "Smile"
+        }
+    ],
+    "skiptaskbarhidden": [],
+    "log_on_focus": false
+}
