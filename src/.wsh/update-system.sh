@@ -29,12 +29,22 @@ function update-system() {
       # linux-zen mesa networkmanager openssh plymouth vulkan-radeon git
   fi
 
-  echo -e "\nStarting Tailscale"
-  sudo systemctl enable tailscaled --now
-  sudo tailscale up --accept-dns=false --operator=ghost
+  echo -n "\nDo you want to start services? (Y/n): "
+  read answer
+  answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
-  echo -e "\nStarting Docker"
-  sudo systemctl enable docker --now
+  if [[ "$answer" != "n" ]]; then
+    echo -e "\nStarting Tailscale"
+    sudo systemctl enable tailscaled --now
+    sudo tailscale up --accept-dns=false --operator=ghost
+
+    echo -e '\nStarting other services'
+    sudo systemctl enable docker --now
+    sudo systemctl enable sshd --now
+    sudo systemctl enable reflector --now
+    sudo systemctl enable bluetooth --now
+    sudo systemctl enable gdm
+  fi
 
   if ! groups $USER | grep -q "\bdocker\b"; then
     echo -e "\nAdded you to the docker group"
