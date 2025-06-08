@@ -70,6 +70,7 @@ function update-system() {
 
   echo -e "\nSetting Gnome Settings"
   # theming
+  echo " - theme settings"
   gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 10'
   gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_Light'
   gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
@@ -81,6 +82,7 @@ function update-system() {
   gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'com.discordapp.Discord.desktop', 'org.gnome.Nautilus.desktop', 'spotify.desktop', 'com.tutanota.Tutanota.desktop']"
   gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
   # gdm theming
+  echo " - gdm theme settings"
   dconf write /org/gnome/login-screen/logo "''"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/cursor-theme "'Breeze_Light'"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/icon-theme "'Adwaita'"
@@ -88,6 +90,7 @@ function update-system() {
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-type "'image'"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-image "'$HOME/Pictures/background.png'"
   # wm keybindings
+  echo " - wm keybindings"
   dconf write /org/gnome/mutter/workspaces-only-on-primary true
   dconf write /org/gnome/desktop/wm/keybindings/show-desktop "['<Super>d']"
   dconf write /org/gnome/desktop/wm/keybindings/minimize "['<Super>h']"
@@ -109,12 +112,14 @@ function update-system() {
   dconf write /org/gnome/mutter/keybindings/toggle-tiled-right "@as []"
   dconf write /org/gnome/mutter/wayland/keybindings/restore-shortcuts "@as []"
   # pop shell
+  echo " - pop shell"
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint "true"
   dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgba(33, 96, 236, 1)'"
   dconf write /org/gnome/shell/extensions/pop-shell/active-hint-border-radius "uint32 15"
   dconf write /org/gnome/shell/extensions/pop-shell/show-title "false"
   dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default "true"
   # clipboard indicator
+  echo " - clipboard indicator"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/history-size "50"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/preview-size "50"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/paste-button "true"
@@ -127,8 +132,10 @@ function update-system() {
   dconf write /org/gnome/shell/extensions/clipboard-indicator/next-entry "@as []"
   dconf write /org/gnome/shell/extensions/clipboard-indicator/prev-entry "@as []"
   # vitals
+  echo " - vitals"
   dconf write /org/gnome/shell/extensions/vitals/hot-sensors "['_memory_usage_', '_processor_usage_']"
   # custom keybindings
+  echo " - custom keybindings"
   ## terminal
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'ghostty'"
@@ -144,13 +151,16 @@ function update-system() {
   ## save keybindings
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/']"
   # privacy
+  echo " - privacy"
   dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
   dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
   dconf write /org/gnome/desktop/privacy/remove-old-temp-files "true"
   dconf write /org/gnome/desktop/privacy/remove-old-trash-files "true"
   # nautilus
+  echo " - theme nautilus"
   dconf write /org/gnome/nautilus/preferences/show-hidden-files "true"
   # guake
+  echo " - guake"
   dconf write /org/guake/style/font/palette "'#151517171c1c:#ecec5f5f6767:#8080a7a76363:#fdfdc2c25353:#54548585c0c0:#bfbf8383c0c0:#5757c2c2c0c0:#eeeeecece7e7:#555555555555:#ffff69697373:#9393d3d39393:#ffffd1d15656:#4d4d8383d0d0:#ffff5555ffff:#8383e8e8e4e4:#ffffffffffff:#eeeeeeeeeeee:#121212121414'"
   dconf write /org/guake/style/font/palette-name "'Custom'"
   dconf write /org/guake/style/font/style "'Comic Mono 12'"
@@ -171,12 +181,14 @@ function update-system() {
   dconf write /org/guake/general/hide-tabs-if-one-tab "true"
   dconf write /org/guake/general/start-at-login "true"
   # clocks
+  echo " - clocks"
   gsettings set org.gnome.clocks world-clocks "[{'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]"
   gsettings set org.gnome.desktop.interface clock-show-seconds true
   gsettings set org.gnome.desktop.interface clock-show-date true
   gsettings set org.gnome.desktop.interface clock-show-weekday false
   gsettings set org.gnome.desktop.interface clock-format '24h'
   # file associations
+  echo " - file associations"
   xdg-settings set default-web-browser brave-browser.desktop
   gio mime x-scheme-handler/http brave-browser.desktop
   gio mime x-scheme-handler/https brave-browser.desktop
@@ -202,6 +214,7 @@ function update-system() {
     fi
   }
 
+  echo -e "\nAssuring home folders exist"
   create_bookmarked_folder dev
   create_bookmarked_folder torrent
   create_bookmarked_folder to-archive
