@@ -177,7 +177,7 @@ function update-system() {
   gsettings set org.gnome.desktop.interface clock-show-weekday false
   gsettings set org.gnome.desktop.interface clock-format '24h'
   # file associations
-  xdg-settings set default-web-browser brave.desktop
+  xdg-settings set default-web-browser brave-browser.desktop
   gio mime x-scheme-handler/http brave-browser.desktop
   gio mime x-scheme-handler/https brave-browser.desktop
 
