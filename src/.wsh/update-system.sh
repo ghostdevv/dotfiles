@@ -24,7 +24,7 @@ function update-system() {
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils gsmartcontrol smartmontools \
       zsh pnpm-shell-completion zsh-syntax-highlighting \
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse \
-      wireless-regdb acpi iio-sensor-proxy fprint less usbutils
+      wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
       # linux-zen mesa networkmanager openssh plymouth vulkan-radeon git
