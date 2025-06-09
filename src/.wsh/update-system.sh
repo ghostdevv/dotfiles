@@ -13,7 +13,7 @@ function update-system() {
   if [[ "$answer" != "n" ]]; then
     echo "Installing System Packages"
     yay -Sy --needed \
-      noto-fonts noto-fonts-extra ttf-twemoji ttf-comic-mono-git \
+      noto-fonts noto-fonts-extra ttf-twemoji ttf-comic-mono-git ttf-liberation \
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep \
@@ -23,11 +23,12 @@ function update-system() {
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils gsmartcontrol smartmontools \
       zsh pnpm-shell-completion zsh-syntax-highlighting \
-      pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse \
+      pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse lib32-pipewire \
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
-      # linux-zen mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git
+      # linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git
+      # steam wine wine-gecko wine-mono
   fi
 
   echo -n "\nDo you want to start services? (Y/n): "
