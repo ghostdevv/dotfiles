@@ -197,31 +197,44 @@ function update-system() {
   gio mime x-scheme-handler/https brave-browser.desktop
 
   # Folders
-  create_bookmarked_folder() {
-    BOOKMARK_FOLDER="$HOME/.config/gtk-3.0"
-    BOOKMARK_FILE="$BOOKMARK_FOLDER/bookmarks"
+  function _assure_bookmark() {
+    local BOOKMARK_FOLDER="$HOME/.config/gtk-3.0"
+    local BOOKMARK_FILE="$BOOKMARK_FOLDER/bookmarks"
 
-    if [[ ! -e "$BOOKMARK_FOLDER" ]]; then
-        mkdir -p "$BOOKMARK_FOLDER"
+    if [[ ! -e "$BOOKMARK_FILE" ]]; then
+        mkdir -p "$(dirname $BOOKMARK_FILE)"
+        touch "$BOOKMARK_FILE"
     fi
 
-    FOLDER="$HOME/$1"
-
-    if [[ ! -e "$FOLDER" ]]; then
-      echo -e "\nCreating $FOLDER and bookmarking in nautillus"
-      mkdir -p "$FOLDER"
-    fi
+    local FOLDER="$HOME/$1"
 
     if ! grep -q "$FOLDER" "$BOOKMARK_FILE"; then
       echo "file://$FOLDER" >> $BOOKMARK_FILE
     fi
   }
 
+  function _assure_bookmarked_folder() {
+    local FOLDER="$HOME/$1"
+
+    if [[ ! -e "$FOLDER" ]]; then
+      echo -e "\nCreating $FOLDER and bookmarking in nautillus"
+      mkdir -p "$FOLDER"
+    fi
+
+    _assure_bookmark "$1"
+  }
+
   echo -e "\nAssuring home folders exist"
-  create_bookmarked_folder dev
-  create_bookmarked_folder torrent
-  create_bookmarked_folder to-archive
   xdg-user-dirs-update
+  _assure_bookmark Desktop
+  _assure_bookmark Documents
+  _assure_bookmark Music
+  _assure_bookmark Pictures
+  _assure_bookmark Downloads
+  _assure_bookmark Videos
+  _assure_bookmarked_folder dev
+  _assure_bookmarked_folder torrent
+  _assure_bookmarked_folder to-archive
 
   # Set shell to zsh
   if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
