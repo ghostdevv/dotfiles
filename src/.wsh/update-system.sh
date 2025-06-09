@@ -21,7 +21,7 @@ function update-system() {
       bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify kate gparted vlc blender brave-bin filelight signal-desktop htop imagemagick \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
-      jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
+      jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils gsmartcontrol smartmontools \
       zsh pnpm-shell-completion zsh-syntax-highlighting \
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse \
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils
