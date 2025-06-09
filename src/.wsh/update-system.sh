@@ -18,13 +18,13 @@ function update-system() {
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep \
       appimagelauncher flatpak reflector \
-      bat fastfetch cmatrix ddgr btop-git jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
-      spotify kate gparted vlc blender brave-bin filelight signal-desktop \
+      bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
+      spotify kate gparted vlc blender brave-bin filelight signal-desktop htop imagemagick \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils \
       zsh pnpm-shell-completion zsh-syntax-highlighting \
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse \
-      wireless-regdb acpi iio-sensor-proxy fprint less
+      wireless-regdb acpi iio-sensor-proxy fprint less usbutils
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
       # linux-zen mesa networkmanager openssh plymouth vulkan-radeon git
