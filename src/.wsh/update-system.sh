@@ -17,7 +17,7 @@ function update-system() {
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep \
-      appimagelauncher flatpak reflector \
+      appimagelauncher flatpak reflector balena-etcher-bin \
       bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify gparted vlc blender brave-bin filelight signal-desktop htop imagemagick \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
@@ -27,7 +27,7 @@ function update-system() {
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
-      # linux-zen mesa networkmanager openssh plymouth vulkan-radeon git
+      # linux-zen mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git
   fi
 
   echo -n "\nDo you want to start services? (Y/n): "
