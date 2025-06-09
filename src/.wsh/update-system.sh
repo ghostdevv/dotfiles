@@ -19,7 +19,7 @@ function update-system() {
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep \
       appimagelauncher flatpak reflector \
       bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
-      spotify kate gparted vlc blender brave-bin filelight signal-desktop htop imagemagick \
+      spotify gparted vlc blender brave-bin filelight signal-desktop htop imagemagick \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
       jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils gsmartcontrol smartmontools \
       zsh pnpm-shell-completion zsh-syntax-highlighting \
@@ -60,7 +60,7 @@ function update-system() {
   if [[ "$answer" != "n" ]]; then
     echo -e "\nInstalling Flatpak Packages"
     flatpak install --or-update flathub \
-        io.missioncenter.MissionCenter org.qbittorrent.qBittorrent org.gnome.Characters it.mijorus.smile \
+        io.missioncenter.MissionCenter org.qbittorrent.qBittorrent it.mijorus.smile \
         org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian com.discordapp.Discord com.modrinth.ModrinthApp \
         org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio org.libreoffice.LibreOffice \
         io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger org.kde.kdenlive \
