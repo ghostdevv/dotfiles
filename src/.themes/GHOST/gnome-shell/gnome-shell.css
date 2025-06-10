@@ -1,20 +1,26 @@
 #panel {
-	background-color: #0f0f0f;
-	height: 44px;
+    height: 38px;
 }
 
 .panel-button,
 .clock,
 .clock-display StIcon {
-	border-radius: 16px;
-	background-color: #29292a;
-	border: 6px solid transparent;
-	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    border-radius: 22px;
+    background-color: #212123;
+    border: 4px solid transparent;
+    box-shadow: inset 0 0 0 1px transparent;
+}
+
+/* clock fix */
+.clock-display {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .clock-display StIcon {
-	padding: 8px;
-	margin: 0;
+    padding: 8px;
+    margin: 0;
 }
 
 .panel-button:active,
@@ -22,17 +28,5 @@
 .panel-button:active .clock,
 .panel-button:hover,
 .panel-button:hover .clock {
-	background-color: #2160ec;
-	color: #ffffff;
-}
-
-/* clock fix */
-.clock-display {
-	background-color: transparent !important;
-	box-shadow: none !important;
-	border: none !important;
-}
-
-.clock {
-	margin: 0 !important;
+    background-color: #2160ec;
 }
