@@ -16,12 +16,12 @@ function update-system() {
       noto-fonts noto-fonts-extra ttf-twemoji ttf-comic-mono-git ttf-liberation \
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
-      mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep \
+      mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep ladybird-git \
       appimagelauncher flatpak reflector balena-etcher-bin \
       bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify gparted vlc blender brave-bin filelight signal-desktop htop imagemagick \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
-      jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils gsmartcontrol smartmontools \
+      jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils gsmartcontrol smartmontools ollama \
       zsh pnpm-shell-completion zsh-syntax-highlighting \
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse lib32-pipewire \
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools wget
