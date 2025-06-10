@@ -38,7 +38,7 @@ function update-system() {
   if [[ "$answer" != "n" ]]; then
     echo -e "\nStarting Tailscale"
     sudo systemctl enable tailscaled --now
-    sudo tailscale up --accept-dns=false --operator=ghost
+    sudo tailscale up --accept-dns=false --operator="$USER"
 
     echo -e '\nStarting other services'
     sudo systemctl enable docker --now
