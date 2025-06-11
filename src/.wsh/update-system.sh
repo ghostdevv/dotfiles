@@ -25,11 +25,11 @@ function update-system() {
       zsh pnpm-shell-completion zsh-syntax-highlighting \
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse lib32-pipewire \
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools wget \
-      nmap gnu-netcat traceroute whois
+      nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
       # linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git
-      # steam wine wine-gecko wine-mono
+      # steam wine wine-gecko wine-mono vulkan-headers
   fi
 
   echo -n "\nDo you want to start services? (Y/n): "
@@ -67,7 +67,7 @@ function update-system() {
         org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio org.libreoffice.LibreOffice \
         io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger org.kde.kdenlive \
         org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine org.bluesabre.MenuLibre \
-        com.mongodb.Compass io.github.realmazharhussain.GdmSettings
+        com.mongodb.Compass io.github.realmazharhussain.GdmSettings org.gnome.meld
   fi
 
   echo -e "\nSetting Gnome Settings"
