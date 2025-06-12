@@ -13,7 +13,9 @@ function update-system() {
   if [[ "$answer" != "n" ]]; then
     echo "Installing System Packages"
     yay -Sy --needed \
-      noto-fonts noto-fonts-extra ttf-twemoji ttf-comic-mono-git ttf-liberation \
+      noto-fonts noto-fonts-extra noto-fonts-cjk ttf-twemoji ttf-comic-mono-git ttf-liberation ttf-dejavu adobe-source-code-pro-fonts \
+      adobe-source-sans-fonts adobe-source-serif-fonts adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts ttf-hanazono \
+      ttf-opensans cantarell-fonts \
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep ladybird-git \
