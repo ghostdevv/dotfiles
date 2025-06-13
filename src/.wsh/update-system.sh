@@ -19,7 +19,7 @@ function update-system() {
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep ladybird-git \
-      appimagelauncher flatpak reflector balena-etcher-bin \
+      appimagelauncher flatpak reflector balena-etcher-bin chromium \
       bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify gparted vlc blender brave-bin filelight signal-desktop htop imagemagick \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
@@ -69,7 +69,7 @@ function update-system() {
         org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio org.libreoffice.LibreOffice \
         io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger org.kde.kdenlive \
         org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine org.bluesabre.MenuLibre \
-        com.mongodb.Compass io.github.realmazharhussain.GdmSettings org.gnome.meld
+        com.mongodb.Compass io.github.realmazharhussain.GdmSettings org.gnome.meld app.zen_browser.zen
   fi
 
   echo -e "\nSetting Gnome Settings"
