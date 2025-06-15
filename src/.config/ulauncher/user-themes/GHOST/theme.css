@@ -1,0 +1,45 @@
+@import url("reset.css");
+
+.app {
+    margin: -20px;
+    border-radius: 12px;
+    background-color: #212123;
+    /* border: 1px solid #29292a; */
+}
+
+.app,
+.input,
+.item-text,
+.item-name {
+    color: #eeeeee;
+}
+
+.input {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.item-name {
+    font-weight: 500;
+}
+
+.selected.item-box {
+    background-color: #29292a;
+}
+
+.item-icon {
+    margin-left: -12px;
+}
+
+.item-shortcut {
+    margin-left: 58px;
+}
+
+.prefs-btn {
+    opacity: 0.2;
+}
+
+.prefs-btn:hover,
+.prefs-button:focus {
+    opacity: 1;
+}

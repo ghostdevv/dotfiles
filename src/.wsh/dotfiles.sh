@@ -89,8 +89,14 @@ function update-dotfiles() {
   # Tools
   _dotfiles_download ".config/fastfetch/config.jsonc"
   _dotfiles_download ".config/pop-shell/config.json" "linux"
-  # Theme
+  # Gnome Theme
   _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
+  # ulauncher theme
+  _dotfiles_download ".config/ulauncher/user-themes/GHOST/dev.sh"
+  _dotfiles_download ".config/ulauncher/user-themes/GHOST/manifest.json"
+  _dotfiles_download ".config/ulauncher/user-themes/GHOST/reset.css"
+  _dotfiles_download ".config/ulauncher/user-themes/GHOST/theme.css"
+  _dotfiles_download ".config/ulauncher/user-themes/GHOST/theme-gtk-3.20.css"
   # Autostart
   _dotfiles_download ".config/autostart/1password.desktop" "linux"
   _dotfiles_download ".config/autostart/it.mijorus.smile.desktop" "linux"
