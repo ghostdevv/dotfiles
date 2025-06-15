@@ -27,7 +27,7 @@ function update-system() {
       zsh pnpm-shell-completion zsh-syntax-highlighting \
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse lib32-pipewire \
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools wget \
-      nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl ulauncher
+      nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl ulauncher tlrc-bin
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
       # linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git
