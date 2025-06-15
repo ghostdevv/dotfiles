@@ -92,7 +92,6 @@ function update-dotfiles() {
   # Gnome Theme
   _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
   # ulauncher
-  _dotfiles_download ".config/ulauncher/extensions.json"
   _dotfiles_download ".config/ulauncher/settings.json"
   _dotfiles_download ".config/ulauncher/shortcuts.json"
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/dev.sh"

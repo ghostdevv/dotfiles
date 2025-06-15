@@ -1,0 +1,4 @@
+- https://github.com/rinaldes/Project-Launcher
+- https://github.com/qcasey/ulauncher-homeassistant
+- https://github.com/commarla/ulauncher-looks-wtf
+- https://github.com/Ulauncher/ulauncher-emoji
