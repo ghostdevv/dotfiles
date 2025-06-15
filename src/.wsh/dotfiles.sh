@@ -91,7 +91,10 @@ function update-dotfiles() {
   _dotfiles_download ".config/pop-shell/config.json" "linux"
   # Gnome Theme
   _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
-  # ulauncher theme
+  # ulauncher
+  _dotfiles_download ".config/ulauncher/extensions.json"
+  _dotfiles_download ".config/ulauncher/settings.json"
+  _dotfiles_download ".config/ulauncher/shortcuts.json"
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/dev.sh"
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/manifest.json"
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/reset.css"
