@@ -27,7 +27,7 @@ function update-system() {
       zsh pnpm-shell-completion zsh-syntax-highlighting \
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse lib32-pipewire \
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools wget \
-      nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl
+      nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl ulauncher
 
       # amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmare
       # linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git
@@ -50,6 +50,7 @@ function update-system() {
     sudo systemctl enable bluetooth --now
     sudo systemctl enable gdm
     sudo systemctl enable fw-fanctrl --now
+    systemctl --user enable ulauncher --now
   fi
 
   if ! groups $USER | grep -q "\bdocker\b"; then
@@ -153,8 +154,13 @@ function update-system() {
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/name "'Emoji Picker (Smile) Toggle'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/command "'flatpak run it.mijorus.smile'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/binding "'<Super>period'"
+  ## rofi
+  dconf write /org/gnome/desktop/wm/keybindings/switch-input-source "@as []"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launcher-toggle/name "'Launcher Toggle'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launcher-toggle/command "'ulauncher-toggle'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launcher-toggle/binding "'<Super>space'"
   ## save keybindings
-  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/']"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/emoji-toggle/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launcher-toggle/']"
   # privacy
   echo " - privacy"
   dconf write /org/gnome/desktop/privacy/remember-app-usage "false"

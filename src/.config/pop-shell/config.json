@@ -10,6 +10,9 @@
         {
             "class": "it.mijorus.smile",
             "title": "Smile"
+        },
+        {
+            "class": "Ulauncher"
         }
     ],
     "skiptaskbarhidden": [],
