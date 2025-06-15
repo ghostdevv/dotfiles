@@ -19,7 +19,7 @@ function update-system() {
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
       mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep ladybird-git \
-      appimagelauncher flatpak reflector balena-etcher-bin chromium \
+      appimagelauncher flatpak reflector balena-etcher-bin chromium librewolf-bin \
       bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
       spotify gparted vlc blender brave-bin filelight signal-desktop htop imagemagick audacity \
       visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
