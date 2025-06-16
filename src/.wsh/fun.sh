@@ -1,6 +1,8 @@
 function imagine() {
     local text="${1:-"imagine"}"
-    local output="/tmp/imagine-$text.gif"
+    local output="/tmp/imagine/$text.gif"
+
+    mkdir -p "$(dirname $output)"
 
     if [[ ! -f "$output" ]]; then
         echo -e "Downloading & Caching ${text}.gif"
