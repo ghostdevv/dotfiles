@@ -48,10 +48,10 @@ function update-dotfiles() {
     local OUTPUT="$HOME/$1"
 
     if _has_update_available "$1"; then
-      printf "\n\nUpdating '$1'\n"
+      echo -e "Updating '$1'"
       mkdir -p "$(dirname $OUTPUT)"
-      curl -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/src/$1" -o "$OUTPUT"
-      echo
+      curl --progress-bar --http2 -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/src/$1" -o "$OUTPUT"
+      echo -e ""
     else
       echo "Skipping '$1'"
     fi
