@@ -11,11 +11,12 @@
         "edit_prediction_provider": "zed"
     },
     "agent": {
+        "default_profile": "write",
         "version": "2",
         "enabled": true,
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-sonnet-4-thinking-latest"
+            "model": "claude-sonnet-4-thinking"
         }
     },
     "collaboration_panel": {
