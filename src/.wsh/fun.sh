@@ -44,7 +44,11 @@ function ai-image() {
 
     echo -e ""
 
-    jq .result.image "$OUTPUT.json" --raw-output | base64 -d > "$OUTPUT.png"
-
-    viu "$OUTPUT.png" --width 45
+    if [[ "$(jq '.success' "$OUTPUT.json")" == "true" ]]; then
+        jq .result.image "$OUTPUT.json" --raw-output | base64 -d > "$OUTPUT.png"
+        viu "$OUTPUT.png" --width 45
+    else
+        echo -e "Failed to generate image :((";
+        jq . "$OUTPUT.json"
+    fi
 }
