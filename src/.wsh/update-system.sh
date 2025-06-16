@@ -47,6 +47,7 @@ function update-system() {
     sudo systemctl enable docker --now
     sudo systemctl enable sshd --now
     sudo systemctl enable reflector --now
+    sudo systemctl enable reflector.timer --now
     sudo systemctl enable bluetooth --now
     sudo systemctl enable gdm
     sudo systemctl enable fw-fanctrl --now
