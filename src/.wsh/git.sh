@@ -108,7 +108,7 @@ function peep() {
     echo "Repo '$1' found, opening..."
   fi
 
-  zed $OUTPUT
+  zeditor $OUTPUT
 }
 
 function clone() {
