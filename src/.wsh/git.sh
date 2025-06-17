@@ -67,20 +67,33 @@ function gsc() {
   done
 }
 
+function __wsh_parse_git_repo_arg() {
+    local REPO
+    if [[ "$1" =~ ^https?:// ]]; then
+      REPO="$1"
+    elif [[ "$1" =~ ^git@ ]]; then
+      REPO="$1"
+    elif [[ "$1" =~ ^[^/]+/[^/]+$ ]]; then
+      REPO="git@github.com:$1.git"
+    else
+      return 1
+    fi
+
+    echo "$REPO"
+}
+
 # Based on idea by @braebo
-peep() {
+function peep() {
   if [[ ! -n "$1" ]]; then
     echo "Usage: peep <repo>"
     return 1
   fi
 
   local REPO
-  if [[ "$1" =~ ^https?:// ]]; then
-    REPO="$1"
-  elif [[ "$1" =~ ^[^/]+/[^/]+$ ]]; then
-    REPO="https://github.com/$1.git"
-  else
-    echo "Please provide a repo path or url"
+  REPO=$(__wsh_parse_git_repo_arg "$1")
+
+  if [[ $? -ne 0 ]]; then
+    echo "Please provide a username/repo or full url"
     return 1
   fi
 
@@ -95,4 +108,24 @@ peep() {
   fi
 
   code $OUTPUT
+}
+
+function clone() {
+    if [[ ! -n "$1" ]]; then
+      echo "Usage: clone <repo>"
+      return 1
+    fi
+
+    local REPO
+    REPO=$(__wsh_parse_git_repo_arg "$1")
+
+    if [[ $? -ne 0 ]]; then
+      echo "Please provide a username/repo or full url"
+      return 1
+    fi
+
+    REPO="$(echo "$REPO" | sed 's|https://\([^/]*\)/\(.*\)|git@\1:\2|')"
+
+    echo "Cloning $REPO"
+    git clone $REPO ${@:2}
 }
