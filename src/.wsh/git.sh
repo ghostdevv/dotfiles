@@ -98,7 +98,8 @@ function peep() {
   fi
 
   local LATEST_COMMIT_HASH="$(git ls-remote --head $REPO --ref main --type commit | head -n 1 | awk '{print $1}')"
-  local OUTPUT="/tmp/peep-$LATEST_COMMIT_HASH"
+  local OUTPUT="/tmp/peep/$LATEST_COMMIT_HASH"
+  mkdir -p "/tmp/peep"
 
   if [[ ! -d "$OUTPUT" ]]; then
     git clone --depth 1 $REPO $OUTPUT
