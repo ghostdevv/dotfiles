@@ -97,17 +97,35 @@ function peep() {
     return 1
   fi
 
-  local LATEST_COMMIT_HASH="$(git ls-remote --head $REPO --ref main --type commit | head -n 1 | awk '{print $1}')"
+  local DEFAULT_BRANCH="$(git ls-remote --symref $REPO HEAD | grep '^ref:' | awk '{print $2}' | sed 's|refs/heads/||')"
+
+  if [[ -z "$DEFAULT_BRANCH" ]]; then
+    echo "No default branch found"
+    return 1
+  fi
+
+  local LATEST_COMMIT_HASH="$(git ls-remote --head $REPO --ref $DEFAULT_BRANCH --type commit | head -n 1 | awk '{print $1}')"
+
+  if [[ -z "$LATEST_COMMIT_HASH" ]]; then
+    echo "No commit found"
+    return 1
+  fi
+
   local OUTPUT="/tmp/peep/$LATEST_COMMIT_HASH"
   mkdir -p "/tmp/peep"
 
+  echo -e "peep v2.0.0"
+  echo -e "  repo           : $REPO"
+  echo -e "  destination    : $OUTPUT"
+  echo -e "  latest-commit  : $LATEST_COMMIT_HASH"
+  echo -e "  default-branch : $DEFAULT_BRANCH"
+
   if [[ ! -d "$OUTPUT" ]]; then
+    echo -e "\nCloning..."
     git clone --depth 1 $REPO $OUTPUT
-    printf "\nCloned '$1' to '$OUTPUT'! Opening...\n"
-  else
-    echo "Repo '$1' found, opening..."
   fi
 
+  echo -e "\nOpening in zed..."
   zeditor $OUTPUT
 }
 
