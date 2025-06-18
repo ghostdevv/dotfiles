@@ -15,6 +15,7 @@ function update-system() {
     yay -Sy --needed \
       noto-fonts noto-fonts-extra noto-fonts-cjk ttf-twemoji ttf-comic-mono-git ttf-liberation ttf-dejavu adobe-source-code-pro-fonts \
       adobe-source-sans-fonts adobe-source-serif-fonts adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts ttf-hanazono \
+      ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
       ttf-opensans cantarell-fonts \
       breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
       gnome-browser-connector gnome-tweaks power-profiles-daemon \
