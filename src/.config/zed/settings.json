@@ -115,5 +115,12 @@
     "calls": {
         "mute_on_join": true,
         "share_on_join": false
+    },
+    "lsp": {
+        "biome": {
+            "settings": {
+                "require_config_file": true
+            }
+        }
     }
 }
