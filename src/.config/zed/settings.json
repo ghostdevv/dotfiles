@@ -1,11 +1,4 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
+// https://zed.dev/docs/configuring-zed
 {
     "features": {
         "edit_prediction_provider": "zed"
@@ -20,16 +13,24 @@
         }
     },
     "collaboration_panel": {
-        "dock": "right"
+        "dock": "right",
+        "button": false
+    },
+    "use_smartcase_search": true,
+    "search": {
+        "button": false
     },
     "project_panel": {
-        "dock": "right"
+        "dock": "right",
+        "indent_size": 16,
+        "entry_spacing": "standard"
     },
     "git_panel": {
         "dock": "right"
     },
     "outline_panel": {
-        "dock": "right"
+        "dock": "right",
+        "button": false
     },
     "notification_panel": {
         "dock": "left"
@@ -39,6 +40,8 @@
     "theme": "Serendipity Sunset V1",
     "icon_theme": "Catppuccin Mocha",
     "buffer_font_family": "Comic Mono",
+    "preferred_line_length": 90,
+    "auto_update": false,
     "tab_size": 4,
     "terminal": {
         "font_family": "Comic Mono",
@@ -64,22 +67,53 @@
         "astro": true,
         "basher": true
     },
+    "minimap": {
+        "show": "never"
+    },
+    "toolbar": {
+        "code_actions": true
+    },
     "tabs": {
         "file_icons": true,
         "git_status": true,
         "show_diagnostics": "all"
     },
     "file_types": {
-        "JSON": ["prettierrc"]
+        "JSON": [
+            "prettierrc"
+        ]
     },
     "journal": {
         "hour_format": "hour24"
     },
-    "lsp": {
-        "biome": {
-            "settings": {
-                "require_config_file": true
-            }
+    "format_on_save": "on",
+    "prettier": {
+        "singleQuote": true,
+        "quoteProps": "as-needed",
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "arrowParens": "always",
+        "semi": true,
+        "useTabs": true,
+        "tabWidth": 4,
+        "svelteAllowShorthand": true,
+        "svelteBracketNewLine": false,
+        "svelteIndentScriptAndStyle": true
+    },
+    "diagnostics": {
+        "button": true,
+        "include_warnings": true,
+        "inline": {
+            "enabled": true
         }
+    },
+    "git": {
+        "inline_blame": {
+            "enabled": true
+        }
+    },
+    "calls": {
+        "mute_on_join": true,
+        "share_on_join": false
     }
 }
