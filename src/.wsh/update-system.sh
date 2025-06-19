@@ -72,7 +72,7 @@ function update-system() {
         io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger org.kde.kdenlive \
         org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine org.bluesabre.MenuLibre \
         com.mongodb.Compass io.github.realmazharhussain.GdmSettings org.gnome.meld app.zen_browser.zen \
-        it.mijorus.whisper net.mkiol.SpeechNote
+        it.mijorus.whisper net.mkiol.SpeechNote xyz.tytanium.DoorKnocker
   fi
 
   echo -e "\nSetting Gnome Settings"
