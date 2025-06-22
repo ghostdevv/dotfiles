@@ -25,6 +25,10 @@ alias pd="nr dev"
 alias pp="nr preview"
 alias pb="nr build"
 
+if ! command -v pnpx &> /dev/null; then
+    alias pnpx="pnpm dlx"
+fi
+
 # Update deps
 update() {
   if [[ -f "package-lock.json" ]]; then
