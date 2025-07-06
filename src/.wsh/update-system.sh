@@ -30,7 +30,7 @@ function update-system() {
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools wget python-black \
       nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl ulauncher tlrc-bin \
       amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmware \
-      linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git \
+      linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git hcloud \
       steam wine wine-gecko wine-mono vulkan-headers timeshift grub-btrfs inotify-tools gtkpod filezilla terraform
   fi
 
