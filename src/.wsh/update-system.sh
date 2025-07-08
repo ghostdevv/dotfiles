@@ -32,7 +32,7 @@ function update-system() {
       amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmware \
       linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git hcloud \
       steam wine wine-gecko wine-mono vulkan-headers timeshift grub-btrfs inotify-tools gtkpod filezilla terraform \
-      virtualbox virtualbox-host-dkms
+      virtualbox virtualbox-host-dkms linux-zen-headers
   fi
 
   echo -n "\nDo you want to start services? (Y/n): "
