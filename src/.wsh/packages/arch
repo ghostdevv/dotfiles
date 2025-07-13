@@ -1,0 +1,190 @@
+# Base System
+base
+base-devel
+linux-zen
+linux-zen-headers
+linux-headers
+linux-firmware
+grub
+grub-btrfs
+efibootmgr
+plymouth
+btrfs-progs
+networkmanager
+openssh
+
+# System Utilities
+timeshift
+reflector
+appimagelauncher
+flatpak
+inotify-tools
+
+# Hardware Support
+bluez
+bluez-utils
+gsmartcontrol
+smartmontools
+wireless-regdb
+acpi
+iio-sensor-proxy
+fprint
+usbutils
+dosfstools
+fw-fanctrl-git
+
+# Graphics & GPU
+mesa
+lib32-mesa
+mesa-utils
+vulkan-radeon
+vulkan-headers
+amd-ucode
+
+# Audio
+pipewire
+wireplumber
+pipewire-audio
+pipewire-alsa
+pipewire-pulse
+lib32-pipewire
+
+# Desktop Environment
+gnome
+gnome-tweaks
+gnome-browser-connector
+power-profiles-daemon
+archlinux-tweak-tool-git
+ulauncher
+
+# Virtualization
+virtualbox
+virtualbox-host-modules-arch
+
+# Fonts
+noto-fonts
+noto-fonts-extra
+noto-fonts-cjk
+ttf-twemoji
+ttf-comic-mono-git
+ttf-liberation
+ttf-dejavu
+adobe-source-code-pro-fonts
+adobe-source-sans-fonts
+adobe-source-serif-fonts
+adobe-source-han-sans-otc-fonts
+adobe-source-han-serif-otc-fonts
+ttf-hanazono
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-mono
+ttf-opensans
+cantarell-fonts
+
+# Theming & Icons
+breeze-gtk
+breeze-icons
+xcursor-breeze
+pop-icon-theme-git
+
+# Terminals & Shell
+zsh
+zsh-syntax-highlighting
+pnpm-shell-completion
+guake
+ghostty
+
+# Development
+git
+github-cli
+docker
+docker-compose
+visual-studio-code-bin
+zed
+nano
+jdk17-openjdk
+jdk21-openjdk
+cmake
+go
+terraform
+python-black
+just
+rustup
+lazygit
+lazydocker
+hcloud
+
+# CLI Utilities
+bat
+ripgrep
+fd
+tree
+jq
+htop
+fastfetch
+hyperfine
+tlrc-bin
+hexyl
+trash-cli
+viu
+man-db
+less
+wget
+cmatrix
+scrcpy
+screen
+ddgr
+7zip
+unzip
+
+# Network & Security
+mullvad-vpn-bin
+tailscale
+dog
+cloudflared-bin
+aws-cli-bin
+nmap
+gnu-netcat
+traceroute
+whois
+
+# Browsers
+chromium
+librewolf-bin
+brave-bin
+ladybird-git
+
+# Media & Entertainment
+spotify
+vlc
+audacity
+yt-dlp
+
+# Gaming
+steam
+wine
+wine-gecko
+wine-mono
+
+# Password Managers
+1password
+1password-cli
+bitwarden
+bitwarden-cli
+
+# File Management
+gtkpod
+filezilla
+gparted
+filelight
+
+# AI/ML
+ollama
+
+# Images
+perl-image-exiftool
+imagemagick
+blender
+
+# Misc Apps
+balena-etcher-bin
+signal-desktop

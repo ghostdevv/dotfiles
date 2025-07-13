@@ -1,0 +1,51 @@
+# System Utilities
+io.missioncenter.MissionCenter
+ca.desrt.dconf-editor
+com.github.tchx84.Flatseal
+io.github.flattool.Warehouse
+io.github.realmazharhussain.GdmSettings
+org.bluesabre.MenuLibre
+xyz.tytanium.DoorKnocker
+it.mijorus.whisper
+
+# Development
+org.dbgate.DbGate
+com.mongodb.Compass
+org.gnome.meld
+
+# Office & Productivity
+md.obsidian.Obsidian
+org.libreoffice.LibreOffice
+org.gnome.Papers
+com.github.jeromerobert.pdfarranger
+
+# Media & Content Creation
+org.gimp.GIMP
+com.obsproject.Studio
+org.kde.kdenlive
+page.tesk.Refine
+org.nickvision.tagger
+org.musicbrainz.Picard
+net.mkiol.SpeechNote
+
+# Communication
+com.discordapp.Discord
+com.tutanota.Tutanota
+
+# Browsers
+app.zen_browser.zen
+
+# Gaming
+com.modrinth.ModrinthApp
+
+# File Sharing
+org.qbittorrent.qBittorrent
+
+# Virtualization
+org.gnome.Boxes
+
+# Hardware Tools
+org.raspberrypi.rpi-imager
+
+# Utilities
+it.mijorus.smile

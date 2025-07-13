@@ -73,6 +73,8 @@ function update-dotfiles() {
   _dotfiles_download ".wsh/rust.sh"
   _dotfiles_download ".wsh/entry.sh"
   _dotfiles_download ".wsh/images/framework-16-expansion-cards.png"
+  _dotfiles_download ".wsh/packages/arch"
+  _dotfiles_download ".wsh/packages/flatpak"
   # bash & zsh config
   _dotfiles_download ".bash_aliases"
   _dotfiles_download ".zshrc-personal"
