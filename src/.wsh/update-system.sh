@@ -29,10 +29,10 @@ function update-system() {
       pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse lib32-pipewire \
       wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools wget python-black \
       nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl ulauncher tlrc-bin \
-      amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmware \
+      amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmware linux-zen-headers \
       linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git hcloud \
       steam wine wine-gecko wine-mono vulkan-headers timeshift grub-btrfs inotify-tools gtkpod filezilla terraform \
-      virtualbox virtualbox-host-dkms linux-zen-headers
+      virtualbox virtualbox-host-modules-arch
   fi
 
   echo -n "\nDo you want to start services? (Y/n): "
