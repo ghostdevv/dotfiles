@@ -10,29 +10,16 @@ function update-system() {
   read answer
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
+  function __wsh_read_pkg_list() {
+    local FILE="$HOME/.wsh/packages/$1"
+    local LIST="$(grep -v '^#' "$FILE" | grep -v '^[[:space:]]*$')"
+
+    echo "Installing $(echo $LIST | wc -l) $1 packages" >&2
+    echo $LIST | tr '\n' ' ' | sed 's/[[:space:]]*$//'
+  }
+
   if [[ "$answer" != "n" ]]; then
-    echo "Installing System Packages"
-    yay -Sy --needed \
-      noto-fonts noto-fonts-extra noto-fonts-cjk ttf-twemoji ttf-comic-mono-git ttf-liberation ttf-dejavu adobe-source-code-pro-fonts \
-      adobe-source-sans-fonts adobe-source-serif-fonts adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts ttf-hanazono \
-      ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
-      ttf-opensans cantarell-fonts \
-      breeze-gtk breeze-icons xcursor-breeze archlinux-tweak-tool-git \
-      gnome-browser-connector gnome-tweaks power-profiles-daemon \
-      mullvad-vpn-bin tailscale dog 7zip unzip trash-cli viu rustup fw-fanctrl-git tree ripgrep ladybird-git \
-      appimagelauncher flatpak reflector balena-etcher-bin chromium librewolf-bin \
-      bat fastfetch cmatrix ddgr jq 1password 1password-cli scrcpy yt-dlp cloudflared-bin screen aws-cli-bin perl-image-exiftool \
-      spotify gparted vlc blender brave-bin filelight signal-desktop htop imagemagick audacity \
-      visual-studio-code-bin lazydocker lazygit ghostty guake github-cli docker docker-compose hyperfine zed nano man-db \
-      jdk17-openjdk jdk21-openjdk cmake bluez bluez-utils gsmartcontrol smartmontools ollama \
-      zsh pnpm-shell-completion zsh-syntax-highlighting \
-      pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse lib32-pipewire \
-      wireless-regdb acpi iio-sensor-proxy fprint less usbutils dosfstools wget python-black \
-      nmap gnu-netcat traceroute whois go just pop-icon-theme-git fd hexyl ulauncher tlrc-bin \
-      amd-ucode base base-devel btrfs-progs efibootmgr gnome grub linux-headers linux-firmware linux-zen-headers \
-      linux-zen mesa lib32-mesa mesa-utils networkmanager openssh plymouth vulkan-radeon git hcloud \
-      steam wine wine-gecko wine-mono vulkan-headers timeshift grub-btrfs inotify-tools gtkpod filezilla terraform \
-      virtualbox virtualbox-host-modules-arch bitwarden bitwarden-cli
+    yay -Sy --needed $(__wsh_read_pkg_list "arch")
   fi
 
   echo -n "\nDo you want to start services? (Y/n): "
@@ -66,15 +53,7 @@ function update-system() {
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
   if [[ "$answer" != "n" ]]; then
-    echo -e "\nInstalling Flatpak Packages"
-    flatpak install --or-update flathub \
-        io.missioncenter.MissionCenter org.qbittorrent.qBittorrent it.mijorus.smile \
-        org.raspberrypi.rpi-imager ca.desrt.dconf-editor md.obsidian.Obsidian com.discordapp.Discord com.modrinth.ModrinthApp \
-        org.gimp.GIMP org.dbgate.DbGate com.github.tchx84.Flatseal com.obsproject.Studio org.libreoffice.LibreOffice \
-        io.github.flattool.Warehouse org.gnome.Papers com.github.jeromerobert.pdfarranger org.kde.kdenlive \
-        org.nickvision.tagger org.gnome.Boxes com.tutanota.Tutanota page.tesk.Refine org.bluesabre.MenuLibre \
-        com.mongodb.Compass io.github.realmazharhussain.GdmSettings org.gnome.meld app.zen_browser.zen \
-        it.mijorus.whisper net.mkiol.SpeechNote xyz.tytanium.DoorKnocker org.musicbrainz.Picard
+    flatpak install --or-update flathub $(__wsh_read_pkg_list "flatpak")
   fi
 
   echo -e "\nSetting Gnome Settings"
