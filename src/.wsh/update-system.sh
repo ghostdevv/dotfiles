@@ -1,3 +1,14 @@
+function __wsh_read_pkg_list() {
+    local FILE="$HOME/.wsh/packages/$1"
+    local LIST="$(grep -v '^#' "$FILE" | grep -v '^[[:space:]]*$')"
+
+    if [[ "$2" == "true" ]]; then
+        echo "Installing $(echo $LIST | wc -l) $1 packages" >&2
+    fi
+
+    echo $LIST | tr '\n' ' ' | sed 's/[[:space:]]*$//'
+}
+
 function update-system() {
   if ! grep -q -E '^ID=arch|ID_LIKE=.*arch' /etc/os-release; then
     echo "System is not Arch Linux or an Arch-based distribution, exiting..."
@@ -10,16 +21,8 @@ function update-system() {
   read answer
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
-  function __wsh_read_pkg_list() {
-    local FILE="$HOME/.wsh/packages/$1"
-    local LIST="$(grep -v '^#' "$FILE" | grep -v '^[[:space:]]*$')"
-
-    echo "Installing $(echo $LIST | wc -l) $1 packages" >&2
-    echo $LIST | tr '\n' ' ' | sed 's/[[:space:]]*$//'
-  }
-
   if [[ "$answer" != "n" ]]; then
-    yay -Sy --needed $(__wsh_read_pkg_list "arch")
+    yay -Sy --needed $(__wsh_read_pkg_list "arch" true)
   fi
 
   echo -n "\nDo you want to start services? (Y/n): "
@@ -53,7 +56,7 @@ function update-system() {
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
   if [[ "$answer" != "n" ]]; then
-    flatpak install --or-update flathub $(__wsh_read_pkg_list "flatpak")
+    flatpak install --or-update flathub $(__wsh_read_pkg_list "flatpak" true)
   fi
 
   echo -e "\nSetting Gnome Settings"
@@ -278,4 +281,50 @@ function update-system() {
   echo "- Setup dns"
   echo "- Press apply in gdm-settings"
   echo "- Restart your computer"
+}
+
+function pkg-diff() {
+    echo -e "\n# Arch"
+
+    local ARCH_APPS_INSTALLED="$(yay -Qeq | tr '\n' ' ')"
+    local ARCH_APPS_TARGET="$(__wsh_read_pkg_list "arch")"
+
+    local ARCH_NOT_TRACKED=$(comm -23 <(echo $ARCH_APPS_INSTALLED | tr ' ' '\n' | sort) <(echo $ARCH_APPS_TARGET | tr ' ' '\n' | sort) | sed '/^$/d')
+    local ARCH_NOT_INSTALLED=$(comm -13 <(echo $ARCH_APPS_INSTALLED | tr ' ' '\n' | sort) <(echo $ARCH_APPS_TARGET | tr ' ' '\n' | sort) | sed '/^$/d')
+
+    if [[ -z "$ARCH_NOT_TRACKED" && -z "$ARCH_NOT_INSTALLED" ]]; then
+        echo -e " => All good!"
+    else
+        if [[ -n "$ARCH_NOT_TRACKED" ]]; then
+            echo -e " => Not tracked:"
+            echo "$ARCH_NOT_TRACKED" | sed 's/^/    - /'
+        fi
+
+        if [[ -n "$ARCH_NOT_INSTALLED" ]]; then
+            echo -e " => Not installed:"
+            echo "$ARCH_NOT_INSTALLED" | sed 's/^/    - /'
+        fi
+    fi
+
+    echo -e "\n# Flatpak"
+
+    local FLATPAK_APPS_INSTALLED="$(flatpak list --app --columns application | tail -n +1 | tr '\n' ' ')"
+    local FLATPAK_APPS_TARGET="$(__wsh_read_pkg_list "flatpak")"
+
+    local FLATPAK_NOT_TRACKED=$(comm -23 <(echo $FLATPAK_APPS_INSTALLED | tr ' ' '\n' | sort) <(echo $FLATPAK_APPS_TARGET | tr ' ' '\n' | sort) | sed '/^$/d')
+    local FLATPAK_NOT_INSTALLED=$(comm -13 <(echo $FLATPAK_APPS_INSTALLED | tr ' ' '\n' | sort) <(echo $FLATPAK_APPS_TARGET | tr ' ' '\n' | sort) | sed '/^$/d')
+
+    if [[ -z "$FLATPAK_NOT_TRACKED" && -z "$FLATPAK_NOT_INSTALLED" ]]; then
+        echo -e " => All good!"
+    else
+        if [[ -n "$FLATPAK_NOT_TRACKED" ]]; then
+            echo -e " => Not tracked:"
+            echo "$FLATPAK_NOT_TRACKED" | sed 's/^/    - /'
+        fi
+
+        if [[ -n "$FLATPAK_NOT_INSTALLED" ]]; then
+            echo -e " => Not installed:"
+            echo "$FLATPAK_NOT_INSTALLED" | sed 's/^/    - /'
+        fi
+    fi
 }
