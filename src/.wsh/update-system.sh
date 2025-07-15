@@ -51,6 +51,11 @@ function update-system() {
     sudo usermod -aG docker $USER
   fi
 
+  if ! groups $USER | grep -q "\bvboxusers\b"; then
+    echo -e "\nAdded you to the vboxusers group"
+    sudo usermod -aG vboxusers $USER
+  fi
+
   echo -n "\nDo you want to install/update flatpak packages? (Y/n): "
   read answer
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
