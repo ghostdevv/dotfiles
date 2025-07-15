@@ -59,7 +59,9 @@ ulauncher
 
 # Virtualization
 virtualbox
-virtualbox-host-modules-arch
+virtualbox-host-dkms
+virtualbox-guest-iso
+virtualbox-ext-oracle
 
 # Fonts
 noto-fonts
