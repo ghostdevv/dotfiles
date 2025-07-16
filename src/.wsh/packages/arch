@@ -12,6 +12,7 @@ plymouth
 btrfs-progs
 networkmanager
 openssh
+python-mutagen
 
 # System Utilities
 timeshift

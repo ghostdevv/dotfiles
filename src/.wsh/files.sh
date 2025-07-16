@@ -53,3 +53,90 @@ function quish_simple() {
 
   ffmpeg -y -v quiet -stats -i "$file" -vf "scale=$resolution:force_original_aspect_ratio=decrease,pad=$resolution:(ow-iw)/2:(oh-ih)/2" -r "$fps" -b:v "$bitrate"k "${output}.${type}" </dev/null
 }
+
+function yt-dlp-abv() {
+    mkdir -p "video"
+    yt-dlp -f "bestvideo[height<=1080]+bestaudio" \
+        --write-thumbnail --embed-thumbnail --add-metadata \
+        --embed-subs --sub-langs "en" --write-auto-subs \
+        --merge-output-format mkv \
+        -o "video/%(uploader)s/%(title,id)S-%(id)s.%(ext)s" \
+        "$1"
+}
+
+function v2a() {
+    local SOURCE="video"
+    local DEST="audio"
+
+    if [[ ! -d "$SOURCE" ]]; then
+        echo "Error: Source directory '$SOURCE' does not exist"
+        return 1
+    fi
+
+    mkdir -p "$DEST"
+
+    # Find all video files recursively
+    find "$SOURCE" -type f \( -name "*.mkv" -o -name "*.mp4" -o -name "*.webm" \) | while read -r VIDEO_FILE; do
+        # Get relative path from source directory
+        local REL_PATH="${VIDEO_FILE#$SOURCE/}"
+        local DIR_PATH=$(dirname "$REL_PATH")
+        local FILENAME=$(basename "$REL_PATH")
+        local FILENAME_NO_EXT="${FILENAME%.*}"
+
+        # Create destination directory structure
+        local DEST_DIR="$DEST/$DIR_PATH"
+        mkdir -p "$DEST_DIR"
+
+        # Full path to output FLAC file
+        local OUTPUT_FILE="$DEST_DIR/$FILENAME_NO_EXT.flac"
+
+        # Skip if FLAC already exists
+        if [[ -f "$OUTPUT_FILE" ]]; then
+            echo "Skipping '$VIDEO_FILE' - FLAC already exists"
+            continue
+        fi
+
+        # Look for thumbnail image with same name
+        local THUMBNAIL=""
+        local VIDEO_DIR=$(dirname "$VIDEO_FILE")
+        for ext in webp jpg jpeg png; do
+            local THUMB_PATH="$VIDEO_DIR/$FILENAME_NO_EXT.$ext"
+            if [[ -f "$THUMB_PATH" ]]; then
+                THUMBNAIL="$THUMB_PATH"
+                break
+            fi
+        done
+
+        echo "Converting '$VIDEO_FILE' to '$OUTPUT_FILE'"
+
+        if [[ -n "$THUMBNAIL" ]]; then
+            echo "Adding cropped square thumbnail: $THUMBNAIL"
+            # Extract audio with cropped square thumbnail
+            ffmpeg -y -v quiet -stats \
+                -i "$VIDEO_FILE" \
+                -i "$THUMBNAIL" \
+                -map 0:a:0 \
+                -map 1:0 \
+                -c:a flac \
+                -vf "crop=min(iw\,ih):min(iw\,ih)" \
+                -c:v:0 png \
+                -disposition:v:0 attached_pic \
+                -metadata:s:v title="Album cover" \
+                -metadata:s:v comment="Cover (front)" \
+                -map_metadata 0 \
+                "$OUTPUT_FILE" </dev/null
+        else
+            echo "No thumbnail found, extracting audio only"
+            # Extract audio without thumbnail
+            ffmpeg -y -v quiet -stats -i "$VIDEO_FILE" \
+                -vn -c:a flac -map_metadata 0 \
+                "$OUTPUT_FILE" </dev/null
+        fi
+
+        if [[ $? -eq 0 ]]; then
+            echo "Successfully converted '$VIDEO_FILE'"
+        else
+            echo "Error converting '$VIDEO_FILE'"
+        fi
+    done
+}
