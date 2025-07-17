@@ -5,7 +5,6 @@
     },
     "agent": {
         "default_profile": "write",
-        "version": "2",
         "enabled": true,
         "default_model": {
             "provider": "zed.dev",
@@ -33,7 +32,7 @@
         "button": false
     },
     "notification_panel": {
-        "dock": "left"
+        "dock": null
     },
     "ui_font_size": 16,
     "buffer_font_size": 14,
@@ -123,5 +122,15 @@
                 "require_config_file": true
             }
         }
-    }
+    },
+    "ssh_connections": [
+		{
+			"host": "xo-monitoring",
+			"projects": [
+                {
+					"paths": ["/etc/nginx/sites-enabled"]
+                }
+			]
+		}
+	]
 }
