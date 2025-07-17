@@ -29,7 +29,7 @@ smartmontools
 wireless-regdb
 acpi
 iio-sensor-proxy
-fprint
+fprintd
 usbutils
 dosfstools
 fw-fanctrl-git
@@ -175,7 +175,6 @@ bitwarden
 bitwarden-cli
 
 # File Management
-gtkpod
 filezilla
 gparted
 filelight
