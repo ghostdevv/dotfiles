@@ -1,17 +1,11 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
+// https://zed.dev/docs/key-bindings
 [
-    {
-        "context": "Workspace",
-        "bindings": {
-            "ctrl-alt-b": "workspace::ToggleLeftDock",
-            "ctrl-b": "workspace::ToggleRightDock",
-            "alt-g": ["task::Spawn", { "task_name": "lazygit" }]
-        }
-    }
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-alt-b": "workspace::ToggleLeftDock",
+			"ctrl-b": "workspace::ToggleRightDock",
+			"alt-g": ["task::Spawn", { "task_name": "lazygit" }]
+		}
+	}
 ]

@@ -1,135 +1,133 @@
 // https://zed.dev/docs/configuring-zed
 {
-    "features": {
-        "edit_prediction_provider": "zed"
-    },
-    "agent": {
-        "default_profile": "write",
-        "enabled": true,
-        "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-sonnet-4-thinking"
-        }
-    },
-    "collaboration_panel": {
-        "dock": "right",
-        "button": false
-    },
-    "use_smartcase_search": true,
-    "search": {
-        "button": false
-    },
-    "project_panel": {
-        "dock": "right",
-        "indent_size": 16,
-        "entry_spacing": "standard"
-    },
-    "git_panel": {
-        "dock": "right"
-    },
-    "outline_panel": {
-        "dock": "right",
-        "button": false
-    },
-    "notification_panel": {
-        "dock": null
-    },
-    "ui_font_size": 16,
-    "buffer_font_size": 14,
-    "theme": "Serendipity Sunset V1",
-    "icon_theme": "Catppuccin Mocha",
-    "buffer_font_family": "Comic Mono",
-    "preferred_line_length": 90,
-    "auto_update": false,
-    "tab_size": 4,
-    "terminal": {
-        "font_family": "Comic Mono",
-        "font_size": 14,
-        "cursor_shape": "bar",
-        "blinking": "on",
-        "toolbar": {
-            "breadcrumbs": false
-        }
-    },
-    "restore_on_startup": "last_workspace",
-    "auto_install_extensions": {
-        "catppuccin-icons": true,
-        "docker-compose": true,
-        "dockerfile": true,
-        "svelte": true,
-        "deno": true,
-        "html": true,
-        "scss": true,
-        "sql": true,
-        "toml": true,
-        "biome": true,
-        "astro": true,
-        "basher": true
-    },
-    "minimap": {
-        "show": "never"
-    },
-    "toolbar": {
-        "code_actions": true
-    },
-    "tabs": {
-        "file_icons": true,
-        "git_status": true,
-        "show_diagnostics": "all"
-    },
-    "file_types": {
-        "JSON": [
-            "prettierrc"
-        ]
-    },
-    "journal": {
-        "hour_format": "hour24"
-    },
-    "format_on_save": "on",
-    "prettier": {
-        "allowed": true,
-        "singleQuote": true,
-        "quoteProps": "as-needed",
-        "trailingComma": "all",
-        "bracketSpacing": true,
-        "arrowParens": "always",
-        "semi": true,
-        "useTabs": true,
-        "tabWidth": 4,
-        "svelteAllowShorthand": true,
-        "svelteBracketNewLine": false,
-        "svelteIndentScriptAndStyle": true
-    },
-    "diagnostics": {
-        "button": true,
-        "include_warnings": true,
-        "inline": {
-            "enabled": true
-        }
-    },
-    "git": {
-        "inline_blame": {
-            "enabled": true
-        }
-    },
-    "calls": {
-        "mute_on_join": true,
-        "share_on_join": false
-    },
-    "lsp": {
-        "biome": {
-            "settings": {
-                "require_config_file": true
-            }
-        }
-    },
-    "ssh_connections": [
+	"features": {
+		"edit_prediction_provider": "zed"
+	},
+	"agent": {
+		"default_profile": "write",
+		"enabled": true,
+		"default_model": {
+			"provider": "zed.dev",
+			"model": "claude-sonnet-4-thinking"
+		}
+	},
+	"collaboration_panel": {
+		"dock": "right",
+		"button": false
+	},
+	"use_smartcase_search": true,
+	"search": {
+		"button": false
+	},
+	"project_panel": {
+		"dock": "right",
+		"indent_size": 16,
+		"entry_spacing": "standard"
+	},
+	"git_panel": {
+		"dock": "right"
+	},
+	"outline_panel": {
+		"dock": "right",
+		"button": false
+	},
+	"notification_panel": {
+		"dock": null
+	},
+	"ui_font_size": 16,
+	"buffer_font_size": 14,
+	"theme": "Serendipity Sunset V1",
+	"icon_theme": "Catppuccin Mocha",
+	"buffer_font_family": "Comic Mono",
+	"preferred_line_length": 90,
+	"auto_update": false,
+	"tab_size": 4,
+	"terminal": {
+		"font_family": "Comic Mono",
+		"font_size": 14,
+		"cursor_shape": "bar",
+		"blinking": "on",
+		"toolbar": {
+			"breadcrumbs": false
+		}
+	},
+	"restore_on_startup": "last_workspace",
+	"auto_install_extensions": {
+		"catppuccin-icons": true,
+		"docker-compose": true,
+		"dockerfile": true,
+		"svelte": true,
+		"deno": true,
+		"html": true,
+		"scss": true,
+		"sql": true,
+		"toml": true,
+		"biome": true,
+		"astro": true,
+		"basher": true
+	},
+	"minimap": {
+		"show": "never"
+	},
+	"toolbar": {
+		"code_actions": true
+	},
+	"tabs": {
+		"file_icons": true,
+		"git_status": true,
+		"show_diagnostics": "all"
+	},
+	"file_types": {
+		"JSON": ["prettierrc"]
+	},
+	"journal": {
+		"hour_format": "hour24"
+	},
+	"format_on_save": "on",
+	"prettier": {
+		"allowed": true,
+		"singleQuote": true,
+		"quoteProps": "as-needed",
+		"trailingComma": "all",
+		"bracketSpacing": true,
+		"arrowParens": "always",
+		"semi": true,
+		"useTabs": true,
+		"tabWidth": 4,
+		"svelteAllowShorthand": true,
+		"svelteBracketNewLine": false,
+		"svelteIndentScriptAndStyle": true
+	},
+	"diagnostics": {
+		"button": true,
+		"include_warnings": true,
+		"inline": {
+			"enabled": true
+		}
+	},
+	"git": {
+		"inline_blame": {
+			"enabled": true
+		}
+	},
+	"calls": {
+		"mute_on_join": true,
+		"share_on_join": false
+	},
+	"lsp": {
+		"biome": {
+			"settings": {
+				"require_config_file": true
+			}
+		}
+	},
+	"ssh_connections": [
 		{
 			"host": "xo-monitoring",
 			"projects": [
-                {
+				{
 					"paths": ["/etc/nginx/sites-enabled"]
-                }
+				}
 			]
 		}
 	]
