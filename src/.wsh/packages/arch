@@ -13,6 +13,7 @@ btrfs-progs
 networkmanager
 openssh
 python-mutagen
+sudo
 
 # System Utilities
 timeshift

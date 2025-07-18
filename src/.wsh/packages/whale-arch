@@ -1,0 +1,51 @@
+# Base System
+base
+base-devel
+linux-headers
+linux-firmware
+grub
+efibootmgr
+networkmanager
+openssh
+sudo
+
+# System Utilities
+reflector
+
+# Terminals & Shell
+zsh
+zsh-syntax-highlighting
+pnpm-shell-completion
+
+# Development
+git
+docker
+docker-compose
+cmake
+go
+lazydocker
+
+# CLI Utilities
+bat
+ripgrep
+fd
+tree
+jq
+htop
+fastfetch
+man-db
+less
+wget
+screen
+ddgr
+7zip
+unzip
+
+# Network & Security
+tailscale
+dog
+cloudflared-bin
+nmap
+gnu-netcat
+traceroute
+whois
