@@ -172,8 +172,6 @@ wine-mono
 # Password Managers
 1password
 1password-cli
-bitwarden
-bitwarden-cli
 
 # File Management
 filezilla
