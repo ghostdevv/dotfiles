@@ -1,5 +1,6 @@
 // https://zed.dev/docs/configuring-zed
 {
+	"context_servers": {},
 	"features": {
 		"edit_prediction_provider": "zed"
 	},
@@ -127,6 +128,17 @@
 			"projects": [
 				{
 					"paths": ["/etc/nginx/sites-enabled"]
+				},
+				{
+					"paths": ["/home/willow"]
+				}
+			]
+		},
+		{
+			"host": "whale",
+			"projects": [
+				{
+					"paths": ["/home/willow/bedrocko-4"]
 				}
 			]
 		}
