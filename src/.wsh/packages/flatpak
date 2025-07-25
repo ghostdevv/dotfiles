@@ -18,6 +18,7 @@ md.obsidian.Obsidian
 org.libreoffice.LibreOffice
 org.gnome.Papers
 com.github.jeromerobert.pdfarranger
+org.gnucash.GnuCash
 
 # Media & Content Creation
 org.gimp.GIMP
