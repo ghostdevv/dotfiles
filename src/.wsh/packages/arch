@@ -101,6 +101,7 @@ ghostty
 git
 github-cli
 docker
+docker-buildx
 docker-compose
 visual-studio-code-bin
 zed
