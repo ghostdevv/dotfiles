@@ -56,6 +56,11 @@ function update-system() {
     sudo usermod -aG vboxusers $USER
   fi
 
+  if ! groups $USER | grep -q "\bvboxusers\b"; then
+    echo -e "\nAdded you to the uucp group"
+    sudo usermod -aG uucp $USER
+  fi
+
   echo -n "\nDo you want to install/update flatpak packages? (Y/n): "
   read answer
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
