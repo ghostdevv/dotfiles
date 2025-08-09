@@ -12,6 +12,7 @@ it.mijorus.whisper
 org.dbgate.DbGate
 com.mongodb.Compass
 org.gnome.meld
+com.usebruno.Bruno
 
 # Office & Productivity
 md.obsidian.Obsidian
