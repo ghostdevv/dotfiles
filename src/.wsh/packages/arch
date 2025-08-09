@@ -21,6 +21,7 @@ reflector
 appimagelauncher
 flatpak
 inotify-tools
+dmidecode
 
 # Hardware Support
 bluez
