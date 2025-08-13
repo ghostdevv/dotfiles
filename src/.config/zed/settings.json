@@ -128,9 +128,6 @@
 			"projects": [
 				{
 					"paths": ["/etc/nginx/sites-enabled"]
-				},
-				{
-					"paths": ["/home/willow"]
 				}
 			]
 		},
@@ -138,7 +135,18 @@
 			"host": "whale",
 			"projects": [
 				{
-					"paths": ["/home/willow/bedrocko-4"]
+					"paths": ["/home/willow"]
+				},
+				{
+					"paths": ["/home/willow/bedrocko"]
+				}
+			]
+		},
+		{
+			"host": "sauron",
+			"projects": [
+				{
+					"paths": ["/home/ghost"]
 				}
 			]
 		}
