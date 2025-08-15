@@ -22,6 +22,7 @@ appimagelauncher
 flatpak
 inotify-tools
 dmidecode
+wl-clipboard
 
 # Hardware Support
 bluez
