@@ -119,6 +119,7 @@ rustup
 lazygit
 lazydocker
 hcloud
+gow-git
 
 # CLI Utilities
 bat
