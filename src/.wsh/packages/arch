@@ -187,6 +187,7 @@ filelight
 
 # AI/ML
 ollama
+llama.cpp-vulkan
 
 # Images
 perl-image-exiftool

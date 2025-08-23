@@ -68,6 +68,7 @@ gnu-netcat
 
 # AI/ML
 ollama
+llama.cpp-vulkan
 
 # Misc Apps
 phoronix-test-suite
