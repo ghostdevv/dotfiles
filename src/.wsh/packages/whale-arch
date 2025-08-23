@@ -32,6 +32,7 @@ fd
 tree
 jq
 htop
+btop
 fastfetch
 man-db
 less

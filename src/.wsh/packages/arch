@@ -129,6 +129,7 @@ fd
 tree
 jq
 htop
+btop
 fastfetch
 hyperfine
 tlrc-bin
