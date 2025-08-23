@@ -23,6 +23,7 @@ flatpak
 inotify-tools
 dmidecode
 wl-clipboard
+ethtool
 
 # Hardware Support
 bluez
