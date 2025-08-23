@@ -1,0 +1,71 @@
+# Base System
+base
+base-devel
+linux-headers
+linux-firmware
+grub
+efibootmgr
+networkmanager
+openssh
+sudo
+
+# System Utilities
+reflector
+inotify-tools
+dmidecode
+
+# Hardware Support
+usbutils
+
+# Graphics & GPU
+mesa
+mesa-utils
+vulkan-radeon
+vulkan-headers
+amd-ucode
+
+# Terminals & Shell
+zsh
+
+# Development
+git
+docker
+docker-buildx
+docker-compose
+nano
+cmake
+go
+rustup
+lazygit
+lazydocker
+
+# CLI Utilities
+bat
+ripgrep
+fd
+tree
+jq
+htop
+fastfetch
+tlrc-bin
+trash-cli
+man-db
+less
+wget
+cmatrix
+screen
+7zip
+unzip
+
+# Network & Security
+tailscale
+dog
+cloudflared-bin
+nmap
+gnu-netcat
+
+# AI/ML
+ollama
+
+# Misc Apps
+phoronix-test-suite
