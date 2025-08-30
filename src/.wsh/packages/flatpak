@@ -30,6 +30,7 @@ page.tesk.Refine
 org.nickvision.tagger
 org.musicbrainz.Picard
 net.mkiol.SpeechNote
+io.github.dynobo.sphereview
 
 # Communication
 com.discordapp.Discord
@@ -44,6 +45,7 @@ org.gnome.Aisleriot
 
 # File Sharing
 org.qbittorrent.qBittorrent
+org.sabnzbd.sabnzbd
 
 # Virtualization
 org.gnome.Boxes
