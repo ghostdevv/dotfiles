@@ -1,6 +1,7 @@
 # Base System
 base
 base-devel
+linux
 linux-zen
 linux-zen-headers
 linux-headers
@@ -24,6 +25,7 @@ inotify-tools
 dmidecode
 wl-clipboard
 ethtool
+yay
 
 # Hardware Support
 bluez
@@ -37,12 +39,14 @@ fprintd
 usbutils
 dosfstools
 fw-fanctrl-git
+brightnessctl
 
 # Graphics & GPU
 mesa
 lib32-mesa
 mesa-utils
 vulkan-radeon
+lib32-vulkan-radeon
 vulkan-headers
 amd-ucode
 
@@ -121,6 +125,7 @@ lazygit
 lazydocker
 hcloud
 gow-git
+uv
 
 # CLI Utilities
 bat
@@ -145,6 +150,7 @@ screen
 ddgr
 7zip
 unzip
+dex
 
 # Network & Security
 mullvad-vpn-bin
@@ -162,6 +168,7 @@ chromium
 librewolf-bin
 brave-bin
 ladybird-git
+firefox
 
 # Media & Entertainment
 spotify
@@ -169,6 +176,8 @@ vlc
 audacity
 yt-dlp
 feishin-bin
+strawberry
+carla
 
 # Gaming
 steam
