@@ -175,6 +175,7 @@ firefox
 # Media & Entertainment
 spotify
 vlc
+vlc-plugin-ffmpeg
 audacity
 yt-dlp
 feishin-bin
