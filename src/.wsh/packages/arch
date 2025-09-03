@@ -113,6 +113,7 @@ docker-buildx
 docker-compose
 visual-studio-code-bin
 zed
+neovim
 nano
 jdk17-openjdk
 jdk21-openjdk
