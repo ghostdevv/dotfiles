@@ -59,7 +59,6 @@ layer-rule {
     place-within-backdrop true
 }
 
-
 cursor {
     // Set the cursor theme
     // todo seems some flatpaks and/or xwayland apps have wrong cursor
@@ -80,15 +79,10 @@ window-rule {
     draw-border-with-background false
 }
 
-// Handle ghostty clipse window that is
-// spawned with Mod+V
+// Handle clipse-gui app
 window-rule {
-    match app-id="com.mitchellh.ghostty" title="clipse"
+    match app-id="clipse-gui"
     open-floating true
-
-    shadow {
-        on
-    }
 }
 
 // No hotkey overlay (Super+Shift+/) on startup
@@ -107,7 +101,7 @@ binds {
 	Mod+T repeat=false hotkey-overlay-title="Open terminal" { spawn "ghostty" "+new-window"; }
 	Alt+Return repeat=false hotkey-overlay-title="Toggle guake" { spawn "guake-toggle"; }
 	Mod+Space repeat=false hotkey-overlay-title="Toggle ulauncher" { spawn "ulauncher-toggle"; }
-	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "ghostty" "--title=clipse" "-e" "clipse"; }
+	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "clipse-gui"; }
 
     // Shift focus
     Mod+L { focus-column-right; }

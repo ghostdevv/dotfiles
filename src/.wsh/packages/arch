@@ -72,6 +72,7 @@ xdg-desktop-portal-gnome
 swaybg
 waybar
 clipse
+clipse-gui
 
 # Desktop Environment Shared
 power-profiles-daemon

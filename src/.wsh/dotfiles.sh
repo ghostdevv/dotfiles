@@ -96,6 +96,7 @@ function update-dotfiles() {
   _dotfiles_download ".config/pop-shell/config.json" "linux"
   # GNOME Theme
   _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
+  _dotfiles_download ".config/gtk-3.0/settings.ini"
   # ulauncher
   _dotfiles_download ".config/ulauncher/settings.json"
   _dotfiles_download ".config/ulauncher/shortcuts.json"
@@ -106,6 +107,7 @@ function update-dotfiles() {
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/theme-gtk-3.20.css"
   # Clipse
   _dotfiles_download ".config/clipse/config.json"
+  _dotfiles_download ".config/clipse-gui/settings.ini"
   # Niri
   _dotfiles_download ".config/niri/config.kdl"
   _dotfiles_download ".Xresources"
