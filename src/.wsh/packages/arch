@@ -180,6 +180,8 @@ nmap
 gnu-netcat
 traceroute
 whois
+gnome-keyring
+libsecret
 
 # Browsers
 chromium
