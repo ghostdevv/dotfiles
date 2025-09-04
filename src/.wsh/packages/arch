@@ -57,11 +57,23 @@ pipewire-audio
 pipewire-alsa
 pipewire-pulse
 lib32-pipewire
+playerctl
 
-# Desktop Environment
+# GNOME
 gnome
 gnome-tweaks
 gnome-browser-connector
+
+# Niri
+niri
+xwayland-satellite
+xdg-desktop-portal-gtk
+xdg-desktop-portal-gnome
+swaybg
+waybar
+clipse
+
+# Desktop Environment Shared
 power-profiles-daemon
 archlinux-tweak-tool-git
 ulauncher
@@ -78,6 +90,7 @@ noto-fonts-extra
 noto-fonts-cjk
 noto-fonts-emoji
 ttf-twemoji
+otf-font-awesome
 ttf-comic-mono-git
 ttf-liberation
 ttf-dejavu
@@ -128,6 +141,7 @@ lazydocker
 hcloud
 gow-git
 uv
+kdlfmt
 
 # CLI Utilities
 bat

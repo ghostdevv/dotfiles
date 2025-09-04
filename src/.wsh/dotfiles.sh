@@ -104,6 +104,14 @@ function update-dotfiles() {
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/reset.css"
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/theme.css"
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/theme-gtk-3.20.css"
+  # Clipse
+  _dotfiles_download ".config/clipse/config.json"
+  # Niri
+  _dotfiles_download ".config/niri/config.kdl"
+  # Waybar
+  _dotfiles_download ".config/waybar/config.jsonc"
+  _dotfiles_download ".config/waybar/style.css"
+  _dotfiles_download ".config/waybar/custom_modules/power-menu.xml"
   # Autostart
   _dotfiles_download ".config/autostart/1password.desktop" "linux"
   _dotfiles_download ".config/autostart/it.mijorus.smile.desktop" "linux"

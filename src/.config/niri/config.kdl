@@ -1,0 +1,191 @@
+// Disable client side window decorations
+prefer-no-csd
+
+// Set the screenshot save directory
+screenshot-path "~/Pictures/Screenshots/niri"
+
+// Spawn the background image at startup
+spawn-sh-at-startup "swaybg --image ~/Pictures/wallpaper.png"
+
+// Spawn waybar
+spawn-at-startup "waybar"
+
+// Spawn notification daemon
+spawn-at-startup "mako"
+
+// Clipse
+spawn-sh-at-startup "clipse -listen"
+
+layout {
+    // Window gaps
+    gaps 8
+
+    // Hide the background so that we use the one from
+    // the overview.
+    background-color "transparent"
+
+    focus-ring {
+        width 3
+        active-color "#2160ec"
+        // Only shows on other monitors as the last focused window
+        // todo should be dark colour?
+        inactive-color "#437af1"
+    }
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+}
+
+overview {
+    // Fallback colour if swaybg fails
+    backdrop-color "#121214"
+
+    // Hide the workspace outlines
+    workspace-shadow {
+        off
+    }
+}
+
+// Set the background for the overview, which will
+// also work for the workspace since it's transparent
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+
+cursor {
+    // Set the cursor theme
+    // todo seems some flatpaks and/or xwayland apps have wrong cursor
+    xcursor-theme "Breeze_Light"
+}
+
+// Rounded windows
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+// Prevent focus ring backdrop on ghostty
+// this makes it so that the transparency is
+// usable when window is focused
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    draw-border-with-background false
+}
+
+// Handle ghostty clipse window that is
+// spawned with Mod+V
+window-rule {
+    match app-id="com.mitchellh.ghostty" title="clipse"
+    open-floating true
+
+    shadow {
+        on
+    }
+}
+
+// No hotkey overlay (Super+Shift+/) on startup
+hotkey-overlay {
+    skip-at-startup
+}
+
+binds {
+    // Niri
+	Print repeat=false { screenshot; }
+	Mod+O repeat=false { toggle-overview; }
+	Mod+Shift+Slash hotkey-overlay-title="Show hotkey cheatsheet" { show-hotkey-overlay; }
+
+	// Apps/shortcuts
+	Mod+F repeat=false hotkey-overlay-title="Open file manager" { spawn "nautilus"; }
+	Mod+T repeat=false hotkey-overlay-title="Open terminal" { spawn "ghostty"; }
+	Alt+Return repeat=false hotkey-overlay-title="Toggle guake" { spawn "guake-toggle"; }
+	Mod+Space repeat=false hotkey-overlay-title="Toggle ulauncher" { spawn "ulauncher-toggle"; }
+	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "ghostty" "--title=clipse" "-e" "clipse"; }
+
+    // Shift focus
+    Mod+L { focus-column-right; }
+    Mod+WheelScrollRight cooldown-ms=150 { focus-column-right; }
+	Mod+H { focus-column-left; }
+    Mod+WheelScrollLeft cooldown-ms=150 { focus-column-left; }
+    Mod+Ctrl+K { focus-workspace-up; }
+    Mod+K { focus-window-up; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+    Mod+J { focus-window-down; }
+    Mod+Ctrl+J { focus-workspace-down; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+
+    // Window state
+	Mod+Q repeat=false { close-window; }
+	Mod+X repeat=false { toggle-window-floating; }
+
+    // Window sizing
+    Mod+M { maximize-column; }
+    Mod+Shift+M { fullscreen-window; }
+    Mod+R { switch-preset-column-width; }
+    Mod+Equal { set-column-width "+10%"; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Ctrl+F { expand-column-to-available-width; }
+
+
+    // Move windows
+    Mod+Shift+L { move-column-right; }
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+K { move-window-up; }
+    Mod+Shift+J { move-window-down; }
+
+    // Move windows into columns
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Shift+Comma { consume-window-into-column; }
+    Mod+Period { consume-or-expel-window-right; }
+    Mod+Shift+Period { expel-window-from-column; }
+
+    // Move columns
+    Mod+Ctrl+Shift+J { move-column-to-workspace-up; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Ctrl+Shift+K { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+
+    // Volume Controls
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Brightness Controls
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    // Mod+Escape hotkey-overlay-title="Lock" { spawn "swaylock"; }
+}
+
+input {
+    // focus-follows-mouse max-scroll-amount="95%"
+
+    touchpad {
+        natural-scroll
+        tap
+    }
+
+    mouse {
+        // non-natural scrolling vertically, natural scrolling horizontally
+        scroll-factor vertical=1.0 horizontal=-1.0
+    }
+}
+
+// dock monitor
+output "Dell Inc. DELL U2412M 0FFXD42O0LCS" {
+    position x=0 y=0
+    focus-at-startup
+}
+
+// built-in display
+output "eDP-1" {
+    mode "2560x1600@165.000"
+    variable-refresh-rate
+}

@@ -1,0 +1,53 @@
+window#waybar {
+	background-color: transparent;
+	border: none;
+	color: #eeeeee;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#clock,
+#privacy,
+#indicators,
+#vitals,
+#tray,
+#mpris,
+#language {
+	padding: 8px 12px;
+	margin: 4px;
+
+	font-size: 14px;
+	background-color: #29292a;
+	border-radius: 14px;
+
+	box-shadow:
+		1px 1px 6px #29292a inset,
+		-1px -1px 6px #121214 inset;
+
+	transition:
+		background-color 0.2s ease-in-out,
+		box-shadow 0.2s ease-in-out;
+}
+
+#clock:hover,
+#language:hover {
+	background-color: #2160ec;
+	box-shadow: none;
+}
+
+#indicators #bluetooth,
+#indicators #battery,
+#vitals #cpu,
+#vitals #memory {
+	margin: 0px 8px;
+}
+
+#privacy {
+	padding: 6px 12px;
+	background-color: #f29b4b;
+	box-shadow:
+		1px 1px 6px #f29b4b inset,
+		-1px -1px 6px #995618 inset;
+}
