@@ -94,7 +94,7 @@ function update-dotfiles() {
   # Tools
   _dotfiles_download ".config/fastfetch/config.jsonc"
   _dotfiles_download ".config/pop-shell/config.json" "linux"
-  # Gnome Theme
+  # GNOME Theme
   _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
   # ulauncher
   _dotfiles_download ".config/ulauncher/settings.json"
@@ -108,6 +108,7 @@ function update-dotfiles() {
   _dotfiles_download ".config/clipse/config.json"
   # Niri
   _dotfiles_download ".config/niri/config.kdl"
+  _dotfiles_download ".Xresources"
   # Waybar
   _dotfiles_download ".config/waybar/config.jsonc"
   _dotfiles_download ".config/waybar/style.css"

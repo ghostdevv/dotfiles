@@ -13,6 +13,9 @@ spawn-at-startup "waybar"
 // Spawn notification daemon
 spawn-at-startup "mako"
 
+// Fix cursor theme on xwayland
+spawn-sh-at-startup "xrdb -merge ~/.Xresources"
+
 // Clipse
 spawn-sh-at-startup "clipse -listen"
 
