@@ -85,6 +85,14 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="Guake"
+    open-floating true
+    open-maximized false
+    open-focused true
+    default-floating-position x=0 y=0 relative-to="top"
+}
+
 // No hotkey overlay (Super+Shift+/) on startup
 hotkey-overlay {
     skip-at-startup
