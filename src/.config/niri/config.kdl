@@ -104,7 +104,7 @@ binds {
 
 	// Apps/shortcuts
 	Mod+F repeat=false hotkey-overlay-title="Open file manager" { spawn "nautilus"; }
-	Mod+T repeat=false hotkey-overlay-title="Open terminal" { spawn "ghostty"; }
+	Mod+T repeat=false hotkey-overlay-title="Open terminal" { spawn "ghostty" "+new-window"; }
 	Alt+Return repeat=false hotkey-overlay-title="Toggle guake" { spawn "guake-toggle"; }
 	Mod+Space repeat=false hotkey-overlay-title="Toggle ulauncher" { spawn "ulauncher-toggle"; }
 	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "ghostty" "--title=clipse" "-e" "clipse"; }

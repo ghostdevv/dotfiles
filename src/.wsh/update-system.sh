@@ -141,7 +141,7 @@ function update-system() {
   echo " - custom keybindings"
   ## terminal
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
-  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'ghostty'"
+  dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'ghostty +new-window'"
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/binding "'<Super>T'"
   ## guake
   dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/guake-toggle/name "'Guake Toggle'"
