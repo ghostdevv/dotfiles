@@ -77,6 +77,8 @@ clipse
 power-profiles-daemon
 archlinux-tweak-tool-git
 ulauncher
+gtk4-layer-shell
+gtk-layer-shell
 
 # Virtualization
 virtualbox
