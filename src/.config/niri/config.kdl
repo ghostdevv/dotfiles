@@ -149,9 +149,9 @@ binds {
     Mod+Shift+Period { expel-window-from-column; }
 
     // Move columns
-    Mod+Ctrl+Shift+J { move-column-to-workspace-up; }
+    Mod+Ctrl+Shift+K { move-column-to-workspace-up; }
     Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
-    Mod+Ctrl+Shift+K { move-column-to-workspace-down; }
+    Mod+Ctrl+Shift+J { move-column-to-workspace-down; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
 
     // Volume Controls
