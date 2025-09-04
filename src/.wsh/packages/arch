@@ -79,6 +79,7 @@ archlinux-tweak-tool-git
 ulauncher
 gtk4-layer-shell
 gtk-layer-shell
+wayland-utils
 
 # Virtualization
 virtualbox
