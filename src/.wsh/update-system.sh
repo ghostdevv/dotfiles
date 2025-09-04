@@ -90,7 +90,7 @@ function update-system() {
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/icon-theme "'Adwaita'"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-color "'rgb(18, 18, 20)'"
   dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-type "'image'"
-  dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-image "'$HOME/Pictures/background.png'"
+  dconf write /io/github/realmazharhussain/GdmSettings/appearance/background-image "'$HOME/Pictures/wallpaper.png'"
   dconf write /org/gnome/desktop/sound/allow-volume-above-100-percent 'true'
   # wm keybindings
   echo " - wm keybindings"
