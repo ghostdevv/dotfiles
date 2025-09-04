@@ -93,6 +93,24 @@ window-rule {
     default-floating-position x=0 y=0 relative-to="top"
 }
 
+window-rule {
+    match app-id="Ulauncer"
+    match title="Ulauncher Preferences"
+    open-floating true
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id="Ulauncher"
+    match title="Ulauncher - Application Launcscroll-factorher"
+    open-floating true
+    default-floating-position x=0 y=200 relative-to="top"
+
+    shadow {
+        on
+    }
+}
+
 // No hotkey overlay (Super+Shift+/) on startup
 hotkey-overlay {
     skip-at-startup
