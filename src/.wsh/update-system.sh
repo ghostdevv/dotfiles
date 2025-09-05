@@ -73,13 +73,14 @@ function update-system() {
   # theming
   echo " - theme settings"
   gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 10'
+  gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 10'
   gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_Light'
   gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
-  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita:dark'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  gsettings set org.gnome.desktop.interface accent-color 'blue'
   gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
   dconf write /org/gnome/shell/extensions/user-theme/name "'GHOST'"
-  dconf write /org/gnome/desktop/interface/accent-color "'blue'"
   gsettings set org.gnome.desktop.interface show-battery-percentage true
   gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'com.discordapp.Discord.desktop', 'appimagekit_c6a7ecf86d9d84cd6069bf81dd900a87-karma.desktop', 'org.gnome.Nautilus.desktop', 'feishin.desktop', 'com.tutanota.Tutanota.desktop', 'md.obsidian.Obsidian.desktop', '1password.desktop']"
   gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
