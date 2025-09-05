@@ -87,10 +87,10 @@ wayland-utils
 wev
 
 # Virtualization
-virtualbox
-virtualbox-host-dkms
-virtualbox-guest-iso
-virtualbox-ext-oracle
+# virtualbox
+# virtualbox-host-dkms
+# virtualbox-guest-iso
+# virtualbox-ext-oracle
 
 # Fonts
 noto-fonts
@@ -142,14 +142,15 @@ jdk17-openjdk
 jdk21-openjdk
 cmake
 go
+gow-git
 terraform
 python-black
 just
 rustup
+zig
 lazygit
 lazydocker
 hcloud
-gow-git
 uv
 kdlfmt
 
@@ -175,8 +176,10 @@ scrcpy
 screen
 ddgr
 7zip
+zip
 unzip
 dex
+bc
 
 # Network & Security
 mullvad-vpn-bin
