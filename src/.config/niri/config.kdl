@@ -194,6 +194,7 @@ binds {
     // XF86RFKill
 
     // Mod+Escape hotkey-overlay-title="Lock" { spawn "swaylock"; }
+    Mod+Shift+Escape { quit; }
 }
 
 input {
