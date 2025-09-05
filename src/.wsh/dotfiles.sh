@@ -97,6 +97,7 @@ function update-dotfiles() {
   # GNOME Theme
   _dotfiles_download ".themes/GHOST/gnome-shell/gnome-shell.css" "linux"
   _dotfiles_download ".config/gtk-3.0/settings.ini"
+  _dotfiles_download ".config/gtk-4.0/settings.ini"
   # ulauncher
   _dotfiles_download ".config/ulauncher/settings.json"
   _dotfiles_download ".config/ulauncher/shortcuts.json"
