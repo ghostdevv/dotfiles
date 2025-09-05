@@ -84,6 +84,7 @@ ulauncher
 gtk4-layer-shell
 gtk-layer-shell
 wayland-utils
+wev
 
 # Virtualization
 virtualbox
