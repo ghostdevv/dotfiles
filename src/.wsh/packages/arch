@@ -73,6 +73,7 @@ swaybg
 waybar
 clipse
 clipse-gui
+mako
 
 # Desktop Environment Shared
 power-profiles-daemon

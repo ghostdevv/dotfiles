@@ -1,0 +1,15 @@
+#format=
+
+padding=12
+border-size=2
+border-radius=8
+
+text-color=#eeeeee
+background-color=#212123
+border-color=#2160ec
+progress-color=#29292a
+
+sort=-time
+#group-by-field
+default-timeout=5000
+ignore-timeout=0
