@@ -1,11 +1,33 @@
-window#waybar {
+* {
+	font-family: 'Adwaita Sans', 'Font Awesome 7 Free';
 	background-color: transparent;
-	border: none;
 	color: #eeeeee;
+	border: none;
+	padding: 0px;
+	margin: 0px;
 }
 
-window#waybar.hidden {
-	opacity: 0.2;
+.modules-left,
+.modules-center,
+.modules-right {
+	margin-top: 8px;
+	margin-bottom: 2px;
+}
+
+.modules-left {
+	margin-left: 2px;
+}
+
+.modules-right {
+	margin-right: 2px;
+}
+
+tooltip {
+	background: #29292a;
+	background-color: #29292a;
+	border: 2px solid #212123;
+	border-radius: 12px;
+	padding: 8px;
 }
 
 #clock,
@@ -14,17 +36,18 @@ window#waybar.hidden {
 #vitals,
 #tray,
 #mpris,
-#language {
-	padding: 8px 12px;
-	margin: 4px;
+#language,
+#workspaces {
+	padding: 4px 12px;
+	margin: 0px 4px;
 
 	font-size: 14px;
+	font-weight: 500;
 	background-color: #29292a;
-	border-radius: 14px;
+	border-radius: 16px;
+	border: 2px solid transparent;
 
-	box-shadow:
-		1px 1px 6px #29292a inset,
-		-1px -1px 6px #121214 inset;
+	box-shadow: inset 0 0 0 1px transparent;
 
 	transition:
 		background-color 0.2s ease-in-out,
@@ -32,16 +55,45 @@ window#waybar.hidden {
 }
 
 #clock:hover,
-#language:hover {
+#language:hover,
+#mpris:hover {
 	background-color: #2160ec;
 	box-shadow: none;
 }
 
+#workspaces button {
+	padding: 0px;
+	margin: 0px 4px;
+	transition: color 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+	color: #2160ec;
+	/* there is a background by default */
+	background: transparent;
+}
+
+/* the `*` is needed for some reason instead of `button` */
+#workspaces button.active {
+	/* Turn the outline circle into filled */
+	font-weight: 600;
+}
+
+#indicators #power-profiles-daemon,
+#indicators #idle_inhibitor,
 #indicators #bluetooth,
+#indicators #network,
+#indicators #wireplumber,
 #indicators #battery,
+#indicators #custom-power-menu,
 #vitals #cpu,
 #vitals #memory {
-	margin: 0px 8px;
+	margin: 0px 4px;
+}
+
+#indicators #bluetooth {
+	/* bluetooth icon is on this weight */
+	font-weight: 400;
 }
 
 #power-profiles-daemon,
@@ -59,9 +111,6 @@ window#waybar.hidden {
 }
 
 #privacy {
-	padding: 6px 12px;
-	background-color: #f29b4b;
-	box-shadow:
-		1px 1px 6px #f29b4b inset,
-		-1px -1px 6px #995618 inset;
+	color: #f29b4b;
+	border: 2px solid #f29b4b;
 }
