@@ -103,7 +103,7 @@ window-rule {
 
 window-rule {
     match app-id="Ulauncher"
-    match title="Ulauncher - Application Launcscroll-factorher"
+    match title="Ulauncher - Application Launcher"
     open-floating true
     default-floating-position x=0 y=200 relative-to="top"
 
