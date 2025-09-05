@@ -136,14 +136,22 @@ binds {
 	Mod+Space repeat=false hotkey-overlay-title="Toggle ulauncher" { spawn "ulauncher-toggle"; }
 	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "clipse-gui"; }
 
-    // Shift focus
+    // Shift focus right
     Mod+L { focus-column-right; }
+    // Mod+Shift+L { focus-output-right; }
     Mod+WheelScrollRight cooldown-ms=150 { focus-column-right; }
+
+    // Shift focus left
 	Mod+H { focus-column-left; }
-    Mod+WheelScrollLeft cooldown-ms=150 { focus-column-left; }
-    Mod+Ctrl+K { focus-workspace-up; }
+    // Mod+Ctrl+H { focus-output-left; }
+	Mod+WheelScrollLeft cooldown-ms=150 { focus-column-left; }
+
+    // Shift focus up
     Mod+K { focus-window-up; }
+    Mod+Ctrl+K { focus-workspace-up; }
     Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+
+    // Shift focus down
     Mod+J { focus-window-down; }
     Mod+Ctrl+J { focus-workspace-down; }
     Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
