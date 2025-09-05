@@ -112,6 +112,12 @@ window-rule {
     }
 }
 
+// Hide 1password when screensharing
+window-rule {
+    match app-id="1Password"
+    block-out-from "screencast"
+}
+
 // No hotkey overlay (Super+Shift+/) on startup
 hotkey-overlay {
     skip-at-startup
