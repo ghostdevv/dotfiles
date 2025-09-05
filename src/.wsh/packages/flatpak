@@ -31,10 +31,15 @@ org.nickvision.tagger
 org.musicbrainz.Picard
 net.mkiol.SpeechNote
 io.github.dynobo.sphereview
+org.gnome.Snapshot
+org.gnome.Loupe
+org.gnome.font-viewer
 
 # Communication
 com.discordapp.Discord
 com.tutanota.Tutanota
+org.gnome.Contacts
+org.gnome.Calendar
 
 # Browsers
 app.zen_browser.zen
@@ -55,3 +60,9 @@ org.raspberrypi.rpi-imager
 
 # Utilities
 it.mijorus.smile
+org.gnome.Characters
+org.gnome.TextEditor
+org.gnome.Calculator
+org.gnome.Maps
+org.gnome.Weather
+org.gnome.clocks

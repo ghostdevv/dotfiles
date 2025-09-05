@@ -15,6 +15,7 @@ networkmanager
 openssh
 python-mutagen
 sudo
+gdm
 
 # System Utilities
 timeshift
@@ -40,6 +41,7 @@ usbutils
 dosfstools
 fw-fanctrl-git
 brightnessctl
+power-profiles-daemon
 
 # Graphics & GPU
 mesa
@@ -59,17 +61,25 @@ pipewire-pulse
 lib32-pipewire
 playerctl
 
-# GNOME
-gnome
+# GNOME Specific
 gnome-tweaks
+gnome-console
 gnome-browser-connector
-gnome-themes-extra
+gnome-connections
+gnome-remote-desktop
+gnome-session
+gnome-settings-daemon
+gnome-shell
+totem
+tecla
+gnome-menus
+gnome-color-manager
+gnome-control-center
+evince # to be replaced by papers
 
 # Niri
 niri
 xwayland-satellite
-xdg-desktop-portal-gtk
-xdg-desktop-portal-gnome
 swaybg
 waybar
 clipse
@@ -77,12 +87,10 @@ clipse-gui
 mako
 swayosd
 
-# Desktop Environment Shared
-power-profiles-daemon
-archlinux-tweak-tool-git
-ulauncher
-gtk4-layer-shell
-gtk-layer-shell
+# Wayland & XDG
+xdg-user-dirs-gtk
+xdg-desktop-portal-gtk
+xdg-desktop-portal-gnome
 wayland-utils
 wev
 
@@ -118,6 +126,9 @@ breeze-gtk
 breeze-icons
 xcursor-breeze
 pop-icon-theme-git
+gtk4-layer-shell
+gtk-layer-shell
+gnome-themes-extra
 
 # Terminals & Shell
 zsh
@@ -210,6 +221,10 @@ yt-dlp
 feishin-bin
 strawberry
 carla
+decibels
+gnome-music
+grilo
+grilo-plugins
 
 # Gaming
 steam
@@ -222,10 +237,27 @@ wine-mono
 1password-cli
 
 # File Management
-filezilla
 gparted
+gnome-disk-utility
 filelight
 rclone
+baobab
+nautilus
+gnome-user-share
+sushi
+
+## GNOME Virtual File System
+gvfs
+gvfs-afc
+gvfs-dnssd
+gvfs-goa
+gvfs-google
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-onedrive
+gvfs-smb
+gvfs-wsdd
 
 # AI/ML
 ollama
@@ -241,3 +273,7 @@ phoronix-test-suite
 etcher-bin
 signal-desktop
 rbutil
+archlinux-tweak-tool-git
+ulauncher
+orca
+gnome-system-monitor
