@@ -8,7 +8,7 @@ screenshot-path "~/Pictures/Screenshots/niri"
 spawn-sh-at-startup "swaybg --image ~/Pictures/wallpaper.png"
 
 // Spawn waybar
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
 
 // Spawn notification & osd daemon
 spawn-at-startup "mako"
