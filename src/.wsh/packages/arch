@@ -75,7 +75,9 @@ tecla
 gnome-menus
 gnome-color-manager
 gnome-control-center
-evince # to be replaced by papers
+gnome-shell-extensions
+# to be replaced by papers
+evince
 
 # Niri
 niri
@@ -191,6 +193,7 @@ zip
 unzip
 dex
 bc
+zstd
 
 # Network & Security
 mullvad-vpn-bin
