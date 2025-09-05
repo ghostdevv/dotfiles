@@ -129,14 +129,13 @@
 		"format": "  {icon} {volume}%",
 		"format-muted": "  ",
 		"format-icons": ["", "", ""],
-		// "on-click": "helvum",
-		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-click": "swayosd-client --output-volume=mute-toggle",
 	},
 	"wireplumber#source": {
 		"node-type": "Audio/Source",
 		"format": "  󰍬 {volume}%",
 		"format-muted": "  󰍭",
-		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+		"on-click": "swayosd-client --input-volume=mute-toggle",
 		"scroll-step": 5,
 	},
 	"battery": {

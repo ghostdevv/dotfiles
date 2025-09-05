@@ -10,8 +10,9 @@ spawn-sh-at-startup "swaybg --image ~/Pictures/wallpaper.png"
 // Spawn waybar
 spawn-at-startup "waybar"
 
-// Spawn notification daemon
+// Spawn notification & osd daemon
 spawn-at-startup "mako"
+spawn-sh-at-startup "GTK_THEME=Adwaita:dark swayosd-server"
 
 // Fix cursor theme on xwayland
 spawn-sh-at-startup "xrdb -merge ~/.Xresources"
@@ -155,7 +156,6 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-
     // Move windows
     Mod+Shift+L { move-column-right; }
     Mod+Shift+H { move-column-left; }
@@ -175,14 +175,23 @@ binds {
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
 
     // Volume Controls
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume=raise"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume=lower"; }
+    XF86AudioMute allow-when-locked=true { spawn "swayosd-client" "--output-volume=mute-toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "swayosd-client" "--input-volume=mute-toggle"; }
+
+    // Media ControlsXF86Tools
+    XF86AudioPlay allow-when-locked=true { spawn "swayosd-client" "--playerctl=play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "swayosd-client" "--playerctl=next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "swayosd-client" "--playerctl=previous"; }
 
     // Brightness Controls
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness=+5"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness=-5"; }
+
+    // Special
+    XF86Tools repeat=false { spawn "dex" "/home/willow/.local/share/applications/appimagekit_c6a7ecf86d9d84cd6069bf81dd900a87-karma.desktop"; }
+    // XF86RFKill
 
     // Mod+Escape hotkey-overlay-title="Lock" { spawn "swaylock"; }
 }
