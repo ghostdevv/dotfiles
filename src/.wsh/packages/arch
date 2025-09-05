@@ -122,7 +122,9 @@ zsh
 zsh-syntax-highlighting
 pnpm-shell-completion
 guake
-ghostty
+ghostty-git
+ghostty-shell-integration-git
+ghostty-terminfo-git
 
 # Development
 git
