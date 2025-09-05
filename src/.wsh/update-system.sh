@@ -261,9 +261,9 @@ function update-system() {
 
     if [[ ! -e "/lib/systemd/system/search.service" ]]; then
       echo "\nAdding Search Service"
-      sudo curl -sL -o /lib/systemd/system/search.service https://raw.githubusercontent.com/ghostdevv/search/main/search.service \
-        && sudo systemctl daemon-reload \
-        && sudo systemctl enable search --now
+      curl -sL -o "$HOME/.config/systemd/user/search.service" 'https://raw.githubusercontent.com/ghostdevv/search/main/search.service' \
+        && systemctl --user daemon-reload \
+        && systemctl --user enable search --now
     fi
 
     sudo systemctl restart search
