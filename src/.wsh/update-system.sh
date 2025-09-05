@@ -72,11 +72,11 @@ function update-system() {
   echo -e "\nSetting Gnome Settings"
   # theming
   echo " - theme settings"
-  gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 10'
-  gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 10'
+  gsettings set org.gnome.desktop.interface monospace-font-name 'Comic Mono 12'
+  gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 12'
   gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_Light'
   gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
-  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita:dark'
+  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   gsettings set org.gnome.desktop.interface accent-color 'blue'
   gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
