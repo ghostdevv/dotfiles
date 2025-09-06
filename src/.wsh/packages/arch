@@ -89,6 +89,18 @@ clipse-gui
 mako
 swayosd
 
+# wshell
+aylurs-gtk-shell-git
+libastal
+libastal-4
+libastal-io
+libastal-tray
+libastal-wireplumber
+libastal-power-profiles
+libastal-bluetooth
+libastal-battery
+libastal-network
+
 # Wayland & XDG
 xdg-user-dirs-gtk
 xdg-desktop-portal-gtk
