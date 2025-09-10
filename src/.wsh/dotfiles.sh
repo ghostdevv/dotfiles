@@ -112,6 +112,7 @@ function update-dotfiles() {
   # Niri
   _dotfiles_download ".config/niri/config.kdl"
   _dotfiles_download ".Xresources"
+  _dotfiles_download ".config/hypr/hyprlock.conf"
   # Waybar
   _dotfiles_download ".config/waybar/config.jsonc"
   _dotfiles_download ".config/waybar/style.css"

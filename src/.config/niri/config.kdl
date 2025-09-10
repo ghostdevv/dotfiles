@@ -207,7 +207,7 @@ binds {
     XF86Tools repeat=false { spawn "dex" "/home/willow/.local/share/applications/appimagekit_c6a7ecf86d9d84cd6069bf81dd900a87-karma.desktop"; }
     // XF86RFKill
 
-    // Mod+Escape hotkey-overlay-title="Lock" { spawn "swaylock"; }
+    Mod+Escape hotkey-overlay-title="Lock" { spawn "hyprlock"; }
     Mod+Shift+Escape { quit; }
 }
 
