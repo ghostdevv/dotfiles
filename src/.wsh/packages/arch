@@ -90,6 +90,7 @@ clipse-gui
 mako
 swayosd
 hyprlock
+swayidle
 
 # wshell
 aylurs-gtk-shell-git
