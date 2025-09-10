@@ -27,6 +27,7 @@ dmidecode
 wl-clipboard
 ethtool
 yay
+waycheck
 
 # Hardware Support
 bluez
