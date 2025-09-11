@@ -91,6 +91,8 @@ mako
 swayosd
 hyprlock
 swayidle
+pantheon-polkit-agent
+gtk-theme-elementary
 
 # wshell
 aylurs-gtk-shell-git
