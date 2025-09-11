@@ -15,7 +15,7 @@ spawn-at-startup "swayidle" "-w" "timeout" "601" "pidof hyprlock || hyprlock" "t
 
 // Spawn notification & osd daemon
 spawn-at-startup "mako"
-spawn-sh-at-startup "GTK_THEME=Adwaita:dark swayosd-server"
+spawn-at-startup "swayosd-server"
 
 // Polkit agent
 spawn-sh-at-startup "GTK_THEME=io.elementary.stylesheet.blueberry:dark /usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit"

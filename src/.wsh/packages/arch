@@ -148,6 +148,9 @@ pop-icon-theme-git
 gtk4-layer-shell
 gtk-layer-shell
 gnome-themes-extra
+adw-gtk-theme
+adwaita-icon-theme
+adwaita-icon-theme-legacy
 
 # Terminals & Shell
 zsh
