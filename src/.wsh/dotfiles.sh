@@ -120,6 +120,8 @@ function update-dotfiles() {
   # Autostart
   _dotfiles_download ".config/autostart/1password.desktop" "linux"
   _dotfiles_download ".config/autostart/it.mijorus.smile.desktop" "linux"
+  # Brave
+  _dotfiles_download ".config/brave-flags.conf"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
