@@ -16,6 +16,7 @@ openssh
 python-mutagen
 sudo
 gdm
+clamav
 
 # System Utilities
 timeshift
