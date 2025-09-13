@@ -124,6 +124,13 @@ window-rule {
     block-out-from "screencast"
 }
 
+// Handle brave picture-in-picture
+window-rule {
+    match title="Picture-in-picture"
+    open-floating true
+    default-floating-position x=25 y=25 relative-to="bottom-right"
+}
+
 // No hotkey overlay (Super+Shift+/) on startup
 hotkey-overlay {
     skip-at-startup
