@@ -63,6 +63,9 @@ cmatrix
 screen
 7zip
 unzip
+nvtop
+radeontop
+amdgpu_top
 
 # Network & Security
 tailscale
@@ -70,11 +73,13 @@ dog
 cloudflared-bin
 nmap
 gnu-netcat
+caddy
 
 # AI/ML
 ollama
 llama.cpp-vulkan
 rocm-smi-lib
+llama-swap
 
 # Misc Apps
 phoronix-test-suite
