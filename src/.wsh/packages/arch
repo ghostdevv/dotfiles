@@ -28,6 +28,8 @@ dmidecode
 wl-clipboard
 ethtool
 yay
+pacman-contrib
+pacgraph
 waycheck
 
 # Hardware Support
@@ -221,7 +223,6 @@ mullvad-vpn-bin
 tailscale
 dog
 cloudflared-bin
-aws-cli-bin
 nmap
 gnu-netcat
 traceroute
@@ -249,6 +250,7 @@ decibels
 gnome-music
 grilo
 grilo-plugins
+helvum
 
 # Gaming
 steam
@@ -269,6 +271,7 @@ baobab
 nautilus
 gnome-user-share
 sushi
+diffpdf
 
 ## GNOME Virtual File System
 gvfs

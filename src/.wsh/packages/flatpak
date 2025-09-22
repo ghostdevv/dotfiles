@@ -47,6 +47,7 @@ app.zen_browser.zen
 # Gaming
 com.modrinth.ModrinthApp
 org.gnome.Aisleriot
+org.gnome.Chess
 
 # File Sharing
 org.qbittorrent.qBittorrent
