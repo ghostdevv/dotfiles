@@ -57,6 +57,8 @@ function update-dotfiles() {
     fi
   }
 
+  # todo add parallel
+
   # wsh - if an update is needed, we remove the whole
   # directory to make removing orphaned files easier
   if _has_update_available ".wsh"; then rm -r "$HOME/.wsh"; fi
