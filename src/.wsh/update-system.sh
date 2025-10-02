@@ -267,7 +267,7 @@ function update-system() {
         && systemctl --user enable search --now
     fi
 
-    sudo systemctl restart search
+    systemctl restart --user search
   }
 
   if command -v search &> /dev/null; then
