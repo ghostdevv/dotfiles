@@ -120,6 +120,8 @@ function update-dotfiles() {
   _dotfiles_download ".config/autostart/it.mijorus.smile.desktop" "linux"
   # Brave
   _dotfiles_download ".config/brave-flags.conf"
+  # Mako
+  _dotfiles_download ".config/mako/config"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
