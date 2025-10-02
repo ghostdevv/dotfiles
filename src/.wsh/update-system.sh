@@ -195,12 +195,12 @@ function update-system() {
   dconf write /org/guake/general/hide-tabs-if-one-tab "true"
   dconf write /org/guake/general/start-at-login "true"
   # clocks
-  echo " - clocks"
-  gsettings set org.gnome.clocks world-clocks "[{'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]"
-  gsettings set org.gnome.desktop.interface clock-show-seconds true
-  gsettings set org.gnome.desktop.interface clock-show-date true
-  gsettings set org.gnome.desktop.interface clock-show-weekday false
-  gsettings set org.gnome.desktop.interface clock-format '24h'
+  # echo " - clocks"
+  # gsettings set org.gnome.clocks world-clocks "[{'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]"
+  # gsettings set org.gnome.desktop.interface clock-show-seconds true
+  # gsettings set org.gnome.desktop.interface clock-show-date true
+  # gsettings set org.gnome.desktop.interface clock-show-weekday false
+  # gsettings set org.gnome.desktop.interface clock-format '24h'
   # file associations
   echo " - file associations"
   xdg-settings set default-web-browser brave-browser.desktop
