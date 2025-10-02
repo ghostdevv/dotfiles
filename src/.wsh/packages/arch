@@ -2,15 +2,15 @@
 base
 base-devel
 linux
+linux-headers
 linux-zen
 linux-zen-headers
-linux-headers
 linux-firmware
 grub
-grub-btrfs
+#grub-btrfs
+# btrfs-progs
 efibootmgr
 plymouth
-btrfs-progs
 networkmanager
 openssh
 python-mutagen
@@ -27,7 +27,7 @@ inotify-tools
 dmidecode
 wl-clipboard
 ethtool
-yay
+yay-bin
 pacman-contrib
 pacgraph
 waycheck
@@ -59,6 +59,7 @@ amd-ucode
 # Audio
 pipewire
 wireplumber
+pipewire-jack
 pipewire-audio
 pipewire-alsa
 pipewire-pulse
@@ -146,7 +147,6 @@ cantarell-fonts
 breeze-gtk
 breeze-icons
 xcursor-breeze
-pop-icon-theme-git
 gtk4-layer-shell
 gtk-layer-shell
 gnome-themes-extra
@@ -156,12 +156,13 @@ adwaita-icon-theme-legacy
 
 # Terminals & Shell
 zsh
+oh-my-zsh-git
 zsh-syntax-highlighting
 pnpm-shell-completion
 guake
-ghostty-git
-ghostty-shell-integration-git
-ghostty-terminfo-git
+ghostty
+ghostty-shell-integration
+ghostty-terminfo
 
 # Development
 git
