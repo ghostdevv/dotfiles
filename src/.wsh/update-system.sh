@@ -51,12 +51,12 @@ function update-system() {
     sudo usermod -aG docker $USER
   fi
 
-  if ! groups $USER | grep -q "\bvboxusers\b"; then
-    echo -e "\nAdded you to the vboxusers group"
-    sudo usermod -aG vboxusers $USER
-  fi
+  # if ! groups $USER | grep -q "\bvboxusers\b"; then
+  #   echo -e "\nAdded you to the vboxusers group"
+  #   sudo usermod -aG vboxusers $USER
+  # fi
 
-  if ! groups $USER | grep -q "\bvboxusers\b"; then
+  if ! groups $USER | grep -q "\buucp\b"; then
     echo -e "\nAdded you to the uucp group"
     sudo usermod -aG uucp $USER
   fi
