@@ -115,10 +115,6 @@ function update-dotfiles() {
   _dotfiles_download ".config/niri/config.kdl"
   _dotfiles_download ".Xresources"
   _dotfiles_download ".config/hypr/hyprlock.conf"
-  # Waybar
-  _dotfiles_download ".config/waybar/config.jsonc"
-  _dotfiles_download ".config/waybar/style.css"
-  _dotfiles_download ".config/waybar/custom_modules/power-menu.xml"
   # Autostart
   _dotfiles_download ".config/autostart/1password.desktop" "linux"
   _dotfiles_download ".config/autostart/it.mijorus.smile.desktop" "linux"

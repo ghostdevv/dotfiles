@@ -7,9 +7,6 @@ screenshot-path "~/Pictures/Screenshots/niri"
 // Spawn the background image at startup
 spawn-sh-at-startup "swaybg --image ~/Pictures/wallpaper.png"
 
-// Spawn waybar
-// spawn-at-startup "waybar"
-
 // Spawn idle handler
 spawn-at-startup "swayidle" "-w" "timeout" "601" "pidof hyprlock || hyprlock" "timeout" "600" "niri msg action power-off-monitors" "resume" "niri msg action power-on-monitors" "before-sleep" "hyprlock"
 
