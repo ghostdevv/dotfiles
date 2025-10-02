@@ -99,15 +99,15 @@ gtk-theme-elementary
 
 # wshell
 aylurs-gtk-shell-git
-libastal
-libastal-4
-libastal-io
-libastal-tray
-libastal-wireplumber
-libastal-power-profiles
-libastal-bluetooth
-libastal-battery
-libastal-network
+libastal-git
+libastal-4-git
+libastal-io-git
+libastal-tray-git
+libastal-wireplumber-git
+libastal-power-profiles-git
+libastal-bluetooth-git
+libastal-battery-git
+libastal-network-git
 
 # Wayland & XDG
 xdg-user-dirs-gtk
