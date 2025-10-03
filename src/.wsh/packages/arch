@@ -97,6 +97,7 @@ hyprlock
 swayidle
 pantheon-polkit-agent
 gtk-theme-elementary
+xorg-xrdb
 
 # wshell
 aylurs-gtk-shell-git
