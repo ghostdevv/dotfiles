@@ -16,7 +16,7 @@ openssh
 python-mutagen
 sudo
 gdm
-clamav
+lm_sensors
 
 # System Utilities
 timeshift
@@ -289,6 +289,7 @@ gvfs-wsdd
 # AI/ML
 ollama
 llama.cpp-vulkan
+jan-bin
 
 # Images
 perl-image-exiftool
