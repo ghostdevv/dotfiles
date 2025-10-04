@@ -82,6 +82,8 @@ gnome-menus
 gnome-color-manager
 gnome-control-center
 gnome-shell-extensions
+mutter-devkit
+evolution-data-server
 # to be replaced by papers
 evince
 
