@@ -214,7 +214,7 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness=-5"; }
 
     // Special
-    XF86Tools repeat=false { spawn "gtk-launch" "appimagekit_c6a7ecf86d9d84cd6069bf81dd900a87-karma"; }
+    XF86Tools repeat=false { spawn "gtk-launch" "appimagekit_f3454270830d1ab8b52cdd900c256070-karma"; }
     // XF86RFKill
 
     Mod+Escape hotkey-overlay-title="Lock" { spawn "hyprlock"; }
