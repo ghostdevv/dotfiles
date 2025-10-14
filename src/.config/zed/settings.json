@@ -1,6 +1,13 @@
 // https://zed.dev/docs/configuring-zed
 {
-	"context_servers": {},
+	"show_edit_predictions": true,
+	"context_servers": {
+		"svelte": {
+			"source": "custom",
+			"command": "npx",
+			"args": ["-y", "@sveltejs/mcp"]
+		}
+	},
 	"features": {
 		"edit_prediction_provider": "zed"
 	},
@@ -123,14 +130,6 @@
 		}
 	},
 	"ssh_connections": [
-		{
-			"host": "xo-monitoring",
-			"projects": [
-				{
-					"paths": ["/etc/nginx/sites-enabled"]
-				}
-			]
-		},
 		{
 			"host": "whale",
 			"projects": [
