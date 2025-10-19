@@ -1,6 +1,7 @@
 // https://zed.dev/docs/configuring-zed
 {
-	"show_edit_predictions": true,
+	"on_last_window_closed": "quit_app",
+	"when_closing_with_no_tabs": "keep_window_open",
 	"context_servers": {
 		"svelte": {
 			"source": "custom",
@@ -8,10 +9,12 @@
 			"args": ["-y", "@sveltejs/mcp"]
 		}
 	},
+	"show_edit_predictions": true,
 	"features": {
 		"edit_prediction_provider": "zed"
 	},
 	"agent": {
+		"play_sound_when_agent_done": true,
 		"default_profile": "write",
 		"enabled": true,
 		"default_model": {
@@ -28,6 +31,9 @@
 		"button": false
 	},
 	"project_panel": {
+		"hide_root": false,
+		"git_status": true,
+		"file_icons": true,
 		"dock": "right",
 		"indent_size": 16,
 		"entry_spacing": "standard"
@@ -78,6 +84,7 @@
 		"show": "never"
 	},
 	"toolbar": {
+		"agent_review": true,
 		"code_actions": true
 	},
 	"tabs": {
@@ -115,6 +122,7 @@
 	},
 	"git": {
 		"inline_blame": {
+			"show_commit_summary": true,
 			"enabled": true
 		}
 	},
@@ -135,9 +143,6 @@
 			"projects": [
 				{
 					"paths": ["/home/willow"]
-				},
-				{
-					"paths": ["/home/willow/bedrocko"]
 				}
 			]
 		},
