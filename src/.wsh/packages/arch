@@ -7,7 +7,7 @@ linux-zen
 linux-zen-headers
 linux-firmware
 grub
-#grub-btrfs
+# grub-btrfs
 # btrfs-progs
 efibootmgr
 plymouth
@@ -254,6 +254,7 @@ gnome-music
 grilo
 grilo-plugins
 helvum
+cameractrls
 
 # Gaming
 steam
