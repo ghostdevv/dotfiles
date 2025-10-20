@@ -48,7 +48,6 @@ app.zen_browser.zen
 com.modrinth.ModrinthApp
 org.gnome.Aisleriot
 org.gnome.Chess
-org.gnome.Quadrapassel
 
 # File Sharing
 org.qbittorrent.qBittorrent
