@@ -255,6 +255,7 @@ grilo
 grilo-plugins
 helvum
 cameractrls
+v4l2loopback-dkms
 
 # Gaming
 steam
