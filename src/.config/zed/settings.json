@@ -2,13 +2,6 @@
 {
 	"on_last_window_closed": "quit_app",
 	"when_closing_with_no_tabs": "keep_window_open",
-	"context_servers": {
-		"svelte": {
-			"source": "custom",
-			"command": "npx",
-			"args": ["-y", "@sveltejs/mcp"]
-		}
-	},
 	"show_edit_predictions": true,
 	"features": {
 		"edit_prediction_provider": "zed"
@@ -20,6 +13,41 @@
 		"default_model": {
 			"provider": "zed.dev",
 			"model": "claude-sonnet-4-thinking"
+		}
+	},
+	"language_models": {
+		"openai_compatible": {
+			"wai": {
+				"api_url": "https://ai.willow.sh/v1",
+				"available_models": [
+					{
+						"name": "unsloth-gpt-oss-120b",
+						"max_tokens": 131072,
+						"max_output_tokens": 131072,
+						"max_completion_tokens": 131072,
+						"capabilities": {
+							"tools": true,
+							"images": false,
+							"parallel_tool_calls": false,
+							"prompt_cache_key": false
+						}
+					}
+				]
+			}
+		}
+	},
+	"context_servers": {
+		"tmcp-web": {
+			"source": "custom",
+			"enabled": true,
+			"command": "npx",
+			"args": ["-y", "mcp-remote", "https://tmcp-web.willowdev.workers.dev/mcp"],
+			"env": {}
+		},
+		"svelte": {
+			"source": "custom",
+			"command": "npx",
+			"args": ["-y", "@sveltejs/mcp"]
 		}
 	},
 	"collaboration_panel": {
