@@ -193,6 +193,7 @@ lazydocker
 hcloud
 uv
 kdlfmt
+bun-bin
 
 # CLI Utilities
 bat
