@@ -43,11 +43,6 @@
 			"command": "npx",
 			"args": ["-y", "mcp-remote", "https://tmcp-web.willowdev.workers.dev/mcp"],
 			"env": {}
-		},
-		"svelte": {
-			"source": "custom",
-			"command": "npx",
-			"args": ["-y", "@sveltejs/mcp"]
 		}
 	},
 	"collaboration_panel": {
@@ -99,6 +94,7 @@
 		"docker-compose": true,
 		"dockerfile": true,
 		"svelte": true,
+		"svelte-mcp": true,
 		"deno": true,
 		"html": true,
 		"scss": true,
