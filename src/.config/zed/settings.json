@@ -122,6 +122,11 @@
 	"journal": {
 		"hour_format": "hour24"
 	},
+	"languages": {
+		"Go": {
+			"formatter": "language_server"
+		}
+	},
 	"format_on_save": "on",
 	"prettier": {
 		"allowed": true,
