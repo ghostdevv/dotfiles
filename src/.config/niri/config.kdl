@@ -127,6 +127,7 @@ window-rule {
     match title="Picture-in-picture"
     match title="Picture-in-Picture"
     open-floating true
+    default-column-width { fixed 200; }
     default-floating-position x=25 y=25 relative-to="bottom-right"
 }
 
