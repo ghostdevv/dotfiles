@@ -210,7 +210,7 @@ function update-system() {
   # if "zen-bin" not in this file /etc/1password/custom_allowed_browsers
   if ! grep -q "zen-bin" /etc/1password/custom_allowed_browsers; then
     # https://docs.zen-browser.app/guides/1password
-    echo " - zen browser 1password workaround"
+    echo -e "\nSetting Zen 1Password Workaround"
     sudo mkdir -p /etc/1password
     sudo touch /etc/1password/custom_allowed_browsers
     echo "zen-bin" | sudo tee -a /etc/1password/custom_allowed_browsers
