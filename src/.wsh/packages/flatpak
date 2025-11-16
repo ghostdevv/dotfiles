@@ -41,9 +41,6 @@ com.tutanota.Tutanota
 org.gnome.Contacts
 org.gnome.Calendar
 
-# Browsers
-app.zen_browser.zen
-
 # Gaming
 com.modrinth.ModrinthApp
 org.gnome.Aisleriot

@@ -207,6 +207,15 @@ function update-system() {
   gio mime x-scheme-handler/http brave-browser.desktop
   gio mime x-scheme-handler/https brave-browser.desktop
 
+  # if "zen-bin" not in this file /etc/1password/custom_allowed_browsers
+  if ! grep -q "zen-bin" /etc/1password/custom_allowed_browsers; then
+    # https://docs.zen-browser.app/guides/1password
+    echo " - zen browser 1password workaround"
+    sudo mkdir -p /etc/1password
+    sudo touch /etc/1password/custom_allowed_browsers
+    echo "zen-bin" | sudo tee -a /etc/1password/custom_allowed_browsers
+  fi
+
   # Folders
   function _assure_bookmark() {
     local BOOKMARK_FOLDER="$HOME/.config/gtk-3.0"
