@@ -121,10 +121,11 @@ window-rule {
     block-out-from "screencast"
 }
 
-// Handle brave picture in picture
+// Handle brave/firefox picture in picture
 window-rule {
     match title="Picture in picture"
     match title="Picture-in-picture"
+    match title="Picture-in-Picture
     open-floating true
     default-floating-position x=25 y=25 relative-to="bottom-right"
 }
