@@ -83,7 +83,7 @@ function update-system() {
   gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
   dconf write /org/gnome/shell/extensions/user-theme/name "'GHOST'"
   gsettings set org.gnome.desktop.interface show-battery-percentage true
-  gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'com.discordapp.Discord.desktop', 'appimagekit_c6a7ecf86d9d84cd6069bf81dd900a87-karma.desktop', 'org.gnome.Nautilus.desktop', 'feishin.desktop', 'com.tutanota.Tutanota.desktop', 'md.obsidian.Obsidian.desktop', '1password.desktop']"
+  gsettings set org.gnome.shell favorite-apps "['zen.desktop', 'com.discordapp.Discord.desktop', 'appimagekit_c6a7ecf86d9d84cd6069bf81dd900a87-karma.desktop', 'org.gnome.Nautilus.desktop', 'feishin.desktop', 'com.tutanota.Tutanota.desktop', 'md.obsidian.Obsidian.desktop', '1password.desktop']"
   gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
   dconf write /org/gnome/desktop/lockdown/disable-lock-screen 'false'
   # gdm theming
@@ -203,9 +203,9 @@ function update-system() {
   # gsettings set org.gnome.desktop.interface clock-format '24h'
   # file associations
   echo " - file associations"
-  xdg-settings set default-web-browser brave-browser.desktop
-  gio mime x-scheme-handler/http brave-browser.desktop
-  gio mime x-scheme-handler/https brave-browser.desktop
+  xdg-settings set default-web-browser zen.desktop
+  gio mime x-scheme-handler/http zen.desktop
+  gio mime x-scheme-handler/https zen.desktop
 
   # if "zen-bin" not in this file /etc/1password/custom_allowed_browsers
   if ! grep -q "zen-bin" /etc/1password/custom_allowed_browsers; then
