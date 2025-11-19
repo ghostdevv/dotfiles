@@ -122,6 +122,8 @@ function update-dotfiles() {
   _dotfiles_download ".config/brave-flags.conf"
   # Mako
   _dotfiles_download ".config/mako/config"
+  # App associations
+  _dotfiles_download ".config/mimeapps.list"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"

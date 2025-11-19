@@ -1,0 +1,12 @@
+[Default Applications]
+text/html=zen.desktop
+x-scheme-handler/http=zen.desktop
+x-scheme-handler/https=zen.desktop
+x-scheme-handler/about=zen.desktop
+x-scheme-handler/unknown=zen.desktop
+application/pdf=org.gnome.Papers.desktop
+video/mp4=vlc.desktop
+image/png=org.gnome.Loupe.desktop
+image/jpeg=org.gnome.Loupe.desktop
+image/svg=org.gnome.Loupe.desktop
+text/plain=dev.zed.Zed.desktop

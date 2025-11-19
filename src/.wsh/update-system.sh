@@ -202,10 +202,6 @@ function update-system() {
   # gsettings set org.gnome.desktop.interface clock-show-weekday false
   # gsettings set org.gnome.desktop.interface clock-format '24h'
   # file associations
-  echo " - file associations"
-  xdg-settings set default-web-browser zen.desktop
-  gio mime x-scheme-handler/http zen.desktop
-  gio mime x-scheme-handler/https zen.desktop
 
   # if "zen-bin" not in this file /etc/1password/custom_allowed_browsers
   if ! grep -q "zen-bin" /etc/1password/custom_allowed_browsers; then
