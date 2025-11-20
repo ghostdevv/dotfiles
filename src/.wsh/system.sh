@@ -29,7 +29,7 @@ alias update-mirrors="sudo reflector @/etc/xdg/reflector/reflector.conf"
 
 # bat config
 if command -v bat &> /dev/null; then
-  export BAT_THEME="Visual Studio Dark+"
+  export BAT_THEME="Catppuccin Mocha"
   export BAT_STYLE="full"
 fi
 
