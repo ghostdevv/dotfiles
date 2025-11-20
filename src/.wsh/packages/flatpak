@@ -6,12 +6,10 @@ io.github.flattool.Warehouse
 io.github.realmazharhussain.GdmSettings
 org.bluesabre.MenuLibre
 xyz.tytanium.DoorKnocker
-it.mijorus.whisper
 org.freedesktop.Bustle
 
 # Development
 org.dbgate.DbGate
-com.mongodb.Compass
 org.gnome.meld
 com.usebruno.Bruno
 
@@ -48,7 +46,6 @@ org.gnome.Chess
 
 # File Sharing
 org.qbittorrent.qBittorrent
-org.sabnzbd.sabnzbd
 
 # Virtualization
 org.gnome.Boxes
