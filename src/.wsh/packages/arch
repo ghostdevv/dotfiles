@@ -219,6 +219,7 @@ zip
 unzip
 bc
 yazi
+fzf
 
 # Network & Security
 mullvad-vpn-bin
