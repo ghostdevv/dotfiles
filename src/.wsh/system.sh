@@ -27,11 +27,10 @@ alias l="ls"
 
 alias update-mirrors="sudo reflector @/etc/xdg/reflector/reflector.conf"
 
-# if bat exists alias cat for it
+# bat config
 if command -v bat &> /dev/null; then
   export BAT_THEME="Visual Studio Dark+"
   export BAT_STYLE="full"
-  alias cat="bat --paging=never --style=header,header-filename,header-filesize,grid"
 fi
 
 # Search
