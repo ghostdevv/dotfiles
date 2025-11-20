@@ -218,7 +218,6 @@ ddgr
 zip
 unzip
 bc
-yazi
 fzf
 
 # Network & Security
@@ -278,6 +277,7 @@ nautilus
 gnome-user-share
 sushi
 diffpdf
+yazi
 
 ## GNOME Virtual File System
 gvfs
@@ -311,4 +311,3 @@ archlinux-tweak-tool-git
 ulauncher
 orca
 gnome-system-monitor
-diffpdf
