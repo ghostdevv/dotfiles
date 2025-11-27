@@ -1,0 +1,86 @@
+default:
+    margin:
+        percent: 8
+    colors:
+        foreground: eeeeee
+        background: null
+
+headings:
+    h1:
+        prefix: '██'
+        colors:
+            foreground: blue
+    h2:
+        prefix: '▓▓▓'
+        colors:
+            foreground: green
+    h3:
+        prefix: '▒▒▒▒'
+        colors:
+            foreground: red
+    h4:
+        prefix: '░░░░░'
+        colors:
+            foreground: blue
+    h5:
+        prefix: '░░░░░░'
+        colors:
+            foreground: blue
+    h6:
+        prefix: '░░░░░░░'
+        colors:
+            foreground: blue
+
+intro_slide:
+    title:
+        alignment: center
+        colors:
+            foreground: blue
+    author:
+        alignment: center
+        positioning: below_title
+
+footer:
+    style: template
+    left: 'ghostdev.xyz'
+    right: '{current_slide} / {total_slides}'
+    colors:
+        foreground: '969697'
+
+slide_title:
+    padding_bottom: 1
+    padding_top: 1
+    colors:
+        foreground: blue
+    alignment: center
+
+code:
+    theme_name: 'serendipity-sunset-v1'
+    padding:
+        horizontal: 2
+        vertical: 1
+
+inline_code:
+    colors:
+        foreground: green
+
+block_quote:
+    prefix: '▍ '
+    colors:
+        foreground: '969697'
+
+alert:
+    prefix: '▍ '
+    base_colors:
+        background: '29292a'
+    styles:
+        note:
+            color: blue
+        tip:
+            color: cyan
+        important:
+            color: cyan
+        warning:
+            color: yellow
+        caution:
+            color: red
