@@ -124,6 +124,8 @@ function update-dotfiles() {
   _dotfiles_download ".config/mako/config"
   # App associations
   _dotfiles_download ".config/mimeapps.list"
+  # Bat Additions
+  _dotfiles_download ".config/bat/themes/serendipity-sunset-v1.tmtheme"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
