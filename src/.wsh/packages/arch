@@ -220,6 +220,7 @@ zip
 unzip
 bc
 fzf
+presenterm
 
 # Network & Security
 mullvad-vpn-bin
