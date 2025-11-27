@@ -38,11 +38,9 @@
 	},
 	"context_servers": {
 		"tmcp-web": {
-			"source": "custom",
+   "settings": {},
 			"enabled": true,
-			"command": "npx",
-			"args": ["-y", "mcp-remote", "https://tmcp-web.willowdev.workers.dev/mcp"],
-			"env": {}
+			"url": "https://tmcp-web.willowdev.workers.dev/mcp"
 		}
 	},
 	"collaboration_panel": {
