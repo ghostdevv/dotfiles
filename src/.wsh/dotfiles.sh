@@ -128,6 +128,8 @@ function update-dotfiles() {
   _dotfiles_download ".config/bat/themes/serendipity-sunset-v1.tmtheme"
   # Presenterm
   _dotfiles_download ".config/presenterm/themes/ghost.yaml"
+  # Opencode
+  _dotfiles_download ".config/opencode/opencode.json"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"

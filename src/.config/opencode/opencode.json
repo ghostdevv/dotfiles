@@ -1,0 +1,39 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"theme": "catppuccin",
+	"mcp": {
+		"svelte": {
+			"type": "local",
+			"command": ["npx", "-y", "@sveltejs/mcp"],
+			"enabled": true
+		},
+		"tmcp-web": {
+			"type": "remote",
+			"url": "https://tmcp-web.willowdev.workers.dev/mcp",
+			"enabled": true
+		}
+	},
+	"model": "wai/unsloth-gpt-oss-120b",
+	"small_model": "wai/llama-3.1-8b-instruct",
+	"provider": {
+		"wai": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "wai",
+			"options": {
+				"baseURL": "https://ai.willow.sh/v1"
+			},
+			"models": {
+				"unsloth-gpt-oss-120b": {
+					"name": "unsloth-gpt-oss-120b",
+					"limit": {
+						"context": 131072,
+						"output": 131072
+					}
+				},
+				"llama-3.1-8b-instruct": {
+					"name": "llama-3.1-8b-instruct"
+				}
+			}
+		}
+	}
+}
