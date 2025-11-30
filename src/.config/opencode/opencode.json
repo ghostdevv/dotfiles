@@ -13,7 +13,7 @@
 			"enabled": true
 		}
 	},
-	"model": "wai/unsloth-gpt-oss-120b",
+	"model": "wai/gpt-oss-120b",
 	"small_model": "wai/llama-3.1-8b-instruct",
 	"provider": {
 		"wai": {
@@ -23,8 +23,8 @@
 				"baseURL": "https://ai.willow.sh/v1"
 			},
 			"models": {
-				"unsloth-gpt-oss-120b": {
-					"name": "unsloth-gpt-oss-120b",
+				"gpt-oss-120b": {
+					"name": "gpt-oss-120b",
 					"limit": {
 						"context": 131072,
 						"output": 131072

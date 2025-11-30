@@ -21,7 +21,7 @@
 				"api_url": "https://ai.willow.sh/v1",
 				"available_models": [
 					{
-						"name": "unsloth-gpt-oss-120b",
+						"name": "gpt-oss-120b",
 						"max_tokens": 131072,
 						"max_output_tokens": 131072,
 						"max_completion_tokens": 131072,
@@ -38,7 +38,7 @@
 	},
 	"context_servers": {
 		"tmcp-web": {
-   "settings": {},
+			"settings": {},
 			"enabled": true,
 			"url": "https://tmcp-web.willowdev.workers.dev/mcp"
 		}
