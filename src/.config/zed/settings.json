@@ -100,7 +100,8 @@
 		"toml": true,
 		"biome": true,
 		"astro": true,
-		"basher": true
+		"basher": true,
+		"just-ls": true
 	},
 	"minimap": {
 		"show": "never"
