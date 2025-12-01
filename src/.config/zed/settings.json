@@ -38,7 +38,7 @@
 	},
 	"context_servers": {
 		"tmcp-web": {
-			"settings": {},
+   "settings": {},
 			"enabled": true,
 			"url": "https://tmcp-web.willowdev.workers.dev/mcp"
 		}
