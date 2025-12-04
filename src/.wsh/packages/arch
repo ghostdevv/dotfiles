@@ -266,6 +266,7 @@ gstreamer
 gst-libav
 gst-plugins-base
 gst-plugins-good
+gst-plugin-va
 
 # Gaming
 steam
