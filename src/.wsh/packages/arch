@@ -193,6 +193,7 @@ hcloud
 uv
 kdlfmt
 bun-bin
+opencode-bin
 
 # CLI Utilities
 bat
@@ -221,6 +222,7 @@ unzip
 bc
 fzf
 presenterm
+nvtop
 
 # Network & Security
 mullvad-vpn-bin
