@@ -260,6 +260,10 @@ helvum
 cameractrls
 v4l2loopback-dkms
 mpv
+gstreamer
+gst-libav
+gst-plugins-base
+gst-plugins-good
 
 # Gaming
 steam
