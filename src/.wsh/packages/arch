@@ -246,6 +246,7 @@ firefox
 spotify
 vlc
 vlc-plugin-ffmpeg
+vlc-plugins-all
 audacity
 yt-dlp
 feishin-bin
@@ -258,6 +259,7 @@ grilo-plugins
 helvum
 cameractrls
 v4l2loopback-dkms
+mpv
 
 # Gaming
 steam
