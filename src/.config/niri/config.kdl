@@ -2,7 +2,7 @@
 prefer-no-csd
 
 // Set the screenshot save directory
-screenshot-path "~/Pictures/Screenshots/niri"
+screenshot-path "~/Pictures/Screenshots/niri/%Y-%m-%d-%H-%M-%S.png"
 
 // Spawn the background image at startup
 spawn-sh-at-startup "swaybg --image ~/Pictures/wallpaper.png"
