@@ -18,3 +18,4 @@ image/svg=org.gnome.Loupe.desktop
 audio/flac=org.gnome.Decibels.desktop
 audio/wav=org.gnome.Decibels.desktop
 audio/webm=org.gnome.Decibels.desktop
+audio/mp4=org.gnome.Decibels.desktop
