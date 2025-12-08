@@ -19,3 +19,4 @@ audio/flac=org.gnome.Decibels.desktop
 audio/wav=org.gnome.Decibels.desktop
 audio/webm=org.gnome.Decibels.desktop
 audio/mp4=org.gnome.Decibels.desktop
+audio/mp3=org.gnome.Decibels.desktop
