@@ -10,6 +10,7 @@ application/json=dev.zed.Zed.desktop
 text/x-shellscript=dev.zed.Zed.desktop
 video/mp4=mpv.desktop
 video/webm=mpv.desktop
+video/x-matroska=mpv.desktop
 image/png=org.gnome.Loupe.desktop
 image/jpeg=org.gnome.Loupe.desktop
 image/gif=org.gnome.Loupe.desktop
