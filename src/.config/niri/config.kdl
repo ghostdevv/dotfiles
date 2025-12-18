@@ -121,6 +121,15 @@ window-rule {
     block-out-from "screencast"
 }
 
+// 1Password password show large type window
+window-rule {
+    match app-id="1password" title=r#"— Password — 1Password$"#
+    baba-is-float true
+    // doesn't work unfortunately
+    // https://github.com/YaLTeR/niri/issues/2831
+    open-floating true
+}
+
 // Handle brave/firefox picture in picture
 window-rule {
     match title="Picture in picture"
