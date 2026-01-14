@@ -7,7 +7,7 @@
 		"edit_prediction_provider": "zed"
 	},
 	"agent": {
-		"play_sound_when_agent_done": true,
+        "play_sound_when_agent_done": true,
 		"default_profile": "write",
 		"enabled": true,
 		"default_model": {
