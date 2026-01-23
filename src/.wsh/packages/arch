@@ -150,9 +150,10 @@ cantarell-fonts
 ttf-quicksand-variable
 
 # Theming & Icons
+breeze
 breeze-gtk
 breeze-icons
-xcursor-breeze
+qt6ct-kde
 gtk4-layer-shell
 gtk-layer-shell
 gnome-themes-extra

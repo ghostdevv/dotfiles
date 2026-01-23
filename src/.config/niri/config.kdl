@@ -1,6 +1,9 @@
 // Disable client side window decorations
 prefer-no-csd
 
+// qt/kde apps settings
+spawn-sh-at-startup "systemctl --user set-environment QT_QPA_PLATFORM=\"wayland;xcb\" QT_QPA_PLATFORMTHEME=\"qt6ct\""
+
 // Set the screenshot save directory
 screenshot-path "~/Pictures/Screenshots/niri/%Y-%m-%d-%H-%M-%S.png"
 
