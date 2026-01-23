@@ -7,6 +7,7 @@ io.github.realmazharhussain.GdmSettings
 org.bluesabre.MenuLibre
 xyz.tytanium.DoorKnocker
 org.freedesktop.Bustle
+org.gnome.dspy
 
 # Development
 org.dbgate.DbGate
@@ -32,6 +33,7 @@ io.github.dynobo.sphereview
 org.gnome.Snapshot
 org.gnome.Loupe
 org.gnome.font-viewer
+org.siril.Siril
 
 # Communication
 com.discordapp.Discord
