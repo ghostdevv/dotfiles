@@ -99,3 +99,42 @@ function yeet-node-modules() {
         echo "No worries! I've not deleted anything"
     fi
 }
+
+function packument() {
+    local name=$1;
+
+    if [[ ! -n "$1" ]]; then
+        echo -e "Usage: packument <name> [version]"
+        return 1
+    fi
+
+    local pkg=$(curl "https://registry.npmjs.org/$1" --silent --fail-with-body)
+
+    if [[ $? -ne 0 ]]; then
+        echo -e "Failed to fetch with data $pkg"
+        return 1
+    fi
+
+    if [[ ! -n "$2" ]]; then
+        jq --monochrome-output . <<< $pkg | bat \
+            --file-name "Packument: $1" \
+            --language json
+        return 0
+    fi
+
+    local pkv=$(
+        jq \
+            --exit-status \
+            --monochrome-output \
+            ".versions[\"$2\"] // .versions[.\"dist-tags\"[\"$2\"]?]?" \
+            <<< "$pkg"
+    )
+
+    if [[ $? -eq 0 && -n "$pkv" ]]; then
+        echo $pkv | bat \
+            --file-name "Packument Version: $1@$(jq --raw-output '.version' <<< $pkv)" \
+            --language json
+    else
+        echo -e "Failed to get packument for \"$1\" (version: '$2')"
+    fi
+}
