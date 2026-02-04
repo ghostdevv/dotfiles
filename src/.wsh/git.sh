@@ -158,6 +158,8 @@ function co-authored-by() {
     fi
 
     local data
+    # Thanks to Seth Larson for the fetch idea!
+    # https://sethmlarson.dev/easy-github-co-authored-by
     data=$(curl "https://api.github.com/users/$username" --silent --fail-with-body)
 
     if [[ $? -ne 0 ]]; then
