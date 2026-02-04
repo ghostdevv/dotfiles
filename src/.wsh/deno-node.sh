@@ -108,7 +108,8 @@ function packument() {
         return 1
     fi
 
-    local pkg=$(curl "https://registry.npmjs.org/$1" --silent --fail-with-body)
+    local pkg
+    pkg=$(curl "https://registry.npmjs.org/$1" --silent --fail-with-body)
 
     if [[ $? -ne 0 ]]; then
         echo -e "Failed to fetch with data $pkg"
