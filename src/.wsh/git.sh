@@ -148,3 +148,24 @@ function clone() {
     echo "Cloning $REPO"
     git clone $REPO ${@:2}
 }
+
+function co-authored-by() {
+    local username="$1"
+
+    if [[ -z "$username" ]]; then
+        echo "Usage: co-authored-by <username>"
+        return 1
+    fi
+
+    local data
+    data=$(curl "https://api.github.com/users/$username" --silent --fail-with-body)
+
+    if [[ $? -ne 0 ]]; then
+        echo -e "Failed to fetch with $data"
+        return 1
+    fi
+
+    echo $data | jq \
+        --raw-output \
+        '"Co-Authored-By: \(.name) <\(.id)+\(.login)@users.noreply.github.com>"'
+}
