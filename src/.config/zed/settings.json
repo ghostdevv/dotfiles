@@ -1,19 +1,19 @@
 // https://zed.dev/docs/configuring-zed
 {
-	"on_last_window_closed": "quit_app",
+	"edit_predictions": {
+  "provider": "zed"
+ },
+ "on_last_window_closed": "quit_app",
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
-	"features": {
-		"edit_prediction_provider": "zed"
-	},
 	"agent": {
-        "play_sound_when_agent_done": true,
+		"play_sound_when_agent_done": true,
 		"default_profile": "write",
 		"enabled": true,
 		"default_model": {
 			"provider": "zed.dev",
-			"model": "claude-sonnet-4-thinking"
-		}
+			"model": "claude-opus-4-5-thinking",
+		},
 	},
 	"language_models": {
 		"openai_compatible": {
@@ -29,27 +29,32 @@
 							"tools": true,
 							"images": false,
 							"parallel_tool_calls": false,
-							"prompt_cache_key": false
-						}
-					}
-				]
-			}
-		}
+							"prompt_cache_key": false,
+						},
+					},
+				],
+			},
+		},
 	},
 	"context_servers": {
+		"dotprompts": {
+   "settings": {},
+			"enabled": false,
+			"url": "https://dotprompts.com/mcp",
+		},
 		"tmcp-web": {
    "settings": {},
 			"enabled": true,
-			"url": "https://tmcp-web.willowdev.workers.dev/mcp"
-		}
+			"url": "https://tmcp-web.willowdev.workers.dev/mcp",
+		},
 	},
 	"collaboration_panel": {
 		"dock": "right",
-		"button": false
+		"button": false,
 	},
 	"use_smartcase_search": true,
 	"search": {
-		"button": false
+		"button": false,
 	},
 	"project_panel": {
 		"hide_root": false,
@@ -57,17 +62,17 @@
 		"file_icons": true,
 		"dock": "right",
 		"indent_size": 16,
-		"entry_spacing": "standard"
+		"entry_spacing": "standard",
 	},
 	"git_panel": {
-		"dock": "right"
+		"dock": "right",
 	},
 	"outline_panel": {
 		"dock": "right",
-		"button": false
+		"button": false,
 	},
 	"notification_panel": {
-		"dock": null
+		"dock": null,
 	},
 	"ui_font_size": 16,
 	"buffer_font_size": 14,
@@ -83,8 +88,8 @@
 		"cursor_shape": "bar",
 		"blinking": "on",
 		"toolbar": {
-			"breadcrumbs": false
-		}
+			"breadcrumbs": false,
+		},
 	},
 	"restore_on_startup": "last_workspace",
 	"auto_install_extensions": {
@@ -101,30 +106,30 @@
 		"biome": true,
 		"astro": true,
 		"basher": true,
-		"just-ls": true
+		"just-ls": true,
 	},
 	"minimap": {
-		"show": "never"
+		"show": "never",
 	},
 	"toolbar": {
 		"agent_review": true,
-		"code_actions": true
+		"code_actions": true,
 	},
 	"tabs": {
 		"file_icons": true,
 		"git_status": true,
-		"show_diagnostics": "all"
+		"show_diagnostics": "all",
 	},
 	"file_types": {
-		"JSON": ["prettierrc"]
+		"JSON": ["prettierrc"],
 	},
 	"journal": {
-		"hour_format": "hour24"
+		"hour_format": "hour24",
 	},
 	"languages": {
 		"Go": {
-			"formatter": "language_server"
-		}
+			"formatter": "language_server",
+		},
 	},
 	"format_on_save": "on",
 	"prettier": {
@@ -139,48 +144,48 @@
 		"useTabs": true,
 		"tabWidth": 4,
 		"svelteAllowShorthand": true,
-		"svelteIndentScriptAndStyle": true
+		"svelteIndentScriptAndStyle": true,
 	},
 	"diagnostics": {
 		"button": true,
 		"include_warnings": true,
 		"inline": {
-			"enabled": true
-		}
+			"enabled": true,
+		},
 	},
 	"git": {
 		"inline_blame": {
 			"show_commit_summary": true,
-			"enabled": true
-		}
+			"enabled": true,
+		},
 	},
 	"calls": {
 		"mute_on_join": true,
-		"share_on_join": false
+		"share_on_join": false,
 	},
 	"lsp": {
 		"biome": {
 			"settings": {
-				"require_config_file": true
-			}
-		}
+				"require_config_file": true,
+			},
+		},
 	},
 	"ssh_connections": [
 		{
 			"host": "whale",
 			"projects": [
 				{
-					"paths": ["/home/willow"]
-				}
-			]
+					"paths": ["/home/willow"],
+				},
+			],
 		},
 		{
 			"host": "sauron",
 			"projects": [
 				{
-					"paths": ["/home/ghost"]
-				}
-			]
-		}
-	]
+					"paths": ["/home/ghost"],
+				},
+			],
+		},
+	],
 }
