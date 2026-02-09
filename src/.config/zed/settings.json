@@ -1,9 +1,9 @@
 // https://zed.dev/docs/configuring-zed
 {
 	"edit_predictions": {
-  "provider": "zed"
- },
- "on_last_window_closed": "quit_app",
+		"provider": "zed",
+	},
+	"on_last_window_closed": "quit_app",
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
 	"agent": {
@@ -130,6 +130,9 @@
 		"Go": {
 			"formatter": "language_server",
 		},
+		"Rust": {
+		    "formatter": "language_server"
+		}
 	},
 	"format_on_save": "on",
 	"prettier": {
@@ -167,6 +170,14 @@
 		"biome": {
 			"settings": {
 				"require_config_file": true,
+			},
+		},
+		"oxlint": {
+			"initialization_options": {
+				"settings": {
+					"run": "onType",
+					"typeAware": true,
+				},
 			},
 		},
 	},
