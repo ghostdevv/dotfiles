@@ -196,6 +196,7 @@ uv
 kdlfmt
 bun
 opencode-bin
+ast-grep
 
 # CLI Utilities
 bat
