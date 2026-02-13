@@ -207,6 +207,7 @@ jq
 htop
 btop
 fastfetch
+hyfetch
 hyperfine
 tlrc-bin
 hexyl
