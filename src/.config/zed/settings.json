@@ -7,12 +7,27 @@
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
 	"agent": {
+		"favorite_models": [
+			{
+				"provider": "wai",
+				"model": "gpt-oss-120b",
+			},
+			{
+				"provider": "zed.dev",
+				"model": "claude-opus-4-5-thinking",
+			},
+			{
+				"provider": "zed.dev",
+				"model": "claude-sonnet-4-5-thinking",
+			},
+		],
+		"show_turn_stats": true,
 		"play_sound_when_agent_done": true,
 		"default_profile": "write",
 		"enabled": true,
 		"default_model": {
-			"provider": "zed.dev",
-			"model": "claude-opus-4-5-thinking",
+			"provider": "wai",
+			"model": "gpt-oss-120b",
 		},
 	},
 	"language_models": {
@@ -131,8 +146,8 @@
 			"formatter": "language_server",
 		},
 		"Rust": {
-		    "formatter": "language_server"
-		}
+			"formatter": "language_server",
+		},
 	},
 	"format_on_save": "on",
 	"prettier": {
