@@ -66,6 +66,12 @@ layer-rule {
     place-within-backdrop true
 }
 
+// Block notifications from showing in screen sharing
+layer-rule {
+    match namespace="^notifications$"
+    block-out-from "screencast"
+}
+
 cursor {
     // Set the cursor theme
     // todo seems some flatpaks and/or xwayland apps have wrong cursor
