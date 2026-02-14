@@ -5,6 +5,8 @@
 	"logFile": "clipse.log",
 	"themeFile": "custom_theme.json",
 	"tempDir": "tmp_files",
+	"enableMouse": false,
+	"enableDescription": false,
 	"keyBindings": {
 		"choose": "enter",
 		"clearSelected": "S",
@@ -28,8 +30,8 @@
 	},
 	"imageDisplay": {
 		"type": "kitty",
-		"scaleX": 9,
-		"scaleY": 13,
+		"scaleX": 18,
+		"scaleY": 30,
 		"heightCut": 4
 	}
 }

@@ -86,10 +86,21 @@ window-rule {
     draw-border-with-background false
 }
 
-// Handle clipse-gui app
+// Clipse
 window-rule {
-    match app-id="clipse-gui"
+    match app-id="com.mitchellh.ghostty" title="clipse-popup"
+
     open-floating true
+    baba-is-float true
+
+    open-fullscreen false
+    open-focused true
+
+    block-out-from "screencast"
+
+    shadow {
+        on
+    }
 }
 
 window-rule {
@@ -165,7 +176,7 @@ binds {
 	Mod+T repeat=false hotkey-overlay-title="Open terminal" { spawn "ghostty" "+new-window"; }
 	Alt+Return repeat=false hotkey-overlay-title="Toggle guake" { spawn "guake-toggle"; }
 	Mod+Space repeat=false hotkey-overlay-title="Toggle ulauncher" { spawn "ulauncher-toggle"; }
-	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "clipse-gui"; }
+	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "ghostty" "--title=clipse-popup" "--background-opacity=0.85" "--window-width=12" "-e" "clipse"; }
 	Mod+B repeat=false hotkey-overlay-title="Open smile" { spawn "gtk-launch" "it.mijorus.smile"; }
 
     // Shift focus right

@@ -112,7 +112,6 @@ function update-dotfiles() {
   _dotfiles_download ".config/ulauncher/user-themes/GHOST/theme-gtk-3.20.css"
   # Clipse
   _dotfiles_download ".config/clipse/config.json"
-  _dotfiles_download ".config/clipse-gui/settings.ini"
   # Niri
   _dotfiles_download ".config/niri/config.kdl"
   _dotfiles_download ".Xresources"
