@@ -10,7 +10,7 @@
 		}
 	},
 	"model": "wai/gpt-oss-120b",
-	"small_model": "wai/llama-3.1-8b-instruct",
+	"small_model": "local/llama-3.1-8b-instruct",
 	"provider": {
 		"wai": {
 			"npm": "@ai-sdk/openai-compatible",
@@ -20,14 +20,30 @@
 			},
 			"models": {
 				"gpt-oss-120b": {
-					"name": "gpt-oss-120b",
+					"name": "GPT OSS 120b",
 					"limit": {
 						"context": 131072,
 						"output": 131072
 					}
 				},
+				"minimax-m2.5": {
+					"name": "MiniMax M2.5",
+					"limit": {
+						"context": 64000,
+						"output": 131072
+					}
+				}
+			}
+		},
+		"local": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "wai",
+			"options": {
+				"baseURL": "http://127.0.0.1:7748/v1"
+			},
+			"models": {
 				"llama-3.1-8b-instruct": {
-					"name": "llama-3.1-8b-instruct"
+					"name": "Llama 3.1 8b Instruct"
 				}
 			}
 		}
