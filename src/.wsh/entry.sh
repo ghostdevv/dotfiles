@@ -9,3 +9,4 @@ source ~/.wsh/update-system.sh
 source ~/.wsh/fun.sh
 source ~/.wsh/rust.sh
 source ~/.wsh/audio.sh
+source ~/.wsh/ai.sh
