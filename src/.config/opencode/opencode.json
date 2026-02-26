@@ -6,10 +6,15 @@
 		"tmcp-web": {
 			"type": "remote",
 			"url": "https://tmcp-web.willowdev.workers.dev/mcp",
-			"enabled": true
+			"enabled": false
+		},
+		"dotprompts": {
+			"type": "remote",
+			"url": "https://dotprompts.com/mcp",
+			"enabled": false
 		}
 	},
-	"model": "wai/gpt-oss-120b",
+	"model": "wai/minimax-m2.5",
 	"small_model": "local/llama-3.1-8b-instruct",
 	"provider": {
 		"wai": {
@@ -21,6 +26,7 @@
 			"models": {
 				"gpt-oss-120b": {
 					"name": "GPT OSS 120b",
+					"cost": { "input": 0.25, "output": 0.69 },
 					"limit": {
 						"context": 131072,
 						"output": 131072
@@ -28,6 +34,7 @@
 				},
 				"minimax-m2.5": {
 					"name": "MiniMax M2.5",
+					"cost": { "input": 0.3, "output": 1.2, "cache_read": 0.06 },
 					"limit": {
 						"context": 64000,
 						"output": 131072
@@ -37,7 +44,7 @@
 		},
 		"local": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "wai",
+			"name": "local",
 			"options": {
 				"baseURL": "http://127.0.0.1:7748/v1"
 			},
