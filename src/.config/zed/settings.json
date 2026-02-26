@@ -27,7 +27,7 @@
 		"enabled": true,
 		"default_model": {
 			"provider": "wai",
-			"model": "gpt-oss-120b",
+			"model": "minimax-m2.5",
 		},
 	},
 	"language_models": {
@@ -43,8 +43,20 @@
 						"capabilities": {
 							"tools": true,
 							"images": false,
-							"parallel_tool_calls": false,
-							"prompt_cache_key": false,
+							"parallel_tool_calls": true,
+							"prompt_cache_key": true,
+						},
+					},
+					{
+						"name": "minimax-m2.5",
+						"max_tokens": 64000,
+						"max_output_tokens": 131072,
+						"max_completion_tokens": 131072,
+						"capabilities": {
+							"tools": true,
+							"images": false,
+							"parallel_tool_calls": true,
+							"prompt_cache_key": true,
 						},
 					},
 				],
