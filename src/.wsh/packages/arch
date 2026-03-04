@@ -321,7 +321,6 @@ gvfs-wsdd
 # AI/ML
 ollama
 llama.cpp-vulkan
-jan-bin
 
 # Images
 perl-image-exiftool
