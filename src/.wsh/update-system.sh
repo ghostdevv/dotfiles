@@ -35,6 +35,7 @@ function update-system() {
     sudo tailscale up --accept-dns=false --operator="$USER"
 
     echo -e '\nStarting other services'
+    systemctl daemon-reload
     sudo systemctl enable NetworkManager --now
     sudo systemctl enable docker --now
     sudo systemctl enable sshd --now
