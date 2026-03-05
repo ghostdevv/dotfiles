@@ -1,14 +1,14 @@
 [Unit]
-Description = local llama-swap for small models
-After=network.target
+Description=local llama-swap for small models
 
 [Service]
-Type = simple
-Restart = on-failure
-RestartSec = 5
+Type=simple
+Restart=on-failure
+RestartSec=5
 StartLimitBurst=3
 StartLimitInterval=30
-ExecStart = /usr/bin/llama-swap -config $HOME/.config/llama-swap/config.yaml -listen 127.0.0.1:7748
+OOMScoreAdj=900
+ExecStart=/usr/bin/llama-swap -config %h/.config/llama-swap/config.yaml -listen 127.0.0.1:7748
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
