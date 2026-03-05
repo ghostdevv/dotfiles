@@ -20,6 +20,10 @@
 				"provider": "zed.dev",
 				"model": "claude-sonnet-4-5-thinking",
 			},
+			{
+				"provider": "wai",
+				"model": "minimax-m2.5",
+			},
 		],
 		"show_turn_stats": true,
 		"play_sound_when_agent_done": true,
@@ -28,6 +32,12 @@
 		"default_model": {
 			"provider": "wai",
 			"model": "minimax-m2.5",
+		},
+	},
+	"agent_servers": {
+		"opencode": {
+			"type": "extension",
+			"favorite_models": ["wai/minimax-m2.5", "wai/gpt-oss-120b"],
 		},
 	},
 	"language_models": {
@@ -64,6 +74,11 @@
 		},
 	},
 	"context_servers": {
+		"svelte-mcp": {
+   "enabled": false,
+			"remote": false,
+			"settings": {},
+		},
 		"dotprompts": {
    "settings": {},
 			"enabled": false,
@@ -71,7 +86,7 @@
 		},
 		"tmcp-web": {
    "settings": {},
-			"enabled": true,
+			"enabled": false,
 			"url": "https://tmcp-web.willowdev.workers.dev/mcp",
 		},
 	},
@@ -130,7 +145,6 @@
 		"scss": true,
 		"sql": true,
 		"toml": true,
-		"biome": true,
 		"astro": true,
 		"basher": true,
 		"just-ls": true,
