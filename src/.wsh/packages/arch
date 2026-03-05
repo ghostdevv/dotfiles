@@ -319,8 +319,8 @@ gvfs-smb
 gvfs-wsdd
 
 # AI/ML
-ollama
 llama.cpp-vulkan
+llama-swap-bin
 
 # Images
 perl-image-exiftool

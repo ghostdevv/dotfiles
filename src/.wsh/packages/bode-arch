@@ -76,7 +76,6 @@ gnu-netcat
 caddy
 
 # AI/ML
-ollama
 llama.cpp-vulkan
 rocm-smi-lib
 llama-swap
