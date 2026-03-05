@@ -132,6 +132,7 @@ function update-dotfiles() {
   _dotfiles_download ".config/presenterm/themes/ghost.yaml"
   # Opencode
   _dotfiles_download ".config/opencode/opencode.json"
+  _dotfiles_download ".config/opencode/svelte.json"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
