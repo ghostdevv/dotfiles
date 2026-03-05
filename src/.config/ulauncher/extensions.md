@@ -1,4 +1,6 @@
-- https://github.com/rinaldes/Project-Launcher
 - https://github.com/qcasey/ulauncher-homeassistant
-- https://github.com/commarla/ulauncher-looks-wtf
 - https://github.com/Ulauncher/ulauncher-emoji
+- https://github.com/ghostdevv/ulauncher-tailscale
+- https://github.com/ghostdevv/ulauncher-fw-fanctrl
+- https://github.com/ghostdevv/ulauncher-deno-scripts
+- https://github.com/ghostdevv/ulauncher-tailscale

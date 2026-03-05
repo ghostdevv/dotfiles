@@ -1,10 +1,9 @@
 @import url("reset.css");
 
 .app {
-    margin: -20px;
     border-radius: 12px;
     background-color: #212123;
-    /* border: 1px solid #29292a; */
+    border: 2px solid #29292a; 
 }
 
 .app,
@@ -25,14 +24,6 @@
 
 .selected.item-box {
     background-color: #29292a;
-}
-
-.item-icon {
-    margin-left: -12px;
-}
-
-.item-shortcut {
-    margin-left: 58px;
 }
 
 .prefs-btn {
