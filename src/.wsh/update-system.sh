@@ -36,6 +36,7 @@ function update-system() {
 
     echo -e '\nStarting other services'
     systemctl daemon-reload
+    systemctl --user daemon-reload
     sudo systemctl enable NetworkManager --now
     sudo systemctl enable docker --now
     sudo systemctl enable sshd --now
