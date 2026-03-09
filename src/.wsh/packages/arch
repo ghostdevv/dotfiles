@@ -17,6 +17,8 @@ python-mutagen
 sudo
 gdm
 lm_sensors
+exfat-utils
+ntfs-3g
 
 # System Utilities
 timeshift
@@ -195,7 +197,9 @@ uv
 kdlfmt
 bun
 opencode-bin
+opencode-desktop-bin
 ast-grep
+caddy
 
 # CLI Utilities
 bat
@@ -228,6 +232,7 @@ presenterm
 nvtop
 cowsay
 oha
+lolcat
 
 # Network & Security
 mullvad-vpn-bin
