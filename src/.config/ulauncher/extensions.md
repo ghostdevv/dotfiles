@@ -4,3 +4,4 @@
 - https://github.com/ghostdevv/ulauncher-fw-fanctrl
 - https://github.com/ghostdevv/ulauncher-deno-scripts
 - https://github.com/ghostdevv/ulauncher-tailscale
+- https://github.com/ghostdevv/ulauncher-llama-swap
