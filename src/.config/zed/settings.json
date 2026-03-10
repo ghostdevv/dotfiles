@@ -7,7 +7,11 @@
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
 	"agent": {
-		"favorite_models": [
+        "inline_assistant_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-5-mini"
+        },
+        "favorite_models": [
 			{
 				"provider": "wai",
 				"model": "gpt-oss-120b",
@@ -60,6 +64,23 @@
 					{
 						"name": "minimax-m2.5",
 						"max_tokens": 64000,
+						"max_output_tokens": 131072,
+						"max_completion_tokens": 131072,
+						"capabilities": {
+							"tools": true,
+							"images": false,
+							"parallel_tool_calls": true,
+							"prompt_cache_key": true,
+						},
+					},
+				],
+			},
+			"local": {
+				"api_url": "http://127.0.0.1:7748/v1",
+				"available_models": [
+					{
+						"name": "llama-3.1-8b-instruct",
+						"max_tokens": 131072,
 						"max_output_tokens": 131072,
 						"max_completion_tokens": 131072,
 						"capabilities": {
