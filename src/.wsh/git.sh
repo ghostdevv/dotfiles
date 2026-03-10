@@ -34,6 +34,12 @@ function gsc() {
           echo "  📝 Has uncommitted changes"
         fi
 
+        # Check for stashes
+        local stash_count=$(git stash list | wc -l)
+        if [ "$stash_count" -gt 0 ]; then
+          echo "  📦 Has $stash_count stash(es)"
+        fi
+
         # Check for unpushed commits and if behind remote
         local ahead=0
         local behind=0
