@@ -32,7 +32,10 @@ function update-system() {
   if [[ "$answer" != "n" ]]; then
     echo -e "\nStarting Tailscale"
     sudo systemctl enable tailscaled --now
-    sudo tailscale up --accept-dns=false --operator="$USER"
+    sudo tailscale up --accept-dns=false --operator="$USER" --accept-routes --exit-node=
+    tailscale configure systray --enable-startup=systemd
+    systemctl --user daemon-reload
+    systemctl --user enable --now tailscale-systray
 
     echo -e '\nStarting other services'
     systemctl daemon-reload
