@@ -7,11 +7,12 @@
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
 	"agent": {
-        "inline_assistant_model": {
-            "provider": "copilot_chat",
-            "model": "gpt-5-mini"
-        },
-        "favorite_models": [
+		"dock": "right",
+		"inline_assistant_model": {
+			"provider": "copilot_chat",
+			"model": "gpt-5-mini",
+		},
+		"favorite_models": [
 			{
 				"provider": "wai",
 				"model": "gpt-oss-120b",
