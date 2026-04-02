@@ -133,6 +133,8 @@ function update-dotfiles() {
   # Opencode
   _dotfiles_download ".config/opencode/opencode.json"
   _dotfiles_download ".config/opencode/svelte.json"
+  _dotfiles_download ".config/opencode/tui.json"
+  _dotfiles_download ".config/opencode/themes/GHOST.json"
   _dotfiles_download ".config/opencode/commands/pr-comments.md"
   # llama-swap
   _dotfiles_download ".config/llama-swap/config.yaml"
