@@ -8,20 +8,19 @@ macros:
 healthCheckTimeout: 30
 
 models:
-    llama-3.1-8b-instruct:
-        name: 'Llama 3.1 8b Instruct'
+    gemma-4-E4B-it:
+        name: 'Gemma 4 E4B'
         ttl: 30
         cmd: |
             ${llama-server}
-            --hf-repo unsloth/Llama-3.1-8B-Instruct-GGUF:Q5_K_M
-            --jinja
+            --hf-repo unsloth/gemma-4-E4B-it-GGUF:UD-Q4_K_XL
             --n-gpu-layers 999
             --flash-attn on
             --parallel 1
             --ctx-size 32000
+            --cache-ram 0
             --ubatch-size 2048
             --batch-size 2048
-            --cache-ram 0
     zeta-2:
         name: 'Zeta 2'
         ttl: 1800
