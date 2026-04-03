@@ -10,5 +10,14 @@
 		"question": "/home/willow/.config/opencode/sounds/dingdong.opus",
 		"user_cancelled": "/home/willow/.config/opencode/sounds/dingaling.opus",
 		"plan_exit": "/home/willow/.config/opencode/sounds/dingaling.opus"
+	},
+	"volumes": {
+		"permission": 0.8,
+		"complete": 0.5,
+		"subagent_complete": 0.5,
+		"error": 0.5,
+		"question": 0.8,
+		"user_cancelled": 0.5,
+		"plan_exit": 0.5
 	}
 }
