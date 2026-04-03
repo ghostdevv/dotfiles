@@ -1,11 +1,16 @@
 // https://zed.dev/docs/configuring-zed
 {
-	"edit_predictions": {
-		"provider": "zed",
-	},
 	"on_last_window_closed": "quit_app",
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
+	"edit_predictions": {
+		"provider": "open_ai_compatible_api",
+		"open_ai_compatible_api": {
+			"prompt_format": "zeta2",
+			"api_url": "http://127.0.0.1:7748/v1/completions",
+			"model": "zeta-2",
+		},
+	},
 	"agent": {
 		"dock": "right",
 		"inline_assistant_model": {
