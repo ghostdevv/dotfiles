@@ -52,7 +52,12 @@
 			},
 			"models": {
 				"llama-3.1-8b-instruct": {
-					"name": "Llama 3.1 8b Instruct"
+					"name": "Llama 3.1 8b Instruct",
+					"limit": {
+						"context": 32000,
+						"output": 16000,
+						"input": 16000
+					}
 				}
 			}
 		}

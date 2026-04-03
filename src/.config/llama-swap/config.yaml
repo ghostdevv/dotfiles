@@ -2,7 +2,7 @@
 
 macros:
     'llama-server': >
-        /app/llama-server
+        /usr/bin/llama-server
         --port ${PORT}
 
 healthCheckTimeout: 30
@@ -12,12 +12,13 @@ models:
         name: 'Llama 3.1 8b Instruct'
         ttl: 30
         cmd: |
-            /usr/bin/llama-server
-            --port ${PORT}
+            ${llama-server}
             --hf-repo unsloth/Llama-3.1-8B-Instruct-GGUF:Q5_K_M
             --jinja
             --n-gpu-layers 999
             --flash-attn on
-            --ctx-size 0
+            --parallel 1
+            --ctx-size 32000
             --ubatch-size 2048
             --batch-size 2048
+            --cache-ram 0
