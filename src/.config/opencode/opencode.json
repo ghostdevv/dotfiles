@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"plugin": ["@sveltejs/opencode@0.1.5", "@mohak34/opencode-notifier@0.1.30"],
+	"plugin": ["@sveltejs/opencode@0.1.5", "@mohak34/opencode-notifier@0.2.1"],
 	"mcp": {
 		"tmcp-web": {
 			"type": "remote",
