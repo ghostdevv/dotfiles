@@ -1,0 +1,14 @@
+{
+	"sound": true,
+	"notification": true,
+	"showSessionTitle": true,
+	"sounds": {
+		"permission": "/home/willow/.config/opencode/sounds/dingdong.opus",
+		"complete": "/home/willow/.config/opencode/sounds/dingaling.opus",
+		"subagent_complete": "/home/willow/.config/opencode/sounds/dingaling.opus",
+		"error": "/home/willow/.config/opencode/sounds/dingaling.opus",
+		"question": "/home/willow/.config/opencode/sounds/dingdong.opus",
+		"user_cancelled": "/home/willow/.config/opencode/sounds/dingaling.opus",
+		"plan_exit": "/home/willow/.config/opencode/sounds/dingaling.opus"
+	}
+}

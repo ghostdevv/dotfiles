@@ -50,7 +50,7 @@ function update-dotfiles() {
     if _has_update_available "$1"; then
       echo -e "Updating '$1'"
       mkdir -p "$(dirname $OUTPUT)"
-      curl --progress-bar --http2 -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/src/$1" -o "$OUTPUT"
+      curl --progress-bar --http2 -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/$1" -o "$OUTPUT"
       echo -e ""
     else
       echo "Skipping '$1'"
@@ -136,6 +136,9 @@ function update-dotfiles() {
   _dotfiles_download ".config/opencode/tui.json"
   _dotfiles_download ".config/opencode/themes/GHOST.json"
   _dotfiles_download ".config/opencode/commands/pr-comments.md"
+  _dotfiles_download ".config/opencode/opencode-notifier.json"
+  _dotfiles_download ".config/opencode/sounds/dingaling.opus"
+  _dotfiles_download ".config/opencode/sounds/dingdong.opus"
   # llama-swap
   _dotfiles_download ".config/llama-swap/config.yaml"
   _dotfiles_download ".config/systemd/user/llama-swap.service"
