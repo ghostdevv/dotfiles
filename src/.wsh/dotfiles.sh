@@ -142,6 +142,8 @@ function update-dotfiles() {
   # llama-swap
   _dotfiles_download ".config/llama-swap/config.yaml"
   _dotfiles_download ".config/systemd/user/llama-swap.service"
+  # Lazygit
+  _dotfiles_download ".config/lazygit/config.yml"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"

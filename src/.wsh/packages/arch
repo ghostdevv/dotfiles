@@ -172,6 +172,7 @@ ghostty
 
 # Development
 git
+git-delta
 github-cli
 docker
 docker-buildx
