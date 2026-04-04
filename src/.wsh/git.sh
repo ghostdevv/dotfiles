@@ -177,3 +177,240 @@ function co-authored-by() {
         --raw-output \
         '"Co-Authored-By: \(.name) <\(.id)+\(.login)@users.noreply.github.com>"'
 }
+
+function pr-comments() {
+    local pr_number="" owner="" repo="" author="" show_all=false
+    local positional=()
+
+    # Parse flags and positional args
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --author) author="$2"; shift 2 ;;
+            --all)    show_all=true; shift ;;
+            --help|-h)
+                echo "Usage: pr-comments <pr-number|url> [owner/repo] [--author LOGIN] [--all]"
+                echo ""
+                echo "Fetches PR comments and review threads using the GitHub GraphQL API (via gh)."
+                echo ""
+                echo "  <pr-number>     PR number in the current repo"
+                echo "  <url>           Full GitHub PR URL"
+                echo "  [owner/repo]    Repository (optional, detected from git remote)"
+                echo "  --author LOGIN  Only show threads started by LOGIN"
+                echo "  --all           Include resolved and outdated threads"
+                return 0
+                ;;
+            *) positional+=("$1"); shift ;;
+        esac
+    done
+
+    local arg="${positional[1]:-}"
+    local repo_arg="${positional[2]:-}"
+
+    if [[ -z "$arg" ]]; then
+        pr-comments --help
+        return 1
+    fi
+
+    # Parse input: URL or bare number
+    if [[ "$arg" =~ ^https?://github\.com/([^/]+)/([^/]+)/pull/([0-9]+) ]]; then
+        owner="${match[1]}"
+        repo="${match[2]}"
+        pr_number="${match[3]}"
+    elif [[ "$arg" =~ ^[0-9]+$ ]]; then
+        pr_number="$arg"
+    else
+        echo "Error: expected a PR number or GitHub PR URL."
+        return 1
+    fi
+
+    # Resolve owner/repo if not parsed from URL
+    if [[ -z "$owner" || -z "$repo" ]]; then
+        if [[ -n "$repo_arg" && "$repo_arg" =~ ^([^/]+)/([^/]+)$ ]]; then
+            owner="${match[1]}"
+            repo="${match[2]}"
+        else
+            local remote_url
+            remote_url=$(git remote get-url origin 2>/dev/null)
+
+            if [[ -z "$remote_url" ]]; then
+                echo "Error: no git remote found. Provide owner/repo as second argument."
+                return 1
+            fi
+
+            if [[ "$remote_url" =~ github\.com[:/]([^/]+)/([^/.]+) ]]; then
+                owner="${match[1]}"
+                repo="${match[2]}"
+            else
+                echo "Error: could not parse owner/repo from remote: $remote_url"
+                return 1
+            fi
+        fi
+    fi
+
+    # Build jq filters
+    local jq_thread_select='.isResolved == false and .isOutdated == false'
+    if $show_all; then
+        jq_thread_select='true'
+    fi
+
+    local jq_author_select='true'
+    if [[ -n "$author" ]]; then
+        jq_author_select="\$c.author.login == \"$author\""
+    fi
+
+    local jq_comment_author='true'
+    if [[ -n "$author" ]]; then
+        jq_comment_author=".author.login == \"$author\""
+    fi
+
+    # jq filter for review threads
+    local jq_threads
+    jq_threads="$(cat <<'JQEOF'
+[
+  .data.repository.pullRequest.reviewThreads.nodes[]
+  | select(__THREAD_SELECT__)
+  | .comments.nodes[0] as $c
+  | select(__AUTHOR_SELECT__)
+  | {
+      id: .id,
+      author: $c.author.login,
+      path: $c.path,
+      line: $c.line,
+      url: $c.url
+    } + (
+      if ($c.body | test("DESCRIPTION START"))
+      then {
+        title:       ($c.body | split("\n")[0]),
+        severity:    ($c.body | split("\n")[2]),
+        description: ($c.body | capture("DESCRIPTION START -->\\s*(?<d>[\\s\\S]*?)\\s*<!-- DESCRIPTION END").d // ""),
+        locations:   ($c.body | capture("LOCATIONS START\\n(?<l>[\\s\\S]*?)\\nLOCATIONS END").l // "")
+      }
+      else { body: $c.body }
+      end
+    )
+]
+JQEOF
+)"
+    jq_threads="${jq_threads//__THREAD_SELECT__/$jq_thread_select}"
+    jq_threads="${jq_threads//__AUTHOR_SELECT__/$jq_author_select}"
+
+    # jq filter for conversation comments
+    local jq_comments
+    jq_comments="$(cat <<JQEOF
+[
+  .data.repository.pullRequest.comments.nodes[]
+  | select($jq_comment_author)
+  | {
+      author: .author.login,
+      date:   .createdAt[0:10],
+      url:    .url,
+      body:   .body
+    }
+]
+JQEOF
+)"
+
+    # Execute GraphQL query — fetches both conversation comments and review threads
+    local raw_response
+    raw_response=$(gh api graphql -f query="
+{
+  repository(owner: \"$owner\", name: \"$repo\") {
+    pullRequest(number: $pr_number) {
+      comments(last: 100) {
+        nodes {
+          author { login }
+          body
+          createdAt
+          url
+        }
+      }
+      reviewThreads(last: 100) {
+        nodes {
+          id
+          isResolved
+          isOutdated
+          comments(first: 1) {
+            nodes {
+              author { login }
+              body
+              path
+              line
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}" 2>&1)
+
+    if [[ $? -ne 0 ]]; then
+        echo "Error fetching PR data:"
+        echo "$raw_response"
+        return 1
+    fi
+
+    # Process conversation comments
+    local comments
+    comments=$(printf '%s\n' "$raw_response" | jq "$jq_comments" 2>&1)
+    if [[ $? -ne 0 ]]; then
+        echo "Error processing comments with jq:"
+        echo "$comments"
+        return 1
+    fi
+
+    # Process review threads
+    local threads
+    threads=$(printf '%s\n' "$raw_response" | jq "$jq_threads" 2>&1)
+    if [[ $? -ne 0 ]]; then
+        echo "Error processing review threads with jq:"
+        echo "$threads"
+        return 1
+    fi
+
+    local comment_count thread_count
+    comment_count=$(printf '%s\n' "$comments" | jq 'length')
+    thread_count=$(printf '%s\n' "$threads" | jq 'length')
+
+    local label="unresolved"
+    $show_all && label="all"
+
+    if [[ "$comment_count" -eq 0 && "$thread_count" -eq 0 ]]; then
+        echo "No comments or ${label} review threads on PR #$pr_number ($owner/$repo)"
+        [[ -n "$author" ]] && echo "  (filtered to author: $author)"
+        return 0
+    fi
+
+    echo "PR #$pr_number - $owner/$repo"
+    [[ -n "$author" ]] && echo "  filtered to author: $author"
+    echo ""
+
+    # Print conversation comments
+    if [[ "$comment_count" -gt 0 ]]; then
+        echo "=== Comments ($comment_count) ==="
+        echo ""
+        printf '%s\n' "$comments" | jq -r '.[] |
+            "--- " + .author + " (" + .date + ") ---\n" +
+            .body + "\n" +
+            .url + "\n"
+        '
+    fi
+
+    # Print review threads
+    if [[ "$thread_count" -gt 0 ]]; then
+        echo "=== Review Threads ($thread_count ${label}) ==="
+        echo ""
+        printf '%s\n' "$threads" | jq -r '.[] |
+            "--- " + .author + " @ " + .path + ":" + (.line // 0 | tostring) + " ---\n" +
+            (if .title then
+                "Title: "       + .title + "\n" +
+                "Severity: "    + .severity + "\n" +
+                "Description: " + .description + "\n" +
+                (if .locations != "" then "Locations:\n" + .locations + "\n" else "" end)
+            else
+                .body + "\n"
+            end) +
+            .url + "\n"
+        '
+    fi
+}
