@@ -263,7 +263,7 @@ function pr-comments() {
         jq_comment_author=".author.login == \"$author\""
     fi
 
-    # jq filter for review threads
+    # jq filter for review threads (includes all replies)
     local jq_threads
     jq_threads="$(cat <<'JQEOF'
 [
@@ -273,21 +273,26 @@ function pr-comments() {
   | select(__AUTHOR_SELECT__)
   | {
       id: .id,
-      author: $c.author.login,
       path: $c.path,
       line: $c.line,
-      url: $c.url
-    } + (
-      if ($c.body | test("DESCRIPTION START"))
-      then {
-        title:       ($c.body | split("\n")[0]),
-        severity:    ($c.body | split("\n")[2]),
-        description: ($c.body | capture("DESCRIPTION START -->\\s*(?<d>[\\s\\S]*?)\\s*<!-- DESCRIPTION END").d // ""),
-        locations:   ($c.body | capture("LOCATIONS START\\n(?<l>[\\s\\S]*?)\\nLOCATIONS END").l // "")
-      }
-      else { body: $c.body }
-      end
-    )
+      comments: [
+        .comments.nodes[] | {
+          author: .author.login,
+          url:    .url,
+          body:   .body
+        } + (
+          if (.body | test("DESCRIPTION START"))
+          then {
+            title:       (.body | split("\n")[0]),
+            severity:    (.body | split("\n")[2]),
+            description: (.body | capture("DESCRIPTION START -->\\s*(?<d>[\\s\\S]*?)\\s*<!-- DESCRIPTION END").d // ""),
+            locations:   (.body | capture("LOCATIONS START\\n(?<l>[\\s\\S]*?)\\nLOCATIONS END").l // "")
+          }
+          else {}
+          end
+        )
+      ]
+    }
 ]
 JQEOF
 )"
@@ -310,7 +315,25 @@ JQEOF
 JQEOF
 )"
 
-    # Execute GraphQL query — fetches both conversation comments and review threads
+    # jq filter for reviews (approve/request-changes/comment with a body)
+    local jq_reviews
+    jq_reviews="$(cat <<JQEOF
+[
+  .data.repository.pullRequest.reviews.nodes[]
+  | select(.body != null and .body != "")
+  | select($jq_comment_author)
+  | {
+      author: .author.login,
+      state:  .state,
+      date:   .createdAt[0:10],
+      url:    .url,
+      body:   .body
+    }
+]
+JQEOF
+)"
+
+    # Execute GraphQL query — fetches comments, reviews, and review threads
     local raw_response
     raw_response=$(gh api graphql -f query="
 {
@@ -324,12 +347,21 @@ JQEOF
           url
         }
       }
+      reviews(last: 100) {
+        nodes {
+          author { login }
+          body
+          state
+          createdAt
+          url
+        }
+      }
       reviewThreads(last: 100) {
         nodes {
           id
           isResolved
           isOutdated
-          comments(first: 1) {
+          comments(last: 20) {
             nodes {
               author { login }
               body
@@ -359,6 +391,15 @@ JQEOF
         return 1
     fi
 
+    # Process reviews
+    local reviews
+    reviews=$(printf '%s\n' "$raw_response" | jq "$jq_reviews" 2>&1)
+    if [[ $? -ne 0 ]]; then
+        echo "Error processing reviews with jq:"
+        echo "$reviews"
+        return 1
+    fi
+
     # Process review threads
     local threads
     threads=$(printf '%s\n' "$raw_response" | jq "$jq_threads" 2>&1)
@@ -368,15 +409,16 @@ JQEOF
         return 1
     fi
 
-    local comment_count thread_count
+    local comment_count review_count thread_count
     comment_count=$(printf '%s\n' "$comments" | jq 'length')
+    review_count=$(printf '%s\n' "$reviews" | jq 'length')
     thread_count=$(printf '%s\n' "$threads" | jq 'length')
 
     local label="unresolved"
     $show_all && label="all"
 
-    if [[ "$comment_count" -eq 0 && "$thread_count" -eq 0 ]]; then
-        echo "No comments or ${label} review threads on PR #$pr_number ($owner/$repo)"
+    if [[ "$comment_count" -eq 0 && "$review_count" -eq 0 && "$thread_count" -eq 0 ]]; then
+        echo "No comments, reviews, or ${label} review threads on PR #$pr_number ($owner/$repo)"
         [[ -n "$author" ]] && echo "  (filtered to author: $author)"
         return 0
     fi
@@ -396,21 +438,35 @@ JQEOF
         '
     fi
 
+    # Print reviews
+    if [[ "$review_count" -gt 0 ]]; then
+        echo "=== Reviews ($review_count) ==="
+        echo ""
+        printf '%s\n' "$reviews" | jq -r '.[] |
+            "--- " + .author + " [" + .state + "] (" + .date + ") ---\n" +
+            .body + "\n" +
+            .url + "\n"
+        '
+    fi
+
     # Print review threads
     if [[ "$thread_count" -gt 0 ]]; then
         echo "=== Review Threads ($thread_count ${label}) ==="
         echo ""
         printf '%s\n' "$threads" | jq -r '.[] |
-            "--- " + .author + " @ " + .path + ":" + (.line // 0 | tostring) + " ---\n" +
-            (if .title then
-                "Title: "       + .title + "\n" +
-                "Severity: "    + .severity + "\n" +
-                "Description: " + .description + "\n" +
-                (if .locations != "" then "Locations:\n" + .locations + "\n" else "" end)
-            else
-                .body + "\n"
-            end) +
-            .url + "\n"
+            "--- " + .comments[0].author + " @ " + .path + ":" + (.line // 0 | tostring) + " ---\n" +
+            ([.comments[] |
+                "  [" + .author + "]\n" +
+                (if .title then
+                    "  Title: "       + .title + "\n" +
+                    "  Severity: "    + .severity + "\n" +
+                    "  Description: " + .description + "\n" +
+                    (if .locations != "" then "  Locations:\n" + .locations + "\n" else "" end)
+                else
+                    "  " + (.body | gsub("\n"; "\n  ")) + "\n"
+                end)
+            ] | join("\n")) +
+            .comments[-1].url + "\n"
         '
     fi
 }
