@@ -286,3 +286,8 @@ output "eDP-1" {
     variable-refresh-rate
     scale 1.8
 }
+
+output "Dell Inc. Dell AW3418DW NDRWF89A0C7L" {
+    mode "3440x1440@49.987"
+    position x=1000 y=-1000
+}
