@@ -4,7 +4,7 @@
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
 	"edit_predictions": {
-		"provider": "open_ai_compatible_api",
+		"provider": "zed",
 		"open_ai_compatible_api": {
 			"prompt_format": "zeta2",
 			"api_url": "http://127.0.0.1:7748/v1/completions",
