@@ -26,6 +26,7 @@ alias ll="ls -alFh"
 alias l="ls"
 
 alias update-mirrors="sudo reflector @/etc/xdg/reflector/reflector.conf"
+alias pkgrep="yay -Q | grep -i"
 
 # bat config
 if command -v bat &> /dev/null; then
