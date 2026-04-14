@@ -198,7 +198,6 @@ uv
 kdlfmt
 bun
 opencode-bin
-opencode-desktop-bin
 ast-grep
 caddy
 
@@ -235,6 +234,7 @@ nvtop
 cowsay
 oha
 lolcat
+jless
 
 # Network & Security
 mullvad-vpn-bin
@@ -255,6 +255,7 @@ brave-bin
 zen-browser-bin
 ladybird-git
 firefox
+servo-bin
 
 # Media & Entertainment
 spotify
@@ -317,7 +318,6 @@ gvfs
 gvfs-afc
 gvfs-dnssd
 gvfs-goa
-gvfs-google
 gvfs-gphoto2
 gvfs-mtp
 gvfs-nfs
