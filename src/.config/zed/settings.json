@@ -1,5 +1,6 @@
 // https://zed.dev/docs/configuring-zed
 {
+	"cli_default_open_behavior": "new_window",
 	"on_last_window_closed": "quit_app",
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
@@ -36,10 +37,11 @@
 			},
 		],
 		"show_turn_stats": true,
-		"play_sound_when_agent_done": true,
+		"play_sound_when_agent_done": "always",
 		"default_profile": "write",
 		"enabled": true,
 		"default_model": {
+			"enable_thinking": true,
 			"provider": "wai",
 			"model": "minimax-m2.5",
 		},
@@ -75,6 +77,18 @@
 						"capabilities": {
 							"tools": true,
 							"images": false,
+							"parallel_tool_calls": true,
+							"prompt_cache_key": true,
+						},
+					},
+					{
+						"name": "gemma-4-31B-it",
+						"max_tokens": 32768,
+						"max_output_tokens": 32768,
+						"max_completion_tokens": 32768,
+						"capabilities": {
+							"tools": false,
+							"images": true,
 							"parallel_tool_calls": true,
 							"prompt_cache_key": true,
 						},
