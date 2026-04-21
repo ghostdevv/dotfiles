@@ -82,7 +82,7 @@
 						},
 					},
 					{
-						"name": "gemma-4-31B-it",
+						"name": "gemma-4-E2B-it",
 						"max_tokens": 32768,
 						"max_output_tokens": 32768,
 						"max_completion_tokens": 32768,
