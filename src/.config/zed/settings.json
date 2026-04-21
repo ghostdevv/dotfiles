@@ -41,9 +41,9 @@
 		"default_profile": "write",
 		"enabled": true,
 		"default_model": {
-			"enable_thinking": true,
+			"enable_thinking": false,
 			"provider": "wai",
-			"model": "minimax-m2.5",
+			"model": "gemma-4-E2B-it",
 		},
 	},
 	"agent_servers": {
@@ -66,7 +66,7 @@
 							"tools": true,
 							"images": false,
 							"parallel_tool_calls": true,
-							"prompt_cache_key": true,
+							"prompt_cache_key": false,
 						},
 					},
 					{
@@ -78,7 +78,7 @@
 							"tools": true,
 							"images": false,
 							"parallel_tool_calls": true,
-							"prompt_cache_key": true,
+							"prompt_cache_key": false,
 						},
 					},
 					{
@@ -90,7 +90,7 @@
 							"tools": true,
 							"images": true,
 							"parallel_tool_calls": true,
-							"prompt_cache_key": true,
+							"prompt_cache_key": false,
 						},
 					},
 				],
