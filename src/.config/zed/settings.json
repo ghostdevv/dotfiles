@@ -87,7 +87,7 @@
 						"max_output_tokens": 32768,
 						"max_completion_tokens": 32768,
 						"capabilities": {
-							"tools": false,
+							"tools": true,
 							"images": true,
 							"parallel_tool_calls": true,
 							"prompt_cache_key": true,
