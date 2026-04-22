@@ -49,7 +49,11 @@
 	"agent_servers": {
 		"opencode": {
 			"type": "extension",
-			"favorite_models": ["wai/minimax-m2.5", "wai/gemma-4-E2B-it"],
+			"favorite_models": [
+				"wai/minimax-m2.5",
+				"wai/minimax-m2.7",
+				"wai/gemma-4-E2B-it",
+			],
 		},
 	},
 	"language_models": {
@@ -75,6 +79,20 @@
 					{
 						"name": "minimax-m2.5",
 						"display_name": "Minimax M2.5",
+						"max_tokens": 64000,
+						"max_output_tokens": 16384,
+						"max_completion_tokens": 16384,
+						"capabilities": {
+							"tools": true,
+							"images": false,
+							"parallel_tool_calls": true,
+							"prompt_cache_key": false,
+							"chat_completions": true,
+						},
+					},
+					{
+						"name": "minimax-m2.7",
+						"display_name": "Minimax M2.7",
 						"max_tokens": 64000,
 						"max_output_tokens": 16384,
 						"max_completion_tokens": 16384,

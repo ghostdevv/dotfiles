@@ -45,6 +45,18 @@
 						"output": 16384
 					}
 				},
+				"minimax-m2.7": {
+					"name": "MiniMax M2.7",
+					"cost": { "input": 0.3, "output": 1.2, "cache_read": 0.06 },
+					"reasoning": true,
+					"tool_call": true,
+					"interleaved": true,
+					"limit": {
+						"context": 64000,
+						"input": 45616,
+						"output": 16384
+					}
+				},
 				"gemma-4-E2B-it": {
 					"name": "Gemma 4 E2B",
 					"cost": { "input": 0.13, "output": 0.4 },
