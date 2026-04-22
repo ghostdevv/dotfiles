@@ -248,6 +248,7 @@ whois
 gnome-keyring
 libsecret
 wireshark-qt
+bind
 
 # Browsers
 chromium
@@ -344,3 +345,4 @@ ulauncher-git
 orca
 gnome-system-monitor
 skrooge
+qflipper
