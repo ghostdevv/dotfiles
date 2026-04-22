@@ -287,7 +287,14 @@ output "eDP-1" {
     scale 1.8
 }
 
+// brady
 output "Dell Inc. Dell AW3418DW NDRWF89A0C7L" {
     mode "3440x1440@49.987"
     position x=1000 y=-1000
+}
+
+// sean
+output "Dell Inc. DELL U4320Q JTMPX13" {
+    mode "3840x2160@60.000"
+    scale 1.2
 }
