@@ -79,9 +79,9 @@
 					{
 						"name": "minimax-m2.5",
 						"display_name": "Minimax M2.5",
-						"max_tokens": 64000,
-						"max_output_tokens": 16384,
-						"max_completion_tokens": 16384,
+						"max_tokens": 131072,
+						"max_output_tokens": 32768,
+						"max_completion_tokens": 32768,
 						"capabilities": {
 							"tools": true,
 							"images": false,
