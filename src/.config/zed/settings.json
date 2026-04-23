@@ -178,9 +178,6 @@
 	"git_panel": {
 		"dock": "right",
 	},
-	"debugger": {
-		"dock": "left",
-	},
 	"outline_panel": {
 		"dock": "right",
 		"button": false,
@@ -198,7 +195,6 @@
 		"font_size": 14,
 		"cursor_shape": "bar",
 		"blinking": "on",
-		"dock": "left",
 		"toolbar": {
 			"breadcrumbs": false,
 		},
