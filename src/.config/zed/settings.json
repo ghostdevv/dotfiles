@@ -13,6 +13,7 @@
 		},
 	},
 	"agent": {
+		"sidebar_side": "right",
 		"dock": "right",
 		"inline_assistant_model": {
 			"provider": "copilot_chat",
@@ -150,13 +151,11 @@
 			"settings": {},
 		},
 		"dotprompts": {
-   "settings": {},
-			"enabled": false,
+   "enabled": false,
 			"url": "https://dotprompts.com/mcp",
 		},
 		"tmcp-web": {
-   "settings": {},
-			"enabled": false,
+   "enabled": false,
 			"url": "https://tmcp-web.willowdev.workers.dev/mcp",
 		},
 	},
@@ -179,12 +178,12 @@
 	"git_panel": {
 		"dock": "right",
 	},
+	"debugger": {
+		"dock": "left",
+	},
 	"outline_panel": {
 		"dock": "right",
 		"button": false,
-	},
-	"notification_panel": {
-		"dock": null,
 	},
 	"ui_font_size": 16,
 	"buffer_font_size": 14,
@@ -199,6 +198,7 @@
 		"font_size": 14,
 		"cursor_shape": "bar",
 		"blinking": "on",
+		"dock": "left",
 		"toolbar": {
 			"breadcrumbs": false,
 		},
@@ -226,7 +226,6 @@
 		"just": true,
 		"opencode": true,
 		"make": true,
-		
 	},
 	"minimap": {
 		"show": "never",
