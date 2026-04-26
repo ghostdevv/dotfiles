@@ -1,12 +1,5 @@
-source ~/.wsh/system.sh
-source ~/.wsh/dotfiles.sh
-source ~/.wsh/git.sh
-source ~/.wsh/deno-node.sh
-source ~/.wsh/editors.sh
-source ~/.wsh/network.sh
-source ~/.wsh/files.sh
-source ~/.wsh/update-system.sh
-source ~/.wsh/fun.sh
-source ~/.wsh/rust.sh
-source ~/.wsh/audio.sh
-source ~/.wsh/ai.sh
+for file in ~/.wsh/*.sh; do
+  if [[ "$(basename "$file")" != "entry.sh" ]]; then
+    source "$file"
+  fi
+done
