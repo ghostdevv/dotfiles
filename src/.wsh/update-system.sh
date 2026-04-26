@@ -75,6 +75,7 @@ function update-system() {
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
   if [[ "$answer" != "n" ]]; then
+    flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     flatpak install --or-update flathub $(__wsh_read_pkg_list "flatpak" true)
   fi
 
