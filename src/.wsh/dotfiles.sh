@@ -43,14 +43,35 @@ function update-dotfiles() {
     local PLATFORM_LOCK="$2"
     if [[ -n $PLATFORM_LOCK && $PLATFORM_LOCK != $PLATFORM ]]; then
         echo "Skipping '$1' (platform mismatch)"
+        return
     fi
 
     local OUTPUT="$HOME/$1"
 
     if _has_update_available "$1"; then
+      local TEMP_FILE
+      TEMP_FILE="$(mktemp)"
+
+      # Download to temp file
+      curl --progress-bar --http2 -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/src/$1" -o "$TEMP_FILE"
+
+      # If local file exists and differs, confirm before overwriting
+      if [[ -f "$OUTPUT" && "$FORCE" != true ]]; then
+        if ! diff -q "$OUTPUT" "$TEMP_FILE" > /dev/null 2>&1; then
+          echo -n "File '$1' differs from remote. Overwrite? (y/N): "
+          read answer
+          answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
+          if [[ "$answer" != "y" ]]; then
+            rm -f "$TEMP_FILE"
+            echo -e "Skipping '$1'"
+            return
+          fi
+        fi
+      fi
+
       echo -e "Updating '$1'"
       mkdir -p "$(dirname $OUTPUT)"
-      curl --progress-bar --http2 -L "https://raw.githubusercontent.com/ghostdevv/dotfiles/$LATEST_VERSION/src/$1" -o "$OUTPUT"
+      mv "$TEMP_FILE" "$OUTPUT"
       echo -e ""
     else
       echo "Skipping '$1'"
