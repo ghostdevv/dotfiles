@@ -52,8 +52,8 @@
 					"tool_call": true,
 					"interleaved": true,
 					"limit": {
-						"context": 64000,
-						"input": 45616,
+						"context": 65536,
+						"input": 47152,
 						"output": 16384
 					}
 				},

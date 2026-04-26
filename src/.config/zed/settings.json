@@ -99,7 +99,7 @@
 					{
 						"name": "minimax-m2.7",
 						"display_name": "Minimax M2.7",
-						"max_tokens": 64000,
+						"max_tokens": 65536,
 						"max_output_tokens": 16384,
 						"max_completion_tokens": 16384,
 						"capabilities": {
@@ -151,16 +151,16 @@
 	},
 	"context_servers": {
 		"svelte-mcp": {
-   "enabled": false,
+			"enabled": false,
 			"remote": false,
 			"settings": {},
 		},
 		"dotprompts": {
-   "enabled": false,
+			"enabled": false,
 			"url": "https://dotprompts.com/mcp",
 		},
 		"tmcp-web": {
-   "enabled": false,
+			"enabled": false,
 			"url": "https://tmcp-web.willowdev.workers.dev/mcp",
 		},
 	},
