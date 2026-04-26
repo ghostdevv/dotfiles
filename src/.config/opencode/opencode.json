@@ -72,6 +72,22 @@
 						"input": 112688,
 						"output": 16384
 					}
+				},
+				"gemma-4-26B-A4B-it": {
+					"name": "Gemma 4 26B A4B",
+					"cost": { "input": 0.13, "output": 0.4 },
+					"reasoning": true,
+					"tool_call": true,
+					"attachment": true,
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					},
+					"limit": {
+						"context": 131072,
+						"input": 112688,
+						"output": 16384
+					}
 				}
 			}
 		},
