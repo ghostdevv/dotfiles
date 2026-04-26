@@ -18,3 +18,18 @@ function create-virtual-listener() {
     echo -e "Plug audio from an app into the sink"
     echo -e "Then you can bring it from the source to where you need it"
 }
+
+function sync-music() {
+    echo -n "Do you want to sync music to the server? (y/N): "
+    read -r answer
+
+    if [ "$answer" != "y" ]; then
+        echo "Cancelled"
+        return 0
+    fi
+
+    SSH_AUTH_SOCK="$HOME/.1password/agent.sock" \
+        rclone sync \
+        Music skyrocket:/srv/navidrome/music \
+        --progress --interactive
+}
