@@ -41,4 +41,4 @@ sq() { search search "!$@"; }
 alias sl="sl -d -e"
 
 # Show the framework 16 expansion card support image
-alias fw="viu ~/.wsh/images/framework-16-expansion-cards.png --width 45"
+alias fw="viu ~/.wsh/images/framework-13-expansion-cards.png --width 45"
