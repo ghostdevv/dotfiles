@@ -59,7 +59,7 @@
 				"wai/minimax-m2.5",
 				"wai/minimax-m2.7",
 				"wai/gemma-4-E4B-it",
-				"gemma-4-26B-A4B-it",
+				"wai/gemma-4-26B-A4B-it",
 			],
 		},
 	},
