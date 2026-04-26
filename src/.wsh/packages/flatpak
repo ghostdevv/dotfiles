@@ -48,6 +48,7 @@ org.gnome.Chess
 
 # File Sharing
 org.qbittorrent.qBittorrent
+org.localsend.localsend_app
 
 # Virtualization
 org.gnome.Boxes
