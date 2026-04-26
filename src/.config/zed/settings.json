@@ -22,19 +22,24 @@
 		"favorite_models": [
 			{
 				"provider": "wai",
-				"model": "gpt-oss-120b",
-			},
-			{
-				"provider": "zed.dev",
-				"model": "claude-opus-4-5-thinking",
-			},
-			{
-				"provider": "zed.dev",
-				"model": "claude-sonnet-4-5-thinking",
+				"model": "minimax-m2.5",
+				"enable_thinking": false,
 			},
 			{
 				"provider": "wai",
-				"model": "minimax-m2.5",
+				"model": "minimax-m2.7",
+				"enable_thinking": false,
+			},
+			{
+				"provider": "wai",
+				"model": "gpt-oss-120b",
+				"enable_thinking": false,
+			},
+			{
+				"provider": "copilot_chat",
+				"model": "claude-sonnet-4.6",
+				"enable_thinking": true,
+				"effort": "high",
 			},
 		],
 		"show_turn_stats": true,
