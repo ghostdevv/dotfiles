@@ -20,6 +20,7 @@ org.libreoffice.LibreOffice
 org.gnome.Papers
 com.github.jeromerobert.pdfarranger
 org.gnucash.GnuCash
+org.moneymanagerex.MMEX
 
 # Media & Content Creation
 org.gimp.GIMP
