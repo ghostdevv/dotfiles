@@ -31,5 +31,5 @@ function sync-music() {
     SSH_AUTH_SOCK="$HOME/.1password/agent.sock" \
         rclone sync \
         Music skyrocket:/srv/navidrome/music \
-        --progress --interactive
+        --progress
 }
