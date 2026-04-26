@@ -49,7 +49,7 @@
 		"default_model": {
 			"enable_thinking": false,
 			"provider": "wai",
-			"model": "gemma-4-E2B-it",
+			"model": "gemma-4-E4B-it",
 		},
 	},
 	"agent_servers": {
@@ -58,7 +58,7 @@
 			"favorite_models": [
 				"wai/minimax-m2.5",
 				"wai/minimax-m2.7",
-				"wai/gemma-4-E2B-it",
+				"wai/gemma-4-E4B-it",
 				"gemma-4-26B-A4B-it",
 			],
 		},
@@ -112,8 +112,8 @@
 						},
 					},
 					{
-						"name": "gemma-4-E2B-it",
-						"display_name": "Gemma 4 E2B",
+						"name": "gemma-4-E4B-it",
+						"display_name": "Gemma 4 E4B",
 						"max_tokens": 131072,
 						"max_output_tokens": 16384,
 						"max_completion_tokens": 16384,

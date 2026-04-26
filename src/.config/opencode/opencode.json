@@ -57,8 +57,8 @@
 						"output": 16384
 					}
 				},
-				"gemma-4-E2B-it": {
-					"name": "Gemma 4 E2B",
+				"gemma-4-E4B-it": {
+					"name": "Gemma 4 E4B",
 					"cost": { "input": 0.13, "output": 0.4 },
 					"reasoning": true,
 					"tool_call": true,
