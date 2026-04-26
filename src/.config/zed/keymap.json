@@ -5,7 +5,16 @@
 		"bindings": {
 			"ctrl-alt-b": "workspace::ToggleLeftDock",
 			"ctrl-b": "workspace::ToggleRightDock",
-			"alt-g": ["task::Spawn", { "task_name": "lazygit" }]
-		}
-	}
+			"alt-g": ["task::Spawn", { "task_name": "lazygit" }],
+		},
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-alt-?": "multi_workspace::ToggleWorkspaceSidebar",
+		},
+		"unbind": {
+			"ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar",
+		},
+	},
 ]
