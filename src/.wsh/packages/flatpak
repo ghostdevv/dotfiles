@@ -37,7 +37,6 @@ org.siril.Siril
 
 # Communication
 com.discordapp.Discord
-com.tutanota.Tutanota
 org.gnome.Contacts
 org.gnome.Calendar
 org.gajim.Gajim
