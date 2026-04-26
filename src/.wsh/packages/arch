@@ -19,6 +19,7 @@ gdm
 lm_sensors
 exfat-utils
 ntfs-3g
+fwupd
 
 # System Utilities
 timeshift
