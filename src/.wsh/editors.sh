@@ -6,3 +6,6 @@ alias hax="zed ~/.zshrc"
 
 # Set nano as the editor
 export EDITOR="nano"
+
+# run pi
+alias clank="volta run pi"

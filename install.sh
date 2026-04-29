@@ -17,7 +17,7 @@ if ! command -v volta &> /dev/null; then
 
     volta setup
     volta install node@24
-    volta install pnpm@11 tsx typescript @antfu/ni
+    volta install pnpm@11 tsx typescript @antfu/ni @mariozechner/pi-coding-agent
 fi
 
 # Install & Setup Deno
