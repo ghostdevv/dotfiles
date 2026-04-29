@@ -16,8 +16,8 @@ if ! command -v volta &> /dev/null; then
     export PATH="$VOLTA_HOME/bin:$PATH"
 
     volta setup
-    volta install node@22
-    volta install pnpm@10 tsx typescript nodemon @antfu/ni
+    volta install node@24
+    volta install pnpm@11 tsx typescript @antfu/ni
 fi
 
 # Install & Setup Deno
