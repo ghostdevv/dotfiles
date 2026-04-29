@@ -1,8 +1,10 @@
-# optionally configure volta
-if [[ -d "$HOME/.volta" ]]; then
-  export VOLTA_FEATURE_PNPM="1"
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
+# optionally configure fnm
+if command -v fnm &> /dev/null; then
+    eval "$(fnm env \
+        --corepack-enabled \
+        --shell zsh \
+        --version-file-strategy recursive \
+        --resolve-engines)"
 fi
 
 # optionally configure deno

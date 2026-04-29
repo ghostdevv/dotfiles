@@ -267,6 +267,13 @@ function update-system() {
     chsh -s /usr/bin/zsh
   fi
 
+  if command -v fnm &> /dev/null; then
+      fnm install --use 2
+      corepack install --global pnpm
+      pnpm setup
+      pnpm install --global @antfu/ni tsx typescript
+  fi
+
   # Install my search tool
   install_search() {
     curl -L -o search https://github.com/ghostdevv/search/releases/latest/download/search-linux-amd64 \
