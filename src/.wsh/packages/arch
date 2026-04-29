@@ -180,6 +180,7 @@ docker-buildx
 docker-compose
 visual-studio-code-bin
 zed
+fnm
 neovim
 nano
 jdk17-openjdk
