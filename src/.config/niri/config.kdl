@@ -59,6 +59,13 @@ overview {
     }
 }
 
+blur {
+    passes 2
+    offset 1
+    noise 0.05
+    saturation 1
+}
+
 // Set the background for the overview, which will
 // also work for the workspace since it's transparent
 layer-rule {
@@ -106,6 +113,15 @@ window-rule {
 
     shadow {
         on
+    }
+}
+
+// clank.pi
+window-rule {
+    match app-id="com.mitchellh.ghostty" title="π - clank"
+
+    background-effect {
+        blur true
     }
 }
 
