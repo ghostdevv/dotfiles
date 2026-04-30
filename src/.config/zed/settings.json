@@ -16,8 +16,8 @@
 		"sidebar_side": "right",
 		"dock": "right",
 		"inline_assistant_model": {
-			"provider": "copilot_chat",
-			"model": "gpt-5-mini",
+			"provider": "wai",
+			"model": "qwen-3.6-35b-a3b",
 		},
 		"favorite_models": [
 			{
@@ -49,10 +49,13 @@
 		"default_model": {
 			"enable_thinking": false,
 			"provider": "wai",
-			"model": "gemma-4-E4B-it",
+			"model": "qwen-3.6-35b-a3b",
 		},
 	},
 	"agent_servers": {
+		"pi-acp": {
+			"type": "registry",
+		},
 		"opencode": {
 			"type": "extension",
 			"favorite_models": [
@@ -60,7 +63,7 @@
 				"wai/minimax-m2.7",
 				"wai/gemma-4-E4B-it",
 				"wai/gemma-4-26B-A4B-it",
-				"wai/qwen-3.6-35b-a3b"
+				"wai/qwen-3.6-35b-a3b",
 			],
 		},
 	},
