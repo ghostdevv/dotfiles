@@ -160,6 +160,9 @@ function update-dotfiles() {
   _dotfiles_download ".config/opencode/opencode-notifier.json"
   _dotfiles_download ".config/opencode/sounds/dingaling.opus"
   _dotfiles_download ".config/opencode/sounds/dingdong.opus"
+  # Clank.pi
+  _dotfiles_download ".pi/agent/models.json"
+  _dotfiles_download ".pi/agent/settings.json"
   # llama-swap
   _dotfiles_download ".config/llama-swap/config.yaml"
   _dotfiles_download ".config/systemd/user/llama-swap.service"

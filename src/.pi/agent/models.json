@@ -1,0 +1,106 @@
+{
+	"providers": {
+		"wai": {
+			"baseUrl": "https://ai.willow.sh/v1",
+			"api": "openai-completions",
+			"apiKey": "no",
+			"models": [
+				{
+					"id": "gpt-oss-120b",
+					"name": "GPT OSS 120b",
+					"reasoning": true,
+					"contextWindow": 131072,
+					"maxTokens": 32768,
+					"cost": {
+						"input": 0.07,
+						"output": 0.28,
+						"cacheRead": 0,
+						"cacheWrite": 0
+					}
+				},
+				{
+					"id": "minimax-m2.5",
+					"name": "MiniMax M2.5",
+					"reasoning": true,
+					"contextWindow": 131072,
+					"maxTokens": 32768,
+					"cost": {
+						"input": 0.3,
+						"output": 1.2,
+						"cacheRead": 0.03,
+						"cacheWrite": 0
+					}
+				},
+				{
+					"id": "minimax-m2.7",
+					"name": "MiniMax M2.7",
+					"reasoning": true,
+					"contextWindow": 65536,
+					"maxTokens": 16384,
+					"cost": {
+						"input": 0.3,
+						"output": 1.2,
+						"cacheRead": 0.06,
+						"cacheWrite": 0
+					}
+				},
+				{
+					"id": "gemma-4-E4B-it",
+					"name": "Gemma 4 E4B",
+					"reasoning": true,
+					"input": ["text", "image"],
+					"contextWindow": 131072,
+					"maxTokens": 16384,
+					"cost": {
+						"input": 0.13,
+						"output": 0.4,
+						"cacheRead": 0,
+						"cacheWrite": 0
+					}
+				},
+				{
+					"id": "gemma-4-26B-A4B-it",
+					"name": "Gemma 4 26B A4B",
+					"reasoning": true,
+					"input": ["text", "image"],
+					"contextWindow": 131072,
+					"maxTokens": 16384,
+					"cost": {
+						"input": 0.13,
+						"output": 0.4,
+						"cacheRead": 0,
+						"cacheWrite": 0
+					}
+				},
+				{
+					"id": "qwen-3.6-35b-a3b",
+					"name": "Qwen 3.6 35B A3B",
+					"reasoning": true,
+					"input": ["text", "image"],
+					"contextWindow": 131072,
+					"maxTokens": 16384,
+					"cost": {
+						"input": 0.33,
+						"output": 1.95,
+						"cacheRead": 0,
+						"cacheWrite": 0
+					}
+				}
+			]
+		},
+		"local": {
+			"baseUrl": "http://127.0.0.1:7748/v1",
+			"api": "openai-completions",
+			"apiKey": "no",
+			"models": [
+				{
+					"id": "gemma-4-E4B-it",
+					"name": "Gemma 4 E4B",
+					"input": ["text", "image"],
+					"contextWindow": 131072,
+					"maxTokens": 16384
+				}
+			]
+		}
+	}
+}
