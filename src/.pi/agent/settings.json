@@ -7,5 +7,6 @@
 	"enableInstallTelemetry": false,
 	"defaultThinkingLevel": "medium",
 	"hideThinkingBlock": false,
-	"packages": ["git:git@github.com:ghostdevv/clank"]
+	"packages": ["git:git@github.com:ghostdevv/clank"],
+	"npmCommand": ["pnpm"]
 }
