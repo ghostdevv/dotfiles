@@ -3,10 +3,9 @@
 	"defaultProvider": "wai",
 	"defaultModel": "qwen-3.6-35b-a3b",
 	"theme": "GHOST",
-	"quietStartup": false,
+	"quietStartup": true,
 	"enableInstallTelemetry": false,
 	"defaultThinkingLevel": "medium",
-	"hideThinkingBlock": false,
-	"packages": ["git:git@github.com:ghostdevv/clank"],
-	"npmCommand": ["pnpm"]
+	"hideThinkingBlock": true,
+	"packages": ["git:git@github.com:ghostdevv/clank", "npm:pi-cursor-provider"]
 }
