@@ -60,8 +60,7 @@ overview {
 }
 
 blur {
-    passes 2
-    offset 1
+    passes 3
     noise 0.05
     saturation 1
 }
