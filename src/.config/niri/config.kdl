@@ -118,7 +118,7 @@ window-rule {
 
 // clank.pi
 window-rule {
-    match app-id="com.mitchellh.ghostty" title="π - clank"
+    match app-id="com.mitchellh.ghostty" title="^π -"
 
     background-effect {
         blur true
