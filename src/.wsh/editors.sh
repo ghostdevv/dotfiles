@@ -8,4 +8,4 @@ alias hax="zed ~/.zshrc"
 export EDITOR="nano"
 
 # run pi
-alias clank="volta run pi"
+alias clank="$(volta which pi)"
