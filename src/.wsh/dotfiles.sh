@@ -168,6 +168,9 @@ function update-dotfiles() {
   _dotfiles_download ".config/systemd/user/llama-swap.service"
   # Lazygit
   _dotfiles_download ".config/lazygit/config.yml"
+  # Scripts
+  _dotfiles_download ".wsh/scripts/update-crates.ts"
+  _dotfiles_download ".wsh/scripts.sh"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"

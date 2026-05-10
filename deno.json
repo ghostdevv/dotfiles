@@ -1,0 +1,16 @@
+{
+	"$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+	"lock": false,
+	"fmt": {
+		"singleQuote": true,
+		"semiColons": true,
+		"useTabs": true,
+		"indentWidth": 4,
+		"lineWidth": 100
+	},
+	"lint": {
+		"rules": {
+			"exclude": ["no-import-prefix"]
+		}
+	}
+}
