@@ -41,6 +41,11 @@
 				"enable_thinking": true,
 				"effort": "high",
 			},
+			{
+				"provider": "wai",
+				"model": "qwen-3.6-35b-a3b",
+				"enable_thinking": false,
+			},
 		],
 		"show_turn_stats": true,
 		"play_sound_when_agent_done": "always",
