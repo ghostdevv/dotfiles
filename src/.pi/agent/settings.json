@@ -1,5 +1,5 @@
 {
-	"lastChangelogVersion": "0.70.6",
+	"lastChangelogVersion": "0.74.0",
 	"defaultProvider": "wai",
 	"defaultModel": "qwen-3.6-35b-a3b",
 	"theme": "GHOST",
@@ -7,5 +7,6 @@
 	"enableInstallTelemetry": false,
 	"defaultThinkingLevel": "medium",
 	"hideThinkingBlock": true,
-	"packages": ["git:git@github.com:ghostdevv/clank", "npm:pi-cursor-provider"]
+	"packages": ["git:git@github.com:ghostdevv/clank", "npm:pi-cursor-provider"],
+	"editorPaddingX": 0
 }
