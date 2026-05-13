@@ -175,7 +175,7 @@ function co-authored-by() {
 
     echo $data | jq \
         --raw-output \
-        '"Co-Authored-By: \(.name) <\(.id)+\(.login)@users.noreply.github.com>"'
+        '"Co-authored-by: \(.name) <\(.id)+\(.login)@users.noreply.github.com>"'
 }
 
 function pr-comments() {
