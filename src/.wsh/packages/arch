@@ -178,6 +178,7 @@ github-cli
 docker
 docker-buildx
 docker-compose
+podman
 visual-studio-code-bin
 zed
 neovim
@@ -236,6 +237,7 @@ cowsay
 oha
 lolcat
 jless
+goat-cli-bin
 
 # Network & Security
 mullvad-vpn-bin
