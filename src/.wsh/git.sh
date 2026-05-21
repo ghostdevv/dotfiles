@@ -29,6 +29,12 @@ function gsc() {
         local branch=$(git branch --show-current)
         echo "  Branch: $branch"
 
+        # Check for worktrees
+        local worktree_count=$(git worktree list 2>/dev/null | wc -l)
+        if [ "$worktree_count" -gt 1 ]; then
+          echo "  🌳 $worktree_count worktree(s)"
+        fi
+
         # Check for uncommitted changes
         if ! git diff --quiet || ! git diff --cached --quiet; then
           echo "  📝 Has uncommitted changes"
