@@ -191,7 +191,7 @@ function update-dotfiles() {
         printf "Found Server: $(echo $SERVER | jq '.title')\n"
 
         echo $SERVER \
-          | jq -r '"\nHost \(.title | ascii_downcase)\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)"' \
+          | jq -r '"\nHost \(.title | ascii_downcase | gsub(" "; "-"))\n  HostName \(.fields[] | select(.label == "ip") | .value)\n  User \(.fields[] | select(.label == "username") | .value)\n  Port \((.fields[] | select(.label == "port") | .value) // 22)"' \
           >>  ~/.ssh/config
       done
     fi
