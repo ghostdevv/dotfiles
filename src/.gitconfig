@@ -10,6 +10,7 @@
 
 [gpg "ssh"]
     program = "/opt/1Password/op-ssh-sign"
+    allowedSignersFile = "__HOME__/.ssh/allowed_signers"
 
 [commit]
     gpgsign = true

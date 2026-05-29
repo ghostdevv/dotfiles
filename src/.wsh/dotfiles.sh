@@ -180,8 +180,11 @@ function update-dotfiles() {
     answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
     if [[ "$answer" == "y" ]]; then
+      local SIGNING_KEY="$(op item get "Git Signing Key" --fields "public key")"
       FORCE=true _dotfiles_download ".gitconfig"
-      sed -i "s|__GIT_SIGNING_KEY__|$(op item get "Git Signing Key" --fields "public key")|g" "$HOME/.gitconfig"
+      sed -i "s|__GIT_SIGNING_KEY__|$SIGNING_KEY|g" "$HOME/.gitconfig"
+      sed -i "s|__HOME__|$HOME|g" "$HOME/.gitconfig"
+      echo "$(git config --get user.email) namespaces=\"git\" $SIGNING_KEY" > ~/.ssh/allowed_signers
     fi
 
     answer=""
