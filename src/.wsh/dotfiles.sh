@@ -113,8 +113,6 @@ function update-dotfiles() {
   # Terminals
   _dotfiles_download ".config/alacritty/alacritty.toml"
   _dotfiles_download ".config/ghostty/config"
-  # Git
-  _dotfiles_download ".gitconfig"
   # Tools
   _dotfiles_download ".config/fastfetch/config.jsonc"
   _dotfiles_download ".config/hyfetch.json"
@@ -177,6 +175,17 @@ function update-dotfiles() {
 
   # Updating ssh config
   if command -v op >/dev/null; then
+    echo -n "\nDo you want to update your .gitconfig? (y/N): "
+    read answer
+    answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
+
+    if [[ "$answer" == "y" ]]; then
+      FORCE=true _dotfiles_download ".gitconfig"
+      sed -i "s|__GIT_SIGNING_KEY__|$(op item get "Git Signing Key" --fields "public key")|g" "$HOME/.gitconfig"
+    fi
+
+    answer=""
+
     echo -n "\nDo you want to update your SSH config? (y/N): "
     read answer
     answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')

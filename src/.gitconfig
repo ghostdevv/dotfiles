@@ -2,6 +2,18 @@
 	name = Willow (GHOST)
 	email = git@willow.sh
 
+[user]
+    signingkey = __GIT_SIGNING_KEY__
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = "/opt/1Password/op-ssh-sign"
+
+[commit]
+    gpgsign = true
+
 [init]
 	defaultBranch = main
 
