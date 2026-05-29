@@ -282,6 +282,7 @@
 	},
 	"file_types": {
 		"JSON": ["prettierrc"],
+		"Markdown": ["*.svx"],
 	},
 	"journal": {
 		"hour_format": "hour24",
