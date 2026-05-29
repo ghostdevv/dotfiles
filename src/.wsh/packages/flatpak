@@ -36,6 +36,7 @@ org.gnome.Snapshot
 org.gnome.Loupe
 org.gnome.font-viewer
 org.siril.Siril
+be.alexandervanhee.gradia
 
 # Communication
 com.discordapp.Discord
@@ -47,6 +48,7 @@ org.gajim.Gajim
 com.modrinth.ModrinthApp
 org.gnome.Aisleriot
 org.gnome.Chess
+org.gnome.Quadrapassel
 
 # File Sharing
 org.qbittorrent.qBittorrent

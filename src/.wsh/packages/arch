@@ -186,6 +186,7 @@ nano
 jdk17-openjdk
 jdk21-openjdk
 cmake
+binaryen
 go
 gow-git
 terraform
@@ -202,6 +203,7 @@ bun
 opencode-bin
 ast-grep
 caddy
+zizmor
 
 # CLI Utilities
 bat
@@ -350,3 +352,4 @@ orca
 gnome-system-monitor
 skrooge
 qflipper
+freecad
