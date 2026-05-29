@@ -58,7 +58,6 @@ org.localsend.localsend_app
 org.gnome.Boxes
 
 # Hardware Tools
-org.raspberrypi.rpi-imager
 com.orcaslicer.OrcaSlicer
 
 # Utilities

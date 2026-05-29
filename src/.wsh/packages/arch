@@ -344,6 +344,7 @@ blender
 # Misc Apps
 phoronix-test-suite
 etcher-bin
+rpi-imager
 signal-desktop
 rbutil
 archlinux-tweak-tool-git
