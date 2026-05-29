@@ -297,9 +297,9 @@ output "Dell Inc. DELL U2412M 0FFXD42O0LCS" {
 
 // built-in display
 output "eDP-1" {
-    mode "2880x1920@120.000"
-    variable-refresh-rate
-    scale 1.8
+    mode "2256x1504@59.999"
+    // variable-refresh-rate
+    // scale 1.8
 }
 
 // brady
