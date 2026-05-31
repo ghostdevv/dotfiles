@@ -169,19 +169,22 @@ function co-authored-by() {
         return 1
     fi
 
-    local data
-    # Thanks to Seth Larson for the fetch idea!
-    # https://sethmlarson.dev/easy-github-co-authored-by
-    data=$(curl "https://api.github.com/users/$username" --silent --fail-with-body)
+    local file="/tmp/$(echo "$username" | base64)"
 
-    if [[ $? -ne 0 ]]; then
-        echo -e "Failed to fetch with $data"
-        return 1
+    if [[ ! -f "$file" ]]; then
+        # Thanks to Seth Larson for the fetch idea!
+        # https://sethmlarson.dev/easy-github-co-authored-by
+        local res="$(curl "https://api.github.com/users/$username" --silent --fail-with-body --output "$file")"
+
+        if [[ $? -ne 0 ]]; then
+            echo -e "Failed to fetch with $res"
+            return 1
+        fi
     fi
 
-    echo $data | jq \
-        --raw-output \
-        '"Co-authored-by: \(.name) <\(.id)+\(.login)@users.noreply.github.com>"'
+    jq --raw-output \
+        '"Co-authored-by: \(.name) <\(.id)+\(.login)@users.noreply.github.com>"' \
+        "$file"
 }
 
 function pr-comments() {
