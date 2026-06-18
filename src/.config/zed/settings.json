@@ -13,6 +13,13 @@
 		},
 	},
 	"agent": {
+		"tool_permissions": {
+			"tools": {
+				"create_directory": {
+					"default": "allow",
+				},
+			},
+		},
 		"sidebar_side": "right",
 		"dock": "right",
 		"inline_assistant_model": {
@@ -52,9 +59,10 @@
 		"default_profile": "write",
 		"enabled": true,
 		"default_model": {
-			"enable_thinking": false,
-			"provider": "wai",
-			"model": "qwen-3.6-35b-a3b",
+			"effort": "high",
+			"enable_thinking": true,
+			"provider": "copilot_chat",
+			"model": "gpt-5.4",
 		},
 	},
 	"agent_servers": {
@@ -190,6 +198,13 @@
 		},
 	},
 	"context_servers": {
+		"searxng": {
+			"enabled": false,
+			"url": "https://ai.willow.sh/mcp/searxng",
+			"headers": {
+				"Authorization": "",
+			},
+		},
 		"svelte-mcp": {
 			"enabled": false,
 			"remote": false,
@@ -229,8 +244,16 @@
 	},
 	"ui_font_size": 16,
 	"buffer_font_size": 14,
-	"theme": "Serendipity Sunset V1",
-	"icon_theme": "Catppuccin Mocha",
+	"theme": {
+		"mode": "dark",
+		"light": "One Light",
+		"dark": "Serendipity Sunset V1",
+	},
+	"icon_theme": {
+		"mode": "dark",
+		"light": "Catppuccin Mocha",
+		"dark": "Catppuccin Mocha",
+	},
 	"buffer_font_family": "Comic Mono",
 	"preferred_line_length": 90,
 	"auto_update": false,
@@ -267,6 +290,7 @@
 		"just": true,
 		"opencode": true,
 		"make": true,
+		"emmet": true,
 	},
 	"minimap": {
 		"show": "never",
