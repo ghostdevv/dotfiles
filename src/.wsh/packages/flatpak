@@ -48,9 +48,10 @@ org.gnome.Aisleriot
 org.gnome.Chess
 org.gnome.Quadrapassel
 
-# File Sharing
+# Files
 org.qbittorrent.qBittorrent
 org.localsend.localsend_app
+me.fouquet.Stencil
 
 # Virtualization
 org.gnome.Boxes
