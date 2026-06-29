@@ -70,13 +70,13 @@ amdgpu_top
 # Network & Security
 tailscale
 dog
-cloudflared-bin
+cloudflared
 nmap
 gnu-netcat
 caddy
 
 # AI/ML
-llama.cpp-vulkan
+llama-cpp-vulkan
 rocm-smi-lib
 llama-swap
 

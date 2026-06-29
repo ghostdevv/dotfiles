@@ -200,7 +200,7 @@ hcloud
 uv
 kdlfmt
 bun
-opencode-bin
+opencode
 ast-grep
 caddy
 zizmor
@@ -242,10 +242,10 @@ jless
 goat-cli-bin
 
 # Network & Security
-mullvad-vpn-bin
+mullvad-vpn
 tailscale
 dog
-cloudflared-bin
+cloudflared
 nmap
 gnu-netcat
 traceroute
@@ -270,7 +270,7 @@ vlc-plugin-ffmpeg
 vlc-plugins-all
 audacity
 yt-dlp
-feishin-bin
+feishin
 strawberry
 carla
 decibels
@@ -333,7 +333,7 @@ gvfs-smb
 gvfs-wsdd
 
 # AI/ML
-llama.cpp-vulkan
+llama-cpp-vulkan
 llama-swap-bin
 
 # Images

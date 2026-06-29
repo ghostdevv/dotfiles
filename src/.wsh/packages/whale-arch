@@ -45,7 +45,7 @@ unzip
 # Network & Security
 tailscale
 dog
-cloudflared-bin
+cloudflared
 nmap
 gnu-netcat
 traceroute
