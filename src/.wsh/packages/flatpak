@@ -6,6 +6,7 @@ io.github.flattool.Warehouse
 io.github.realmazharhussain.GdmSettings
 org.freedesktop.Bustle
 org.gnome.dspy
+io.github.justinrdonnelly.bouncer
 
 # Development
 org.dbgate.DbGate
@@ -31,6 +32,8 @@ org.gnome.Loupe
 org.gnome.font-viewer
 org.siril.Siril
 be.alexandervanhee.gradia
+org.gnome.gitlab.YaLTeR.Identity
+org.gnome.gitlab.YaLTeR.VideoTrimmer
 
 # Communication
 com.discordapp.Discord
