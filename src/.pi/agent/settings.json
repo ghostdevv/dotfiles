@@ -1,7 +1,7 @@
 {
 	"lastChangelogVersion": "0.74.0",
 	"defaultProvider": "wai",
-	"defaultModel": "qwen-3.6-35b-a3b",
+	"defaultModel": "minimax-m2.7",
 	"theme": "GHOST",
 	"quietStartup": true,
 	"enableInstallTelemetry": false,
