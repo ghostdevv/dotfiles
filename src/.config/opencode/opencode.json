@@ -13,7 +13,7 @@
 			"enabled": false
 		}
 	},
-	"model": "wai/minimax-m2.5",
+	"model": "wai/minimax-m2.7",
 	"small_model": "local/gemma-4-E4B-it",
 	"provider": {
 		"wai": {
