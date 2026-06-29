@@ -32,8 +32,6 @@ wl-clipboard
 ethtool
 yay-bin
 pacman-contrib
-pacgraph
-waycheck
 sysstat
 pkgstats
 
@@ -88,8 +86,6 @@ gnome-control-center
 gnome-shell-extensions
 mutter-devkit
 evolution-data-server
-# to be replaced by papers
-evince
 
 # Niri
 niri
@@ -121,13 +117,6 @@ xdg-user-dirs-gtk
 xdg-desktop-portal-gtk
 xdg-desktop-portal-gnome
 wayland-utils
-wev
-
-# Virtualization
-# virtualbox
-# virtualbox-host-dkms
-# virtualbox-guest-iso
-# virtualbox-ext-oracle
 
 # Fonts
 noto-fonts
@@ -342,7 +331,6 @@ imagemagick
 blender
 
 # Misc Apps
-phoronix-test-suite
 etcher-bin
 rpi-imager
 signal-desktop

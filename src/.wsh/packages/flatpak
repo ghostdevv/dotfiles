@@ -4,21 +4,17 @@ ca.desrt.dconf-editor
 com.github.tchx84.Flatseal
 io.github.flattool.Warehouse
 io.github.realmazharhussain.GdmSettings
-org.bluesabre.MenuLibre
-xyz.tytanium.DoorKnocker
 org.freedesktop.Bustle
 org.gnome.dspy
 
 # Development
 org.dbgate.DbGate
 org.gnome.meld
-com.usebruno.Bruno
 
 # Office & Productivity
 md.obsidian.Obsidian
 org.libreoffice.LibreOffice
 org.gnome.Papers
-com.github.jeromerobert.pdfarranger
 org.gnucash.GnuCash
 org.moneymanagerex.MMEX
 ai.jan.Jan
@@ -27,10 +23,8 @@ ai.jan.Jan
 org.gimp.GIMP
 com.obsproject.Studio
 org.kde.kdenlive
-page.tesk.Refine
 org.nickvision.tagger
 org.musicbrainz.Picard
-net.mkiol.SpeechNote
 io.github.dynobo.sphereview
 org.gnome.Snapshot
 org.gnome.Loupe
