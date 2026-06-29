@@ -168,7 +168,7 @@ docker
 docker-buildx
 docker-compose
 podman
-visual-studio-code-bin
+code
 zed
 neovim
 nano

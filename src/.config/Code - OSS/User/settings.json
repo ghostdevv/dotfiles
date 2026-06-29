@@ -1,0 +1,183 @@
+{
+	"svelte.enable-ts-plugin": true,
+	"git.autofetch": true,
+	"stripe.cliInstallPath": "/usr/bin/stripe",
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"workbench.startupEditor": "none",
+	"sqltools.useNodeRuntime": true,
+	"editor.inlineSuggest.enabled": true,
+	"prettier.singleQuote": true,
+	"prettier.quoteProps": "as-needed",
+	"prettier.trailingComma": "all",
+	"prettier.bracketSpacing": true,
+	"prettier.bracketSameLine": false,
+	"prettier.arrowParens": "always",
+	"prettier.semi": true,
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 4,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"workbench.preferredDarkColorTheme": "Serendipity Sunset V1",
+	"workbench.preferredLightColorTheme": "Solarized Light",
+	"window.autoDetectColorScheme": true,
+	"editor.fontLigatures": false,
+	"editor.fontFamily": "Comic Mono",
+	"editor.fontSize": 14,
+	"editor.tokenColorCustomizations": {
+		"[Serendipity Sunset V1]": {
+			"textMateRules": [
+				{
+					"scope": [
+						"comment",
+						"variable",
+						"variable.other.object.js",
+						"variable.other.object.property",
+						"variable.language",
+						"punctuation.accessor",
+						"markup.changed",
+						"markup.deleted.diff",
+						"markup.inserted.diff",
+						"keyword",
+						"keyword.operator.relational",
+						"keyword.operator.comparison",
+						"keyword.control.flow.js",
+						"keyword.control.flow.ts",
+						"keyword.control.flow.tsx",
+						"keyword.control.ruby",
+						"keyword.control.module.ruby",
+						"keyword.control.class.ruby",
+						"keyword.control.def.ruby",
+						"keyword.control.loop.js",
+						"keyword.control.loop.ts",
+						"keyword.control.import.js",
+						"keyword.control.import.ts",
+						"keyword.control.import.tsx",
+						"keyword.control.from.js",
+						"keyword.control.from.ts",
+						"keyword.control.from.tsx",
+						"keyword.operator.instanceof.js",
+						"keyword.operator.expression.instanceof.ts",
+						"keyword.operator.expression.instanceof.tsx",
+						"support.constant",
+						"support.function",
+						"entity.other.attribute-name",
+						"entity.other.inherited-class",
+						"entity.name.function",
+						"entity.name.tag.doctype",
+						"entity.name.function",
+						"meta.directive.vue",
+						"meta.diff.header.git",
+						"meta.diff.header.from-file",
+						"meta.diff.header.to-file",
+						"meta.var.expr",
+						"meta.delimiter.period",
+						"meta.selector",
+						"meta.tag.sgml.doctype",
+						"meta.tag.sgml.doctype.html",
+						"meta.class meta.method.declaration meta.var.expr storage.type.js",
+						"storage",
+						"storage.type.property.js",
+						"storage.type.property.ts",
+						"storage.type.property.tsx",
+						"source.elixir .punctuation.binary.elixir",
+						"source.go keyword.package.go",
+						"source.go keyword.import.go",
+						"source.go keyword.function.go",
+						"source.go keyword.type.go",
+						"source.go keyword.struct.go",
+						"source.go keyword.interface.go",
+						"source.go keyword.const.go",
+						"source.go keyword.var.go",
+						"source.go keyword.map.go",
+						"source.go keyword.channel.go",
+						"source.go keyword.control.go",
+						"string.quoted.docstring.multi.python"
+					],
+					"settings": {
+						"fontStyle": ""
+					}
+				}
+			]
+		}
+	},
+	"workbench.colorTheme": "Serendipity Sunset V1",
+	"editor.linkedEditing": true,
+	"editor.bracketPairColorization.enabled": false,
+	"workbench.editor.labelFormat": "short",
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+		"editor.formatOnSave": true
+	},
+	"[python]": {
+		"editor.formatOnType": true
+	},
+	"redhat.telemetry.enabled": false,
+	"gitlens.codeLens.authors.enabled": false,
+	"gitlens.codeLens.enabled": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"workbench.sideBar.location": "right",
+	"debug.javascript.defaultRuntimeExecutable": {
+		"pwa-node": "node"
+	},
+	"githubPullRequests.pullBranch": "never",
+	"editor.minimap.renderCharacters": false,
+	"arduino.useArduinoCli": true,
+	"Lua.workspace.library": ["/home/ghost/Desktop/CC-Tweaked-EmmyLua"],
+	"workbench.tree.enableStickyScroll": true,
+	"editor.stickyScroll.enabled": true,
+	"git.confirmSync": false,
+	"workbench.editor.empty.hint": "hidden",
+	"window.titleBarStyle": "native",
+	"window.customTitleBarVisibility": "never",
+	"window.menuBarVisibility": "hidden",
+	"apc.menubar.compact": false,
+	"apc.electron": {
+		"frame": false,
+		"titleBarStyle": "hiddenInset"
+	},
+	"[mdx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"git.replaceTagsWhenPull": true,
+	"[terraform]": {
+		"editor.defaultFormatter": "hashicorp.terraform"
+	},
+	"[dockerfile]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"update.showReleaseNotes": false,
+	"git.openRepositoryInParentFolders": "never",
+	"json.schemaDownload.trustedDomains": {
+		"https://schemastore.azurewebsites.net/": true,
+		"https://raw.githubusercontent.com/microsoft/vscode/": true,
+		"https://raw.githubusercontent.com/devcontainers/spec/": true,
+		"https://www.schemastore.org/": true,
+		"https://json.schemastore.org/": true,
+		"https://json-schema.org/": true,
+		"https://developer.microsoft.com/json-schemas/": true,
+		"https://biomejs.dev": true
+	}
+}

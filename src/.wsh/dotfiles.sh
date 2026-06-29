@@ -169,6 +169,9 @@ function update-dotfiles() {
   # Scripts
   _dotfiles_download ".wsh/scripts/update-crates.ts"
   _dotfiles_download ".wsh/scripts.sh"
+  # VSCode
+  _dotfiles_download ".config/Code - OSS/User/settings.json"
+  _dotfiles_download ".config/Code - OSS/extensions"
 
   # Store new version
   echo "$LATEST_VERSION" > "$CURRENT_VERSION_FILE"
