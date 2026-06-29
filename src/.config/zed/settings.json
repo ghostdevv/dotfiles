@@ -62,7 +62,7 @@
 			"effort": "high",
 			"enable_thinking": true,
 			"provider": "copilot_chat",
-			"model": "gpt-5.4",
+			"model": "claude-sonnet-4.6",
 		},
 	},
 	"agent_servers": {
