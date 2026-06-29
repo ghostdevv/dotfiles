@@ -19,6 +19,7 @@ org.gnome.Papers
 org.gnucash.GnuCash
 org.moneymanagerex.MMEX
 ai.jan.Jan
+io.github.tanaybhomia.Whisp
 
 # Media & Content Creation
 org.gimp.GIMP

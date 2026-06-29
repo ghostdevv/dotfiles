@@ -181,6 +181,14 @@ window-rule {
     open-floating true
 }
 
+// Whisp (notes window)
+window-rule {
+    match app-id="io.github.tanaybhomia.Whisp"
+    open-floating true
+    default-window-height { fixed 400; }
+    default-column-width { fixed 400; }
+}
+
 // No hotkey overlay (Super+Shift+/) on startup
 hotkey-overlay {
     skip-at-startup
@@ -199,6 +207,7 @@ binds {
 	Mod+Space repeat=false hotkey-overlay-title="Toggle ulauncher" { spawn "ulauncher-toggle"; }
 	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "ghostty" "--title=clipse-popup" "--background-opacity=0.85" "--window-width=12" "-e" "clipse"; }
 	Mod+B repeat=false hotkey-overlay-title="Open smile" { spawn "gtk-launch" "it.mijorus.smile"; }
+	Mod+N repeat=false hotkey-overlay-title="Open Whisp" { spawn "gtk-launch" "io.github.tanaybhomia.Whisp"; }
 
     // Shift focus right
     Mod+L { focus-column-right; }

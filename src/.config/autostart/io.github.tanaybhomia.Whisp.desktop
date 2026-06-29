@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=io.github.tanaybhomia.Whisp
+X-XDP-Autostart=io.github.tanaybhomia.Whisp
+Exec=flatpak run --command=whisp io.github.tanaybhomia.Whisp --hidden
+X-Flatpak=io.github.tanaybhomia.Whisp
