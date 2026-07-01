@@ -38,11 +38,6 @@
 				"enable_thinking": false,
 			},
 			{
-				"provider": "wai",
-				"model": "gpt-oss-120b",
-				"enable_thinking": false,
-			},
-			{
 				"provider": "copilot_chat",
 				"model": "claude-sonnet-4.6",
 				"enable_thinking": true,
@@ -74,8 +69,6 @@
 			"favorite_models": [
 				"wai/minimax-m2.5",
 				"wai/minimax-m2.7",
-				"wai/gemma-4-E4B-it",
-				"wai/gemma-4-26B-A4B-it",
 				"wai/qwen-3.6-35b-a3b",
 			],
 		},
@@ -85,21 +78,6 @@
 			"wai": {
 				"api_url": "https://ai.willow.sh/v1",
 				"available_models": [
-					{
-						"name": "gpt-oss-120b",
-						"display_name": "GPT OSS 120b",
-						"max_tokens": 131072,
-						"max_output_tokens": 32768,
-						"max_completion_tokens": 32768,
-						"reasoning_effort": "medium",
-						"capabilities": {
-							"tools": true,
-							"images": false,
-							"parallel_tool_calls": true,
-							"prompt_cache_key": false,
-							"chat_completions": true,
-						},
-					},
 					{
 						"name": "minimax-m2.5",
 						"display_name": "Minimax M2.5",
@@ -123,36 +101,6 @@
 						"capabilities": {
 							"tools": true,
 							"images": false,
-							"parallel_tool_calls": true,
-							"prompt_cache_key": false,
-							"chat_completions": true,
-						},
-					},
-					{
-						"name": "gemma-4-E4B-it",
-						"display_name": "Gemma 4 E4B",
-						"max_tokens": 131072,
-						"max_output_tokens": 16384,
-						"max_completion_tokens": 16384,
-						"reasoning_effort": "medium",
-						"capabilities": {
-							"tools": true,
-							"images": true,
-							"parallel_tool_calls": true,
-							"prompt_cache_key": false,
-							"chat_completions": true,
-						},
-					},
-					{
-						"name": "gemma-4-26B-A4B-it",
-						"display_name": "Gemma 4 26B A4B",
-						"max_tokens": 131072,
-						"max_output_tokens": 16384,
-						"max_completion_tokens": 16384,
-						"reasoning_effort": "medium",
-						"capabilities": {
-							"tools": true,
-							"images": true,
 							"parallel_tool_calls": true,
 							"prompt_cache_key": false,
 							"chat_completions": true,
