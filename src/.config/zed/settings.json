@@ -1,9 +1,16 @@
 // https://zed.dev/docs/configuring-zed
 {
+	"default_open_behavior": "new_window",
 	"cli_default_open_behavior": "new_window",
+	"diff_view_style": "split",
 	"on_last_window_closed": "quit_app",
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
+	"telemetry": {
+		"anthropic_retention": false,
+		"diagnostics": false,
+		"metrics": false,
+	},
 	"edit_predictions": {
 		"provider": "zed",
 		"open_ai_compatible_api": {
@@ -53,6 +60,7 @@
 		"play_sound_when_agent_done": "always",
 		"default_profile": "write",
 		"enabled": true,
+		"enable_feedback": false,
 		"default_model": {
 			"effort": "high",
 			"enable_thinking": true,
@@ -173,6 +181,7 @@
 	},
 	"use_smartcase_search": true,
 	"search": {
+		"center_on_match": true,
 		"button": false,
 	},
 	"project_panel": {
@@ -182,9 +191,17 @@
 		"dock": "right",
 		"indent_size": 16,
 		"entry_spacing": "standard",
+		"diagnostic_badges": true,
 	},
 	"git_panel": {
 		"dock": "right",
+		"entry_primary_click_action": "project_diff",
+		"collapse_untracked_diff": true,
+		"tree_view": true,
+		"group_by": "none",
+		"commit_title_max_length": 72,
+		"show_count_badge": true,
+		"folder_icons": false,
 	},
 	"outline_panel": {
 		"dock": "right",
@@ -197,11 +214,7 @@
 		"light": "One Light",
 		"dark": "Serendipity Sunset V1",
 	},
-	"icon_theme": {
-		"mode": "dark",
-		"light": "Catppuccin Mocha",
-		"dark": "Catppuccin Mocha",
-	},
+	"icon_theme": "Catppuccin Mocha",
 	"buffer_font_family": "Comic Mono",
 	"preferred_line_length": 90,
 	"auto_update": false,
@@ -211,11 +224,11 @@
 		"font_size": 14,
 		"cursor_shape": "bar",
 		"blinking": "on",
+		"bell": "system",
 		"toolbar": {
 			"breadcrumbs": false,
 		},
 	},
-	"restore_on_startup": "last_workspace",
 	"auto_install_extensions": {
 		"catppuccin-icons": true,
 		"docker-compose": true,
@@ -247,6 +260,11 @@
 		"agent_review": true,
 		"code_actions": true,
 	},
+	"title_bar": {
+		"show_branch_status_icon": true,
+		"show_sign_in": false,
+		"button_layout": "",
+	},
 	"tabs": {
 		"file_icons": true,
 		"git_status": true,
@@ -259,6 +277,9 @@
 	"journal": {
 		"hour_format": "hour24",
 	},
+	"auto_signature_help": false,
+	"show_signature_help_after_edits": false,
+	"hover_popover_delay": 200,
 	"languages": {
 		"Go": {
 			"formatter": "language_server",
@@ -268,6 +289,7 @@
 		},
 	},
 	"format_on_save": "on",
+	"hard_tabs": true,
 	"prettier": {
 		"allowed": true,
 		"singleQuote": true,
