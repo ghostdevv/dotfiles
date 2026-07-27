@@ -139,6 +139,7 @@ ttf-nerd-fonts-symbols-mono
 ttf-opensans
 cantarell-fonts
 ttf-quicksand-variable
+ttf-comic-sans
 
 # Theming & Icons
 breeze
@@ -193,6 +194,7 @@ opencode
 ast-grep
 caddy
 zizmor
+duckdb
 
 # CLI Utilities
 bat
@@ -229,6 +231,7 @@ oha
 lolcat
 jless
 goat-cli-bin
+websocat
 
 # Network & Security
 mullvad-vpn
