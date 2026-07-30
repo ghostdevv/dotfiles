@@ -11,6 +11,19 @@
 			"type": "remote",
 			"url": "https://dotprompts.com/mcp",
 			"enabled": false
+		},
+		"searxng": {
+			"type": "remote",
+			"url": "https://ai.willow.sh/mcp/searxng",
+			"enabled": false,
+			"headers": {
+				"Authorization": ""
+			}
+		},
+		"atproto.md": {
+			"type": "remote",
+			"url": "https://atproto.md/mcp",
+			"enabled": false
 		}
 	},
 	"model": "wai/minimax-m2.7",
