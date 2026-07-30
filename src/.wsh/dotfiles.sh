@@ -146,6 +146,7 @@ function update-dotfiles() {
   _dotfiles_download ".config/mimeapps.list"
   # Bat Additions
   _dotfiles_download ".config/bat/themes/serendipity-sunset-v1.tmtheme"
+  _dotfiles_download ".config/bat/syntaxes/gleam.sublime-syntax"
   # Presenterm
   _dotfiles_download ".config/presenterm/themes/ghost.yaml"
   # Opencode
