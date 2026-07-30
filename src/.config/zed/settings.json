@@ -2,7 +2,7 @@
 {
 	"default_open_behavior": "new_window",
 	"cli_default_open_behavior": "new_window",
-	"diff_view_style": "split",
+	"diff_view_style": "unified",
 	"on_last_window_closed": "quit_app",
 	"when_closing_with_no_tabs": "keep_window_open",
 	"show_edit_predictions": true,
@@ -154,6 +154,10 @@
 		},
 	},
 	"context_servers": {
+		"atproto.md": {
+			"enabled": false,
+			"url": "https://atproto.md/mcp",
+		},
 		"searxng": {
 			"enabled": false,
 			"url": "https://ai.willow.sh/mcp/searxng",
@@ -214,7 +218,11 @@
 		"light": "One Light",
 		"dark": "Serendipity Sunset V1",
 	},
-	"icon_theme": "Catppuccin Mocha",
+	"icon_theme": {
+		"mode": "dark",
+		"light": "Catppuccin Mocha",
+		"dark": "Catppuccin Mocha",
+	},
 	"buffer_font_family": "Comic Mono",
 	"preferred_line_length": 90,
 	"auto_update": false,
