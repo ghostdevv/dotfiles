@@ -17,4 +17,13 @@
 			"ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar",
 		},
 	},
+	{
+		"context": "Pane",
+		"bindings": {
+			"alt-left": "pane::GoBack",
+			"ctrl-alt--": "pane::GoBack",
+			"alt-right": "pane::GoForward",
+			"ctrl-alt-_": "pane::GoForward",
+		},
+	},
 ]
