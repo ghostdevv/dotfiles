@@ -47,6 +47,7 @@ fprintd
 usbutils
 dosfstools
 fw-fanctrl-git
+framework-system
 brightnessctl
 power-profiles-daemon
 
@@ -195,6 +196,9 @@ ast-grep
 caddy
 zizmor
 duckdb
+webkit2gtk
+meson
+vala
 
 # CLI Utilities
 bat
@@ -256,7 +260,6 @@ firefox
 servo-bin
 
 # Media & Entertainment
-spotify
 vlc
 vlc-plugin-ffmpeg
 vlc-plugins-all
@@ -338,7 +341,6 @@ etcher-bin
 rpi-imager
 signal-desktop
 rbutil
-archlinux-tweak-tool-git
 ulauncher-git
 orca
 gnome-system-monitor
