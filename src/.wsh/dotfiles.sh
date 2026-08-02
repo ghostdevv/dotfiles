@@ -162,9 +162,9 @@ function update-dotfiles() {
   # Clank.pi
   _dotfiles_download ".pi/agent/models.json"
   _dotfiles_download ".pi/agent/settings.json"
-  # llama-swap
-  _dotfiles_download ".config/llama-swap/config.yaml"
-  _dotfiles_download ".config/systemd/user/llama-swap.service"
+  # llama-cpp/llama-server
+  _dotfiles_download ".config/llama-cpp/presets.ini"
+  _dotfiles_download ".config/systemd/user/llama-server.service"
   # Lazygit
   _dotfiles_download ".config/lazygit/config.yml"
   # Scripts

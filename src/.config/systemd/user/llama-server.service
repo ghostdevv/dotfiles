@@ -1,0 +1,14 @@
+[Unit]
+Description=local llama-server in router mode for small models
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5
+StartLimitBurst=3
+StartLimitInterval=30
+OOMScoreAdj=900
+ExecStart=/usr/bin/llama-server --port 7748 --models-preset %h/.config/llama-cpp/presets.ini
+
+[Install]
+WantedBy=default.target

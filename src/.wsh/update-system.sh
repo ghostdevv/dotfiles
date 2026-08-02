@@ -51,8 +51,7 @@ function update-system() {
     systemctl --user enable ulauncher --now
     sudo systemctl enable systemd-timesyncd --now
     systemctl enable --user app-com.mitchellh.ghostty.service
-    systemctl disable --now llama-swap
-    systemctl enable --now --user llama-swap
+    systemctl enable --now --user llama-server
   fi
 
   if ! groups $USER | grep -q "\bdocker\b"; then
