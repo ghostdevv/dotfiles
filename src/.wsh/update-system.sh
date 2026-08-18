@@ -69,6 +69,16 @@ function update-system() {
     sudo usermod -aG uucp $USER
   fi
 
+  if ! groups $USER | grep -q "\bwireshark\b"; then
+    echo -e "\nAdded you to the wireshark group"
+    sudo usermod -aG wireshark $USER
+  fi
+
+  if ! groups $USER | grep -q "\binput\b"; then
+    echo -e "\nAdded you to the input group"
+    sudo usermod -aG input $USER
+  fi
+
   echo -n "\nDo you want to install/update flatpak packages? (Y/n): "
   read answer
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
