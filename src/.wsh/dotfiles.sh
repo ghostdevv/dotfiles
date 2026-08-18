@@ -137,7 +137,6 @@ function update-dotfiles() {
   _dotfiles_download ".config/hypr/hyprlock.conf"
   # Autostart
   _dotfiles_download ".config/autostart/1password.desktop" "linux"
-  _dotfiles_download ".config/autostart/it.mijorus.smile.desktop" "linux"
   # Brave
   _dotfiles_download ".config/brave-flags.conf"
   # Mako

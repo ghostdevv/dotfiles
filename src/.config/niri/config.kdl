@@ -176,12 +176,6 @@ window-rule {
     default-floating-position x=25 y=25 relative-to="bottom-right"
 }
 
-// Smile (emoji picker)
-window-rule {
-    match app-id="it.mijorus.smile"
-    open-floating true
-}
-
 // Whisp (notes window)
 window-rule {
     match app-id="io.github.tanaybhomia.Whisp"
@@ -207,7 +201,6 @@ binds {
 	Alt+Return repeat=false hotkey-overlay-title="Toggle guake" { spawn "guake-toggle"; }
 	Mod+Space repeat=false hotkey-overlay-title="Toggle ulauncher" { spawn "ulauncher-toggle"; }
 	Mod+V repeat=false hotkey-overlay-title="Open clipse" { spawn "ghostty" "--title=clipse-popup" "--background-opacity=0.85" "--window-width=12" "-e" "clipse"; }
-	Mod+B repeat=false hotkey-overlay-title="Open smile" { spawn "gtk-launch" "it.mijorus.smile"; }
 	Mod+N repeat=false hotkey-overlay-title="Open Whisp" { spawn "gtk-launch" "io.github.tanaybhomia.Whisp"; }
 
     // Shift focus right
