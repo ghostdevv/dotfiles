@@ -100,12 +100,30 @@ interface Results {
 const results: Results[] = [];
 const s = spinner();
 
+/**
+ * Rust semver can have a single number which is invalid in JS semver,
+ * so we have to handle it ourselves.
+ */
+function parseSemver(version: string): semver.SemVer {
+	if (!version.includes('.')) {
+		const major = Number.parseInt(version, 10);
+		if (Number.isNaN(major)) throw new Error('not a number: ' + version);
+		return { major, minor: 0, patch: 0 };
+	}
+
+	return semver.parse(version);
+}
+
 const visit = async (path: string[], dependencies: v.InferOutput<typeof Dependencies>) => {
 	for (const [crate, version] of Object.entries(dependencies)) {
 		s.message(`Checking ${c.bold(path.join('.'))} -> ${c.bold(crate)}`);
 
 		const currentStr = typeof version === 'string' ? version : version.version;
-		const current = semver.parse(currentStr);
+		const current = t(parseSemver(currentStr));
+		if (!current.ok) {
+			s.error(`Invalid version: ${c.dim(currentStr)}`);
+			continue;
+		}
 
 		const latest = await t(fetchLatestVersion(crate));
 		if (!latest.ok) {
@@ -113,7 +131,7 @@ const visit = async (path: string[], dependencies: v.InferOutput<typeof Dependen
 			Deno.exit(1);
 		}
 
-		if (semver.greaterThan(latest.value, current)) {
+		if (semver.greaterThan(latest.value, current.value)) {
 			const versionPath = [...path, crate];
 			if (typeof version != 'string') versionPath.push('version');
 
@@ -145,18 +163,21 @@ if (parsed.output.target) {
 }
 
 let longestName = 0;
+let longestTo = 0;
 let updates = 0;
 
 for (const result of results) {
 	if (result.to !== null) updates++;
 	if (longestName < result.crate.length) longestName = result.crate.length;
+	if (longestTo < result.from.length) longestTo = result.from.length;
 }
 
 const resultsStr = results
 	.map((change) => {
 		const spacing = longestName - change.crate.length + 1;
+		const toSpacing = longestTo - change.from.length + 1;
 		let result = `${c.bold(change.crate)}${' '.repeat(spacing)}${c.dim(change.from)}`;
-		if (change.to) result += `\t-> ${c.green(change.to)}`;
+		if (change.to) result += `${' '.repeat(toSpacing)}-> ${c.green(change.to)}`;
 		return result;
 	})
 	.join('\n');
