@@ -1,9 +1,9 @@
 import { confirm, intro, isCancel, log, outro, spinner } from 'npm:@clack/prompts@1.3.0';
+import * as toml from 'npm:@decimalturn/toml-patch@3.0.2';
 import * as semver from 'jsr:@std/semver@1.0.8';
 import * as c from 'jsr:@std/fmt@1.0.10/colors';
 import * as v from 'jsr:@valibot/valibot@1.4.0';
 import { resolve } from 'jsr:@std/path@1.1.4';
-import * as toml from 'jsr:@std/toml@1.0.11';
 import { dset } from 'npm:dset@3.1.4';
 import { inspect } from 'node:util';
 import { t } from 'npm:try@1.0.3';
@@ -169,7 +169,7 @@ if (updates) {
 	if (isCancel(save)) exit(true, 'Cancelled');
 
 	if (save) {
-		await Deno.writeTextFile(cargoTomlPath, content.value);
+		await Deno.writeTextFile(cargoTomlPath, toml.patch(content.value, raw.value));
 		outro('Done! Run `cargo update`');
 	}
 }
