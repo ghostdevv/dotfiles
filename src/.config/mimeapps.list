@@ -22,3 +22,5 @@ audio/webm=org.gnome.Decibels.desktop
 audio/mp4=org.gnome.Decibels.desktop
 audio/mp3=org.gnome.Decibels.desktop
 text/vnd.trolltech.linguist=dev.zed.Zed.desktop
+x-scheme-handler/opencode=ai.opencode.desktop.desktop
+image/svg+xml=org.gnome.Loupe.desktop
