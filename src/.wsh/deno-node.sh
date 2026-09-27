@@ -139,3 +139,41 @@ function packument() {
         echo -e "Failed to get packument for \"$1\" (version: '$2')"
     fi
 }
+
+function get-porffor-version() {
+	local version="$1"
+
+	if ! [[ $version =~ '^[0-9]+$' ]]; then
+		echo -e "Porffor Version should be a number"
+		return 1
+	fi
+
+	local dest="porf-alpha-$version"
+
+	if [[ -f $dest ]]; then
+		echo -e "./$dest already exists"
+		return 1
+	fi
+
+	local url="https://github.com/CanadaHonk/porffor/releases/download/alpha-$version/porffor-linux-x64.tar.gz"
+	local tarball="$(mktemp /tmp/porffor-alpha-$version-XXX.tar.gz)"
+
+	local result
+	result=$(curl --silent --fail-with-body -Lo $tarball $url)
+
+	if [[ $? -ne 0 ]]; then
+		echo -e "Failed to find Porffor Alpha $version download with \"$(cat $tarball)\""
+		return 1
+	fi
+
+	result=$(tar -xzf "$tarball" porf -O 2>&1 1>"$dest")
+
+	if [[ $? -ne 0 ]]; then
+		echo -e "Failed to extract Porffor Alpha $version download with: $(echo "$result" | sed 's/^/    /')"
+		return 1
+	fi
+
+	echo "Downloaded Porffor Alpha $version to ./$dest"
+	chmod +x $dest
+	rm $tarball
+}
