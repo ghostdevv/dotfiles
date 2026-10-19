@@ -157,6 +157,8 @@ function update-dotfiles() {
   _dotfiles_download ".config/opencode/commands/pr-review.md"
   _dotfiles_download ".config/opencode/sounds/dingaling.mp3"
   _dotfiles_download ".config/opencode/sounds/dingdong.mp3"
+  # Skills
+  _dotfiles_download ".config/.agents/skills/readme/SKILL.md"
   # Clank.pi
   _dotfiles_download ".pi/agent/models.json"
   _dotfiles_download ".pi/agent/settings.json"
