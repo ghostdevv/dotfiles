@@ -151,7 +151,7 @@ function update-dotfiles() {
   # Opencode
   _dotfiles_download ".config/opencode/opencode.json"
   _dotfiles_download ".config/opencode/svelte.json"
-  _dotfiles_download ".config/opencode/tui.json"
+  _dotfiles_download ".config/opencode/cli.json"
   _dotfiles_download ".config/opencode/themes/GHOST.json"
   _dotfiles_download ".config/opencode/commands/pr-comments.md"
   _dotfiles_download ".config/opencode/commands/pr-review.md"

@@ -1,99 +1,85 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"plugin": ["@sveltejs/opencode@0.1.5", "@mohak34/opencode-notifier@0.2.1"],
+	"plugins": ["@sveltejs/opencode@0.1.16", "@mohak34/opencode-notifier@0.2.8"],
+	"update": "notify",
 	"mcp": {
-		"tmcp-web": {
-			"type": "remote",
-			"url": "https://tmcp-web.willowdev.workers.dev/mcp",
-			"enabled": false
-		},
-		"dotprompts": {
-			"type": "remote",
-			"url": "https://dotprompts.com/mcp",
-			"enabled": false
-		},
-		"searxng": {
-			"type": "remote",
-			"url": "https://ai.willow.sh/mcp/searxng",
-			"enabled": false,
-			"headers": {
-				"Authorization": ""
+		"servers": {
+			"tmcp-web": {
+				"type": "remote",
+				"url": "https://tmcp-web.willowdev.workers.dev/mcp",
+				"disabled": true
+			},
+			"dotprompts": {
+				"type": "remote",
+				"url": "https://dotprompts.com/mcp",
+				"disabled": true
+			},
+			"searxng": {
+				"type": "remote",
+				"url": "https://ai.willow.sh/mcp/searxng",
+				"disabled": true,
+				"headers": {
+					"Authorization": "Basic"
+				}
+			},
+			"atproto.md": {
+				"type": "remote",
+				"url": "https://atproto.md/mcp",
+				"disabled": true
 			}
-		},
-		"atproto.md": {
-			"type": "remote",
-			"url": "https://atproto.md/mcp",
-			"enabled": false
 		}
 	},
 	"model": "wai/minimax-m2.7",
-	"small_model": "local/gemma-4-E4B-it",
-	"provider": {
+	"agents": {
+		"title": {
+			"model": "local/gemma-4-E4B-it"
+		}
+	},
+	"providers": {
 		"wai": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "wai",
-			"options": {
+			"package": "aisdk:@ai-sdk/openai-compatible",
+			"settings": {
 				"baseURL": "https://ai.willow.sh/v1"
 			},
 			"models": {
 				"minimax-m2.5": {
 					"name": "MiniMax M2.5",
-					"cost": { "input": 0.3, "output": 1.2, "cache_read": 0.03 },
-					"reasoning": true,
-					"tool_call": true,
-					"limit": {
-						"context": 131072,
-						"input": 96304,
-						"output": 32768
+					"cost": { "input": 0.3, "output": 1.2, "cache": { "read": 0.03 } },
+					"capabilities": {
+						"tools": true
 					}
 				},
 				"minimax-m2.7": {
 					"name": "MiniMax M2.7",
-					"cost": { "input": 0.3, "output": 1.2, "cache_read": 0.06 },
-					"reasoning": true,
-					"tool_call": true,
-					"interleaved": true,
-					"limit": {
-						"context": 65536,
-						"input": 47152,
-						"output": 16384
+					"cost": { "input": 0.3, "output": 1.2, "cache": { "read": 0.06 } },
+					"capabilities": {
+						"tools": true,
+						"input": ["text", "audio"],
+						"output": ["text"]
 					}
 				},
 				"qwen-3.6-35b-a3b": {
 					"name": "Qwen 3.6 35B A3B",
 					"cost": { "input": 0.33, "output": 1.95 },
-					"reasoning": true,
-					"tool_call": true,
-					"attachment": true,
-					"modalities": {
+					"capabilities": {
+						"tools": true,
 						"input": ["text", "image"],
 						"output": ["text"]
-					},
-					"limit": {
-						"context": 131072,
-						"input": 112688,
-						"output": 16384
 					}
 				}
 			}
 		},
 		"local": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "local",
-			"options": {
+			"package": "aisdk:@ai-sdk/openai-compatible",
+			"settings": {
 				"baseURL": "http://127.0.0.1:7748/v1"
 			},
 			"models": {
 				"gemma-4-E4B-it": {
 					"name": "Gemma 4 E4B",
-					"modalities": {
+					"capabilities": {
 						"input": ["text", "image", "audio"],
 						"output": ["text"]
-					},
-					"limit": {
-						"context": 131072,
-						"output": 16384,
-						"input": 112688
 					}
 				}
 			}
