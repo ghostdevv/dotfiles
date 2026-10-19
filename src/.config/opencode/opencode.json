@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"plugins": ["@sveltejs/opencode@0.1.16", "@mohak34/opencode-notifier@0.2.8"],
+	"plugins": ["@sveltejs/opencode@0.1.16"],
 	"update": "notify",
 	"mcp": {
 		"servers": {

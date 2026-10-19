@@ -155,9 +155,8 @@ function update-dotfiles() {
   _dotfiles_download ".config/opencode/themes/GHOST.json"
   _dotfiles_download ".config/opencode/commands/pr-comments.md"
   _dotfiles_download ".config/opencode/commands/pr-review.md"
-  _dotfiles_download ".config/opencode/opencode-notifier.json"
-  _dotfiles_download ".config/opencode/sounds/dingaling.opus"
-  _dotfiles_download ".config/opencode/sounds/dingdong.opus"
+  _dotfiles_download ".config/opencode/sounds/dingaling.mp3"
+  _dotfiles_download ".config/opencode/sounds/dingdong.mp3"
   # Clank.pi
   _dotfiles_download ".pi/agent/models.json"
   _dotfiles_download ".pi/agent/settings.json"

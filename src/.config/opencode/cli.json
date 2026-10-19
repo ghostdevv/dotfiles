@@ -1,4 +1,17 @@
 {
 	"$schema": "https://opencode.ai/v2/cli.json",
-	"theme": { "name": "GHOST" }
+	"theme": { "name": "GHOST" },
+	"attention": {
+		"notifications": true,
+		"sound": true,
+		"volume": 0.4,
+		"sound_pack": "opencode.default",
+		"sounds": {
+			"default": "/home/willow/.config/opencode/sounds/dingaling.mp3",
+			"permission": "/home/willow/.config/opencode/sounds/dingdong.mp3",
+			"question": "/home/willow/.config/opencode/sounds/dingdong.mp3",
+			"error": "/home/willow/.config/opencode/sounds/dingdong.mp3",
+			"done": "/home/willow/.config/opencode/sounds/dingaling.mp3"
+		}
+	}
 }
