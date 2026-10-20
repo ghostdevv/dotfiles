@@ -20,6 +20,9 @@ lm_sensors
 exfat-utils
 ntfs-3g
 fwupd
+ntfsprogs
+
+
 
 # System Utilities
 timeshift
@@ -50,6 +53,7 @@ fw-fanctrl-git
 framework-system
 brightnessctl
 power-profiles-daemon
+cups
 
 # Graphics & GPU
 mesa
@@ -185,6 +189,8 @@ python-black
 just
 rustup
 zig
+gleam
+rebar3
 lazygit
 lazydocker
 hcloud
@@ -199,6 +205,14 @@ duckdb
 webkit2gtk
 meson
 vala
+watchexec
+
+## Wasm
+wasmtime
+wasmer
+emscripten
+emsdk
+wasi-sdk-bin
 
 # CLI Utilities
 bat
