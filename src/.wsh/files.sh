@@ -140,3 +140,12 @@ function v2a() {
         fi
     done
 }
+
+function mm-to-px() {
+    local mm=$1
+    local dpi=${2:-600}
+    local px=$(echo "$mm $dpi" | awk '{printf "%.0f", ($1 / 25.4) * $2}')
+    local a4w=$(echo "210 $dpi" | awk '{printf "%.0f", ($1 / 25.4) * $2}')
+    local a4h=$(echo "297 $dpi" | awk '{printf "%.0f", ($1 / 25.4) * $2}')
+    echo "${mm}mm @ ${dpi}dpi = ${px}px  (A4 canvas: ${a4w}x${a4h}px)"
+}
